@@ -1,0 +1,2 @@
+C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/26_03_25/ihm_coupe_geii/CM7/TouchGFX/generated/images/src/BitmapDatabase.cpp:53:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	1
+C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/26_03_25/ihm_coupe_geii/CM7/TouchGFX/generated/images/src/BitmapDatabase.cpp:58:10:uint16_t BitmapDatabase::getInstanceSize()	1
