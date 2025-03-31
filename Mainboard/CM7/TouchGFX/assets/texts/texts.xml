@@ -36,14 +36,8 @@
       <Text Id="__SingleUse_Y14O" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Tourner de 180°</Translation>
       </Text>
-      <Text Id="__SingleUse_VNQG" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Menu tests&#10;Lidar haut</Translation>
-      </Text>
-      <Text Id="__SingleUse_OH7N" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Lidar haut</Translation>
-      </Text>
       <Text Id="__SingleUse_KKOG" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Lidars bas</Translation>
+        <Translation Language="GB">Lidars</Translation>
       </Text>
       <Text Id="__SingleUse_8TIH" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Moteurs</Translation>
@@ -52,7 +46,7 @@
         <Translation Language="GB">Sélectionner le test à réaliser</Translation>
       </Text>
       <Text Id="__SingleUse_WWBO" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Menu tests&#10;Lidars bas</Translation>
+        <Translation Language="GB">Menu tests&#10;Lidars</Translation>
       </Text>
       <Text Id="__SingleUse_OXSS" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Menu tests&#10;Moteurs</Translation>

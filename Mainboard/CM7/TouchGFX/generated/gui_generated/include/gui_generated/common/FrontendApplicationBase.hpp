@@ -38,11 +38,8 @@ public:
     // Tests_moteurs
     void gotoTests_moteursScreenNoTransition();
 
-    // Test_lidar_bas
-    void gotoTest_lidar_basScreenNoTransition();
-
-    // Test_lidar_haut
-    void gotoTest_lidar_hautScreenNoTransition();
+    // Test_lidar
+    void gotoTest_lidarScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -67,11 +64,8 @@ protected:
     // Tests_moteurs
     void gotoTests_moteursScreenNoTransitionImpl();
 
-    // Test_lidar_bas
-    void gotoTest_lidar_basScreenNoTransitionImpl();
-
-    // Test_lidar_haut
-    void gotoTest_lidar_hautScreenNoTransitionImpl();
+    // Test_lidar
+    void gotoTest_lidarScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

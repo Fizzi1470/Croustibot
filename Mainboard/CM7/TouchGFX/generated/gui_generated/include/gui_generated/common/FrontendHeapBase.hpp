@@ -24,10 +24,8 @@
 #include <gui/choix_tests_screen/Choix_testsPresenter.hpp>
 #include <gui/tests_moteurs_screen/Tests_moteursView.hpp>
 #include <gui/tests_moteurs_screen/Tests_moteursPresenter.hpp>
-#include <gui/test_lidar_bas_screen/Test_lidar_basView.hpp>
-#include <gui/test_lidar_bas_screen/Test_lidar_basPresenter.hpp>
-#include <gui/test_lidar_haut_screen/Test_lidar_hautView.hpp>
-#include <gui/test_lidar_haut_screen/Test_lidar_hautPresenter.hpp>
+#include <gui/test_lidar_screen/Test_lidarView.hpp>
+#include <gui/test_lidar_screen/Test_lidarPresenter.hpp>
 
 
 /**
@@ -56,9 +54,8 @@ public:
             touchgfx::meta::TypeList< Robot_en_matchView,
             touchgfx::meta::TypeList< Choix_testsView,
             touchgfx::meta::TypeList< Tests_moteursView,
-            touchgfx::meta::TypeList< Test_lidar_basView,
-            touchgfx::meta::TypeList< Test_lidar_hautView,
-            touchgfx::meta::Nil > > > > > > >
+            touchgfx::meta::TypeList< Test_lidarView,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -76,9 +73,8 @@ public:
             touchgfx::meta::TypeList< Robot_en_matchPresenter,
             touchgfx::meta::TypeList< Choix_testsPresenter,
             touchgfx::meta::TypeList< Tests_moteursPresenter,
-            touchgfx::meta::TypeList< Test_lidar_basPresenter,
-            touchgfx::meta::TypeList< Test_lidar_hautPresenter,
-            touchgfx::meta::Nil > > > > > > >
+            touchgfx::meta::TypeList< Test_lidarPresenter,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -37,14 +37,13 @@
     <ClCompile Include="..\..\gui\src\tests_moteurs_screen\Tests_moteursView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\tests_moteurs_screen\Tests_moteursViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\test_lidar_bas_screen\Test_lidar_basView.cpp"/>
-    <ClCompile Include="..\..\gui\src\test_lidar_haut_screen\Test_lidar_hautPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\test_lidar_haut_screen\Test_lidar_hautView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\test_lidar_haut_screen\Test_lidar_hautViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\test_lidar_bas_screen\Test_lidar_basPresenter.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\test_lidar_bas_screen\Test_lidar_basViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\robot_en_match_screen\Robot_en_matchPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\robot_en_match_screen\Robot_en_matchView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\robot_en_match_screen\Robot_en_matchViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\test_lidar_screen\Test_lidarPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\test_lidar_screen\Test_lidarView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\test_lidar_screen\Test_lidarViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -211,14 +210,13 @@
     <ClInclude Include="..\..\gui\include\gui\tests_moteurs_screen\Tests_moteursView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\tests_moteurs_screen\Tests_moteursViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\test_lidar_bas_screen\Test_lidar_basView.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\test_lidar_haut_screen\Test_lidar_hautPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\test_lidar_haut_screen\Test_lidar_hautView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_lidar_haut_screen\Test_lidar_hautViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\test_lidar_bas_screen\Test_lidar_basPresenter.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_lidar_bas_screen\Test_lidar_basViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\robot_en_match_screen\Robot_en_matchPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\robot_en_match_screen\Robot_en_matchView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\robot_en_match_screen\Robot_en_matchViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\test_lidar_screen\Test_lidarPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\test_lidar_screen\Test_lidarView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_lidar_screen\Test_lidarViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

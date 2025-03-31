@@ -21,10 +21,8 @@
 #include <gui/choix_tests_screen/Choix_testsPresenter.hpp>
 #include <gui/tests_moteurs_screen/Tests_moteursView.hpp>
 #include <gui/tests_moteurs_screen/Tests_moteursPresenter.hpp>
-#include <gui/test_lidar_bas_screen/Test_lidar_basView.hpp>
-#include <gui/test_lidar_bas_screen/Test_lidar_basPresenter.hpp>
-#include <gui/test_lidar_haut_screen/Test_lidar_hautView.hpp>
-#include <gui/test_lidar_haut_screen/Test_lidar_hautPresenter.hpp>
+#include <gui/test_lidar_screen/Test_lidarView.hpp>
+#include <gui/test_lidar_screen/Test_lidarPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -123,28 +121,15 @@ void FrontendApplicationBase::gotoTests_moteursScreenNoTransitionImpl()
     touchgfx::makeTransition<Tests_moteursView, Tests_moteursPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Test_lidar_bas
+// Test_lidar
 
-void FrontendApplicationBase::gotoTest_lidar_basScreenNoTransition()
+void FrontendApplicationBase::gotoTest_lidarScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoTest_lidar_basScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoTest_lidarScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoTest_lidar_basScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoTest_lidarScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<Test_lidar_basView, Test_lidar_basPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Test_lidar_haut
-
-void FrontendApplicationBase::gotoTest_lidar_hautScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoTest_lidar_hautScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoTest_lidar_hautScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<Test_lidar_hautView, Test_lidar_hautPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Test_lidarView, Test_lidarPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

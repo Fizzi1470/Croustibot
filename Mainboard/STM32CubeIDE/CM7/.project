@@ -682,24 +682,24 @@
 			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Test_lidar_basPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/test_lidar_bas_screen/Test_lidar_basPresenter.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/Test_lidar_basView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/test_lidar_bas_screen/Test_lidar_basView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Test_lidar_hautPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/test_lidar_haut_screen/Test_lidar_hautPresenter.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/Test_lidar_hautView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/test_lidar_haut_screen/Test_lidar_hautView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Test_lidarPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Test_lidarView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Tests_moteursPresenter.cpp</name>
@@ -847,14 +847,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/generated/gui_generated/src/robot_pret_screen/Robot_pretViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Test_lidar_basViewBase.cpp</name>
+			<name>Application/User/generated/Test_lidarViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/generated/gui_generated/src/test_lidar_bas_screen/Test_lidar_basViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Test_lidar_hautViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/generated/gui_generated/src/test_lidar_haut_screen/Test_lidar_hautViewBase.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/CM7/TouchGFX/generated/gui_generated/src/test_lidar_screen/Test_lidarViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Tests_moteursViewBase.cpp</name>

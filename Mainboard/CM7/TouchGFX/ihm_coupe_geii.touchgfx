@@ -1614,31 +1614,8 @@
             "Components": [
               {
                 "Type": "ButtonWithLabel",
-                "Name": "bouton_lidar_2",
-                "X": 530,
-                "Y": 10,
-                "Width": 240,
-                "Height": 50,
-                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_disabled.png",
-                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_disabled.png",
-                "TextId": "__SingleUse_OH7N",
-                "ReleasedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "PressedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "TextRotation": "0",
-                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_round_disabled.json"
-              },
-              {
-                "Type": "ButtonWithLabel",
                 "Name": "bouton_lidar_1",
-                "X": 268,
+                "X": 415,
                 "Y": 10,
                 "Width": 240,
                 "Height": 50,
@@ -1661,7 +1638,7 @@
               {
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_moteurs",
-                "X": 9,
+                "X": 28,
                 "Y": 10,
                 "Width": 240,
                 "Height": 50,
@@ -1686,7 +1663,7 @@
           {
             "Type": "ScalableImage",
             "Name": "image_moteur",
-            "X": 21,
+            "X": 40,
             "Y": 134,
             "Width": 240,
             "Height": 156,
@@ -1696,7 +1673,7 @@
           {
             "Type": "ScalableImage",
             "Name": "image_lidar_bas",
-            "X": 285,
+            "X": 330,
             "Y": 134,
             "Width": 230,
             "Height": 156,
@@ -1726,7 +1703,7 @@
           {
             "Type": "Button",
             "Name": "button1",
-            "X": 53,
+            "X": 72,
             "Y": 125,
             "Width": 176,
             "Height": 175,
@@ -1738,8 +1715,8 @@
           {
             "Type": "Button",
             "Name": "button1_1",
-            "X": 309,
-            "Y": 125,
+            "X": 357,
+            "Y": 127,
             "Width": 176,
             "Height": 175,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_large_fill_pressed.png",
@@ -1751,7 +1728,7 @@
             "Type": "Button",
             "Name": "button1_1_1",
             "X": 574,
-            "Y": 125,
+            "Y": 127,
             "Width": 176,
             "Height": 175,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_large_fill_pressed.png",
@@ -1794,19 +1771,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Test_lidar_bas"
-            }
-          },
-          {
-            "InteractionName": "vers_test_lidar_2",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_lidar_2"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Test_lidar_haut"
+              "ActionComponent": "Test_lidar"
             }
           },
           {
@@ -1842,19 +1807,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Test_lidar_bas"
-            }
-          },
-          {
-            "InteractionName": "vers_test_lidar_2_1",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button1_1_1"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Test_lidar_haut"
+              "ActionComponent": "Test_lidar"
             }
           }
         ]
@@ -2267,9 +2220,8 @@
         ]
       },
       {
-        "Name": "Test_lidar_bas",
-        "OverrideDefaultBufferSize": true,
-        "CanvasBufferSize": 150000,
+        "Name": "Test_lidar",
+        "CanvasBufferSize": 12000,
         "Components": [
           {
             "Type": "Box",
@@ -2340,31 +2292,58 @@
           {
             "Type": "ScalableImage",
             "Name": "image_lidar_bas",
-            "X": 684,
-            "Y": 70,
-            "Width": 87,
-            "Height": 80,
+            "X": 670,
+            "Y": 66,
+            "Width": 57,
+            "Height": 55,
             "Filename": "lidar1.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
             "Type": "Circle",
-            "Name": "point1",
-            "X": 78,
-            "Y": 192,
-            "Width": 38,
-            "Height": 40,
+            "Name": "point",
+            "X": 780,
+            "Y": 460,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 255
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 5.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "Moveable": true
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 766,
+            "Y": 455,
+            "Width": 19,
+            "Height": 20,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "CenterX": 790.0,
-            "CenterY": 470.0,
-            "Radius": 5.0,
-            "EndAngle": 360.0,
-            "CapPrecision": "Butt",
-            "Moveable": true
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 3.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 733,
+            "Y": 67,
+            "Width": 57,
+            "Height": 54,
+            "Filename": "lidar2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
         "Interactions": [
@@ -2423,134 +2402,6 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "reception_can_lidars_test_lidar_bas_avant"
-            }
-          }
-        ]
-      },
-      {
-        "Name": "Test_lidar_haut",
-        "Components": [
-          {
-            "Type": "Box",
-            "Name": "fond",
-            "Width": 800,
-            "Height": 480,
-            "Color": {
-              "Red": 99,
-              "Blue": 59
-            }
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "repere_polaire",
-            "X": 149,
-            "Width": 503,
-            "Height": 480,
-            "Filename": "table.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "texte_menu_tests_lidar_2",
-            "X": 672,
-            "Y": 6,
-            "Width": 110,
-            "Height": 48,
-            "TextId": "__SingleUse_VNQG",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "ButtonWithIcon",
-            "Name": "bouton_retour",
-            "Y": 420,
-            "Width": 60,
-            "Height": 60,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_normal.png",
-            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
-            "IconReleased": "__generated\\icon_theme_images_content_reply_50_50_E8F6FB.svg.png",
-            "IconX": 5,
-            "IconY": 5,
-            "IconHeight": 50,
-            "IconWidth": 50,
-            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_normal.json"
-          },
-          {
-            "Type": "ButtonWithIcon",
-            "Name": "bouton_home",
-            "Width": 60,
-            "Height": 60,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_normal.png",
-            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
-            "IconReleased": "__generated\\icon_theme_images_action_home_50_50_E8F6FB.svg.png",
-            "IconX": 5,
-            "IconY": 5,
-            "IconHeight": 50,
-            "IconWidth": 50,
-            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_normal.json"
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "image_lidar_haut",
-            "X": 687,
-            "Y": 70,
-            "Width": 80,
-            "Height": 80,
-            "Filename": "lidar2.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "vers_home",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_home"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Home"
-            }
-          },
-          {
-            "InteractionName": "vers_choix_tests",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_retour"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Choix_tests"
-            }
-          },
-          {
-            "InteractionName": "fonction_donnees_lidar_haut",
-            "Trigger": {
-              "Type": "TriggerScreenTransitionBegins"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "donnees_lidar_haut"
-            }
-          },
-          {
-            "InteractionName": "fonction_lidar_loop",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 1
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "lidar_loop"
             }
           }
         ]
