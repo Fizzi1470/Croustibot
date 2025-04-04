@@ -1,0 +1,4 @@
+../Application/User/Core/Src/parser.c:9:16:_getToNextCtrlChr	32	static
+../Application/User/Core/Src/parser.c:22:13:parse	32	static
+../Application/User/Core/Src/parser.c:64:7:getHeader	16	static
+../Application/User/Core/Src/parser.c:69:7:getData	16	static

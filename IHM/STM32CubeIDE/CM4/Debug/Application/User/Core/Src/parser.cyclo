@@ -1,0 +1,4 @@
+../Application/User/Core/Src/parser.c:9:16:_getToNextCtrlChr	4
+../Application/User/Core/Src/parser.c:22:13:parse	17
+../Application/User/Core/Src/parser.c:64:7:getHeader	1
+../Application/User/Core/Src/parser.c:69:7:getData	1

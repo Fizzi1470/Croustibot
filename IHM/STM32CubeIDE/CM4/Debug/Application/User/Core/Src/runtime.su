@@ -1,0 +1,6 @@
+../Application/User/Core/Src/runtime.c:43:7:_random	40	static
+../Application/User/Core/Src/runtime.c:47:14:_dist	24	static
+../Application/User/Core/Src/runtime.c:49:6:testingMove	160	static
+../Application/User/Core/Src/runtime.c:93:17:_isolateBeacons	64	static
+../Application/User/Core/Src/runtime.c:142:13:setup	16	static
+../Application/User/Core/Src/runtime.c:151:13:loop	128	static

@@ -1,0 +1,7 @@
+#ifndef APPLICATION_USER_CORE_INC_RUNTIME_H_
+#define APPLICATION_USER_CORE_INC_RUNTIME_H_
+
+void setup();
+void loop();
+
+#endif /* APPLICATION_USER_CORE_INC_RUNTIME_H_ */

@@ -1,4 +1,0 @@
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/Middlewares/Third_Party/LibJPEG/source/jutils.c:124:1:jdiv_round_up	0	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/Middlewares/Third_Party/LibJPEG/source/jutils.c:133:1:jround_up	0	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/Middlewares/Third_Party/LibJPEG/source/jutils.c:177:1:jcopy_sample_rows	24	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/Middlewares/Third_Party/LibJPEG/source/jutils.c:211:1:jcopy_block_row	8	static

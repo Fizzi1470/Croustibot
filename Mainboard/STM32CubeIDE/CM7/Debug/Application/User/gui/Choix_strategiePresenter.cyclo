@@ -1,7 +1,0 @@
-../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategiePresenter.hpp:28:13:Choix_strategiePresenter::~Choix_strategiePresenter()	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategiePresenter.cpp:10:6:virtual void Choix_strategiePresenter::activate()	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategiePresenter.cpp:15:6:virtual void Choix_strategiePresenter::deactivate()	1
-../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategiePresenter.hpp:28:13:virtual Choix_strategiePresenter::~Choix_strategiePresenter()	1
-../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategiePresenter.hpp:28:13:virtual void* Choix_strategiePresenter::_ZThn4_N24Choix_strategiePresenterD1Ev()	1
-../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategiePresenter.hpp:28:13:virtual void* Choix_strategiePresenter::_ZThn4_N24Choix_strategiePresenterD0Ev()	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategiePresenter.cpp:4:1:Choix_strategiePresenter::Choix_strategiePresenter(Choix_strategieView&)	1

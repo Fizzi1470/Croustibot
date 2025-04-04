@@ -1,0 +1,8 @@
+../Application/User/Core/Src/loc.c:11:14:_dist	24	static
+../Application/User/Core/Src/loc.c:12:13:_inside	32	static
+../Application/User/Core/Src/loc.c:14:6:setPosition	40	static
+../Application/User/Core/Src/loc.c:42:6:updateField	112	static
+../Application/User/Core/Src/loc.c:122:13:trilateration	64	static
+../Application/User/Core/Src/loc.c:142:13:bilateration	88	static
+../Application/User/Core/Src/loc.c:182:13:angleFinder	64	static
+../Application/User/Core/Src/loc.c:195:6:computePosition	32	static

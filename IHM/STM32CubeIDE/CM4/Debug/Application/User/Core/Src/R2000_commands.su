@@ -1,0 +1,5 @@
+../Application/User/Core/Src/R2000_commands.c:92:14:_responseReceivedCallback	2080	static
+../Application/User/Core/Src/R2000_commands.c:118:14:_requestSentCallback	24	static
+../Application/User/Core/Src/R2000_commands.c:127:7:httpCommandRaw	64	static
+../Application/User/Core/Src/R2000_commands.c:161:7:httpCommandText	24	static
+../Application/User/Core/Src/R2000_commands.c:165:7:httpCommand	296	static

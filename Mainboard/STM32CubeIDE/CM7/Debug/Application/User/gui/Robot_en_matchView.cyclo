@@ -1,8 +1,0 @@
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:23:6:virtual void Robot_en_matchView::tearDownScreen()	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:28:6:virtual void Robot_en_matchView::reception_can_lidars_en_match()	5
-../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchView.hpp:11:13:Robot_en_matchView::~Robot_en_matchView()	1
-../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchView.hpp:11:13:virtual Robot_en_matchView::~Robot_en_matchView()	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:13:1:Robot_en_matchView::Robot_en_matchView()	1
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:18:6:virtual void Robot_en_matchView::setupScreen()	1

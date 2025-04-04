@@ -1,8 +1,0 @@
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
-../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretView.cpp:17:6:virtual void Robot_pretView::tearDownScreen()	0	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretView.cpp:22:6:virtual void Robot_pretView::attente_tirette()	0	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_pret_screen/Robot_pretView.hpp:11:13:Robot_pretView::~Robot_pretView()	8	static
-../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_pret_screen/Robot_pretView.hpp:11:13:virtual Robot_pretView::~Robot_pretView()	8	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretView.cpp:7:1:Robot_pretView::Robot_pretView()	8	static
-C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/31_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretView.cpp:12:6:virtual void Robot_pretView::setupScreen()	8	static

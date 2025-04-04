@@ -1,0 +1,7 @@
+../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchPresenter.hpp:28:13:Robot_en_matchPresenter::~Robot_en_matchPresenter()	0	static
+C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/26_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchPresenter.cpp:10:6:virtual void Robot_en_matchPresenter::activate()	0	static
+C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/26_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchPresenter.cpp:15:6:virtual void Robot_en_matchPresenter::deactivate()	0	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchPresenter.hpp:28:13:virtual Robot_en_matchPresenter::~Robot_en_matchPresenter()	8	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchPresenter.hpp:28:13:virtual void* Robot_en_matchPresenter::_ZThn4_N23Robot_en_matchPresenterD1Ev()	0	static
+../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchPresenter.hpp:28:13:virtual void* Robot_en_matchPresenter::_ZThn4_N23Robot_en_matchPresenterD0Ev()	8	static
+C:/Users/lisaf/STM32CubeIDE/workspace_1.15.1/SAE_ESCAPEBOT/GOOD/26_03_25/ihm_coupe_geii/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchPresenter.cpp:4:1:Robot_en_matchPresenter::Robot_en_matchPresenter(Robot_en_matchView&)	0	static
