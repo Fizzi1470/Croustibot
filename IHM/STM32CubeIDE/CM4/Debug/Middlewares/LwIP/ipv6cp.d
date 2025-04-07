@@ -1,5 +1,5 @@
 Middlewares/LwIP/ipv6cp.o: \
- C:/Users/Dany/Documents/Github/ESE_Robotique/IHM/Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.c \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/netif/ppp/ipv6cp.c \
  ../../../Middlewares/Third_Party/LwIP/src/include/netif/ppp/ppp_opts.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
  ../../../CM4/LWIP/Target/lwipopts.h ../../../CM4/Core/Inc/main.h \

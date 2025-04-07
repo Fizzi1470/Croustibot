@@ -11,6 +11,11 @@ public:
     virtual ~HomeView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void pos_depart();
+    virtual void envoi_trame_can();
+    //virtual void can_periodique();
+
 protected:
 };
 

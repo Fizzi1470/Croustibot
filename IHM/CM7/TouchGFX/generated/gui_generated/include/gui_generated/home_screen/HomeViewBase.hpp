@@ -19,6 +19,14 @@ public:
     virtual ~HomeViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void pos_depart()
+    {
+        // Override and implement this function in Home
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -31,8 +39,10 @@ protected:
     touchgfx::Box fond;
     touchgfx::ButtonWithLabel bouton_strategies;
     touchgfx::ButtonWithLabel bouton_tests;
+    touchgfx::ButtonWithLabel bouton_position_depart;
     touchgfx::TextArea texte_menu_principal;
     touchgfx::ScalableImage image_logo_iut;
+    touchgfx::ButtonWithLabel buttonWithLabel1;
 
 private:
 

@@ -1,5 +1,5 @@
 Middlewares/LwIP/lowpan6.o: \
- C:/Users/Dany/Documents/Github/ESE_Robotique/IHM/Middlewares/Third_Party/LwIP/src/netif/lowpan6.c \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/netif/lowpan6.c \
  ../../../Middlewares/Third_Party/LwIP/src/include/netif/lowpan6.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/netif/lowpan6_opts.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \

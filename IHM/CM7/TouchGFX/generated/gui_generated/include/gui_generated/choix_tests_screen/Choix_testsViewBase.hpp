@@ -37,7 +37,6 @@ protected:
     touchgfx::TextArea texte_menu_tests;
     touchgfx::ButtonWithIcon bouton_home;
     touchgfx::Container bloc_possibilites;
-    touchgfx::ButtonWithLabel bouton_lidar_2;
     touchgfx::ButtonWithLabel bouton_lidar_1;
     touchgfx::ButtonWithLabel bouton_moteurs;
     touchgfx::ScalableImage image_moteur;

@@ -17,6 +17,15 @@ public:
     Robot_pretViewBase();
     virtual ~Robot_pretViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void attente_tirette()
+    {
+        // Override and implement this function in Robot_pret
+    }
 
 protected:
     FrontendApplication& application() {

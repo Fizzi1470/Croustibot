@@ -14,8 +14,9 @@ public:
     virtual void tearDownScreen();
 
     void moteurs_avancer();
-    void moteurs_gauche();
-    void moteurs_droite();
+    void moteurs_tourner_90();
+    void moteurs_tourner_180();
+    virtual void stop();
 
 protected:
 };

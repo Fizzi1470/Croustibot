@@ -11,6 +11,8 @@ public:
     virtual ~Robot_pretView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void attente_tirette();
+
 protected:
 };
 

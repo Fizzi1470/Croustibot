@@ -1,5 +1,5 @@
 Middlewares/LwIP/inet_chksum.o: \
- C:/Users/Dany/Documents/Github/ESE_Robotique/IHM/Middlewares/Third_Party/LwIP/src/core/inet_chksum.c \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/core/inet_chksum.c \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
  ../../../CM4/LWIP/Target/lwipopts.h ../../../CM4/Core/Inc/main.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \

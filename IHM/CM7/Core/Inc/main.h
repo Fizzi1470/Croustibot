@@ -43,6 +43,16 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
+typedef struct {
+	FDCAN_TxHeaderTypeDef header;
+	uint8_t data[8];
+} T_CAN_trame_tx;
+
+typedef struct {
+	FDCAN_RxHeaderTypeDef header;
+	uint8_t data[64];
+} T_CAN_trame_rx;
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -66,6 +76,8 @@ extern int32_t DSI_IO_Read(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, ui
 /* Private defines -----------------------------------------------------------*/
 #define LCD_BL_Pin GPIO_PIN_12
 #define LCD_BL_GPIO_Port GPIOJ
+#define LED1_Pin GPIO_PIN_12
+#define LED1_GPIO_Port GPIOI
 #define LCD_RESET_Pin GPIO_PIN_3
 #define LCD_RESET_GPIO_Port GPIOG
 #define MCU_ACTIVE_Pin GPIO_PIN_8
@@ -78,6 +90,7 @@ extern int32_t DSI_IO_Read(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, ui
 #define VSYNC_FREQ_GPIO_Port GPIOJ
 
 /* USER CODE BEGIN Private defines */
+extern FDCAN_HandleTypeDef hfdcan1;
 
 /* USER CODE END Private defines */
 

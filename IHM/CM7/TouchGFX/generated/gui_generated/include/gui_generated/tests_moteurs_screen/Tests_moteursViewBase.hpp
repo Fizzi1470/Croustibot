@@ -27,11 +27,15 @@ public:
     {
         // Override and implement this function in Tests_moteurs
     }
-    virtual void moteurs_gauche()
+    virtual void moteurs_tourner_90()
     {
         // Override and implement this function in Tests_moteurs
     }
-    virtual void moteurs_droite()
+    virtual void moteurs_tourner_180()
+    {
+        // Override and implement this function in Tests_moteurs
+    }
+    virtual void stop()
     {
         // Override and implement this function in Tests_moteurs
     }
@@ -47,9 +51,10 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box fond;
     touchgfx::Container bloc_possibilites;
-    touchgfx::ButtonWithLabel bouton_quart_droite;
-    touchgfx::ButtonWithLabel bouton_quart_gauche;
+    touchgfx::ButtonWithLabel bouton_tourner_180;
+    touchgfx::ButtonWithLabel bouton_tourner_90;
     touchgfx::ButtonWithLabel bouton_avancer;
+    touchgfx::ButtonWithLabel bouton_stop;
     touchgfx::TextArea texte_menu_tests_moteurs;
     touchgfx::ButtonWithIcon bouton_retour;
     touchgfx::ButtonWithIcon bouton_home;

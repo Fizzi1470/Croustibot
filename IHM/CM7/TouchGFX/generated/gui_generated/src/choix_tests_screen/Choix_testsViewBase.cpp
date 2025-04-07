@@ -42,15 +42,7 @@ Choix_testsViewBase::Choix_testsViewBase() :
     add(bouton_home);
 
     bloc_possibilites.setPosition(12, 319, 770, 71);
-    bouton_lidar_2.setXY(530, 10);
-    bouton_lidar_2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_DISABLED_ID));
-    bouton_lidar_2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_OH7N));
-    bouton_lidar_2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    bouton_lidar_2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    bouton_lidar_2.setAction(buttonCallback);
-    bloc_possibilites.add(bouton_lidar_2);
-
-    bouton_lidar_1.setXY(268, 10);
+    bouton_lidar_1.setXY(415, 10);
     bouton_lidar_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_DISABLED_ID));
     bouton_lidar_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_KKOG));
     bouton_lidar_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -58,7 +50,7 @@ Choix_testsViewBase::Choix_testsViewBase() :
     bouton_lidar_1.setAction(buttonCallback);
     bloc_possibilites.add(bouton_lidar_1);
 
-    bouton_moteurs.setXY(9, 10);
+    bouton_moteurs.setXY(28, 10);
     bouton_moteurs.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUND_DISABLED_ID));
     bouton_moteurs.setLabelText(touchgfx::TypedText(T___SINGLEUSE_8TIH));
     bouton_moteurs.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -69,12 +61,12 @@ Choix_testsViewBase::Choix_testsViewBase() :
     add(bloc_possibilites);
 
     image_moteur.setBitmap(touchgfx::Bitmap(BITMAP_IMAGE_ID));
-    image_moteur.setPosition(21, 134, 240, 156);
+    image_moteur.setPosition(40, 134, 240, 156);
     image_moteur.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(image_moteur);
 
     image_lidar_bas.setBitmap(touchgfx::Bitmap(BITMAP_LIDAR1_ID));
-    image_lidar_bas.setPosition(285, 134, 230, 156);
+    image_lidar_bas.setPosition(330, 134, 230, 156);
     image_lidar_bas.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(image_lidar_bas);
 
@@ -86,22 +78,21 @@ Choix_testsViewBase::Choix_testsViewBase() :
     bloc_images.setPosition(12, 121, 761, 186);
     add(bloc_images);
 
-    button1.setXY(53, 125);
+    button1.setXY(72, 125);
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_PRESSED_ID));
     button1.setAlpha(0);
     button1.setAction(buttonCallback);
     add(button1);
 
-    button1_1.setXY(309, 125);
+    button1_1.setXY(357, 127);
     button1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_PRESSED_ID));
     button1_1.setAlpha(0);
     button1_1.setAction(buttonCallback);
     add(button1_1);
 
-    button1_1_1.setXY(574, 125);
+    button1_1_1.setXY(574, 127);
     button1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_PRESSED_ID));
     button1_1_1.setAlpha(0);
-    button1_1_1.setAction(buttonCallback);
     add(button1_1_1);
 }
 
@@ -134,16 +125,9 @@ void Choix_testsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
     if (&src == &bouton_lidar_1)
     {
         //vers_test_lidar_1
-        //When bouton_lidar_1 clicked change screen to Test_lidar_bas
-        //Go to Test_lidar_bas with no screen transition
-        application().gotoTest_lidar_basScreenNoTransition();
-    }
-    if (&src == &bouton_lidar_2)
-    {
-        //vers_test_lidar_2
-        //When bouton_lidar_2 clicked change screen to Test_lidar_haut
-        //Go to Test_lidar_haut with no screen transition
-        application().gotoTest_lidar_hautScreenNoTransition();
+        //When bouton_lidar_1 clicked change screen to Test_lidar
+        //Go to Test_lidar with no screen transition
+        application().gotoTest_lidarScreenNoTransition();
     }
     if (&src == &bouton_retour)
     {
@@ -162,15 +146,8 @@ void Choix_testsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
     if (&src == &button1_1)
     {
         //vers_test_lidar_1_1
-        //When button1_1 clicked change screen to Test_lidar_bas
-        //Go to Test_lidar_bas with no screen transition
-        application().gotoTest_lidar_basScreenNoTransition();
-    }
-    if (&src == &button1_1_1)
-    {
-        //vers_test_lidar_2_1
-        //When button1_1_1 clicked change screen to Test_lidar_haut
-        //Go to Test_lidar_haut with no screen transition
-        application().gotoTest_lidar_hautScreenNoTransition();
+        //When button1_1 clicked change screen to Test_lidar
+        //Go to Test_lidar with no screen transition
+        application().gotoTest_lidarScreenNoTransition();
     }
 }
