@@ -1,5 +1,5 @@
 Middlewares/LwIP/slipif.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/netif/slipif.c \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/netif/slipif.c \
  ../../../Middlewares/Third_Party/LwIP/src/include/netif/slipif.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
  ../../../CM4/LWIP/Target/lwipopts.h ../../../CM4/Core/Inc/main.h \

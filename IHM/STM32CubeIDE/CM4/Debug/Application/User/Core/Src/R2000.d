@@ -72,11 +72,11 @@ Application/User/Core/Src/R2000.o: ../Application/User/Core/Src/R2000.c \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../../../CM4/LWIP/Target/ethernetif.h \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000.h \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/LL_R2000.h \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_data.h \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000.h \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/LL_R2000.h \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_data.h \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h:
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 ../../../CM4/LWIP/Target/lwipopts.h:
@@ -151,8 +151,8 @@ Application/User/Core/Src/R2000.o: ../Application/User/Core/Src/R2000.c \
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 ../../../CM4/LWIP/Target/ethernetif.h:
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000.h:
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h:
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/LL_R2000.h:
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_data.h:
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h:
+C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000.h:
+C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h:
+C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/LL_R2000.h:
+C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_data.h:
+C:/Users/Dany/Documents/Github/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/R2000_commands.h:
