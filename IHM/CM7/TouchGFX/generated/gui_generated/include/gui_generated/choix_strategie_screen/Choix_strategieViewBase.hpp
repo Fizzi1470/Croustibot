@@ -35,22 +35,6 @@ public:
     {
         // Override and implement this function in Choix_strategie
     }
-    virtual void strategie_3()
-    {
-        // Override and implement this function in Choix_strategie
-    }
-    virtual void strategie_4()
-    {
-        // Override and implement this function in Choix_strategie
-    }
-    virtual void strategie_5()
-    {
-        // Override and implement this function in Choix_strategie
-    }
-    virtual void strategie_6()
-    {
-        // Override and implement this function in Choix_strategie
-    }
 
 protected:
     FrontendApplication& application() {
@@ -66,10 +50,6 @@ protected:
     touchgfx::TextArea texte_mode_competition;
     touchgfx::TextArea texte_choix_strategie;
     touchgfx::Container bloc_possibilites;
-    touchgfx::ButtonWithLabel bouton_strat_5;
-    touchgfx::ButtonWithLabel bouton_strat_6;
-    touchgfx::ButtonWithLabel bouton_strat_4;
-    touchgfx::ButtonWithLabel bouton_strat_3;
     touchgfx::ButtonWithLabel bouton_strat_2;
     touchgfx::ButtonWithLabel bouton_strat_1;
     touchgfx::ButtonWithIcon bouton_home;

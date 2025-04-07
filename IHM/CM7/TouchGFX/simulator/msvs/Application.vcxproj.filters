@@ -232,9 +232,6 @@
     <Filter Include="Header Files\generated\gui_generated\tests_moteurs_screen">
       <UniqueIdentifier>EF1508CE-59CD-D13D-D3A2-7DAC9D1B6641</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\test_lidar_bas_screen">
-      <UniqueIdentifier>4FE0357B-43E1-3AB7-4622-E23821182861</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\test_lidar_bas_screen">
       <UniqueIdentifier>157EC6F2-92C9-F9B5-BC59-B2498A8443DA</UniqueIdentifier>
     </Filter>
@@ -338,9 +335,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\tests_moteurs_screen\Tests_moteursViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\tests_moteurs_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\test_lidar_bas_screen\Test_lidar_basView.cpp">
-      <Filter>Source Files\gui\test_lidar_bas_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\robot_en_match_screen\Robot_en_matchPresenter.cpp">
       <Filter>Source Files\gui\robot_en_match_screen</Filter>

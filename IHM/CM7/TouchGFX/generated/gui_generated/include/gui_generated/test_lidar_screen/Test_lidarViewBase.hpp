@@ -58,9 +58,9 @@ protected:
     touchgfx::ScalableImage image_lidar_bas;
     touchgfx::MoveAnimator< touchgfx::Circle > point;
     touchgfx::PainterRGB888 pointPainter;
-    touchgfx::Line line1;
-    touchgfx::PainterRGB888 line1Painter;
-    touchgfx::ScalableImage scalableImage1;
+    touchgfx::ScalableImage image_lidar_haut;
+    touchgfx::Line ligne;
+    touchgfx::PainterRGB888 lignePainter;
 
 private:
 

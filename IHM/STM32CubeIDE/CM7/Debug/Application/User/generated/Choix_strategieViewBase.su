@@ -6,17 +6,13 @@
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:26:18:virtual void Choix_strategieViewBase::strategie_1()	0	static
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:30:18:virtual void Choix_strategieViewBase::valider_strat()	0	static
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:34:18:virtual void Choix_strategieViewBase::strategie_2()	0	static
-../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:38:18:virtual void Choix_strategieViewBase::strategie_3()	0	static
-../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:42:18:virtual void Choix_strategieViewBase::strategie_4()	0	static
-../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:46:18:virtual void Choix_strategieViewBase::strategie_5()	0	static
-../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp:50:18:virtual void Choix_strategieViewBase::strategie_6()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<Choix_strategieViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:105:1:Choix_strategieViewBase::~Choix_strategieViewBase()	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:110:6:virtual void Choix_strategieViewBase::setupScreen()	0	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:73:1:Choix_strategieViewBase::~Choix_strategieViewBase()	0	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:78:6:virtual void Choix_strategieViewBase::setupScreen()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = Choix_strategieViewBase; T1 = const touchgfx::AbstractButton&]	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = Choix_strategieViewBase; T1 = const touchgfx::AbstractButton&]	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<Choix_strategieViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:105:1:virtual Choix_strategieViewBase::~Choix_strategieViewBase()	8	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:115:6:void Choix_strategieViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	40	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:9:1:Choix_strategieViewBase::Choix_strategieViewBase()	200	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:73:1:virtual Choix_strategieViewBase::~Choix_strategieViewBase()	8	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:83:6:void Choix_strategieViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	16	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp:9:1:Choix_strategieViewBase::Choix_strategieViewBase()	152	static

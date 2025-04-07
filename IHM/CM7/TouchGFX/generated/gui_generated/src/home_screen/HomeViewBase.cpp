@@ -17,7 +17,7 @@ HomeViewBase::HomeViewBase() :
     fond.setColor(touchgfx::Color::getColorFromRGB(99, 0, 59));
     add(fond);
 
-    bouton_strategies.setXY(244, 240);
+    bouton_strategies.setXY(440, 180);
     bouton_strategies.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_DISABLED_ID));
     bouton_strategies.setLabelText(touchgfx::TypedText(T___SINGLEUSE_P0SJ));
     bouton_strategies.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -25,7 +25,7 @@ HomeViewBase::HomeViewBase() :
     bouton_strategies.setAction(buttonCallback);
     add(bouton_strategies);
 
-    bouton_tests.setXY(244, 325);
+    bouton_tests.setXY(440, 297);
     bouton_tests.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_DISABLED_ID));
     bouton_tests.setLabelText(touchgfx::TypedText(T___SINGLEUSE_G913));
     bouton_tests.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -33,7 +33,7 @@ HomeViewBase::HomeViewBase() :
     bouton_tests.setAction(buttonCallback);
     add(bouton_tests);
 
-    bouton_position_depart.setXY(244, 152);
+    bouton_position_depart.setXY(56, 180);
     bouton_position_depart.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_DISABLED_ID));
     bouton_position_depart.setLabelText(touchgfx::TypedText(T___SINGLEUSE_OTEQ));
     bouton_position_depart.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -57,6 +57,7 @@ HomeViewBase::HomeViewBase() :
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J5LX));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setVisible(false);
     buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
 }

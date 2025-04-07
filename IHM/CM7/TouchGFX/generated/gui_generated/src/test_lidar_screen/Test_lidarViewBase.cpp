@@ -55,21 +55,22 @@ Test_lidarViewBase::Test_lidarViewBase() :
     point.setArc(0, 360);
     pointPainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     point.setPainter(pointPainter);
+    point.setVisible(false);
     add(point);
 
-    line1.setPosition(766, 455, 19, 20);
-    line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    line1.setPainter(line1Painter);
-    line1.setStart(5, 5);
-    line1.setEnd(95, 45);
-    line1.setLineWidth(3);
-    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
-    add(line1);
+    image_lidar_haut.setBitmap(touchgfx::Bitmap(BITMAP_LIDAR2_ID));
+    image_lidar_haut.setPosition(733, 67, 57, 54);
+    image_lidar_haut.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(image_lidar_haut);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_LIDAR2_ID));
-    scalableImage1.setPosition(733, 67, 57, 54);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    add(scalableImage1);
+    ligne.setPosition(772, 450, 20, 20);
+    lignePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    ligne.setPainter(lignePainter);
+    ligne.setStart(0, 0);
+    ligne.setEnd(10, 15);
+    ligne.setLineWidth(2);
+    ligne.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    add(ligne);
 }
 
 Test_lidarViewBase::~Test_lidarViewBase()
