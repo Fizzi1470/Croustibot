@@ -3,6 +3,8 @@
 #include <gui_generated/test_lidar_screen/Test_lidarViewBase.hpp>
 #include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
 
+//bonjour
+
 uint16_t x, y;
 
 #include <touchgfx/widgets/canvas/Circle.hpp>
