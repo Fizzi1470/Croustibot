@@ -1688,9 +1688,9 @@
             "Components": [
               {
                 "Type": "ButtonWithLabel",
-                "Name": "bouton_tourner_180",
+                "Name": "bouton_aller_a_cet_endroit",
                 "X": 5,
-                "Y": 194,
+                "Y": 193,
                 "Width": 480,
                 "Height": 60,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
@@ -1872,7 +1872,7 @@
             "InteractionName": "changement_couleur_bouton_droite",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_180"
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
             },
             "Action": {
               "Type": "ActionSetLabelColors",
@@ -1881,7 +1881,7 @@
                 "Green": 30,
                 "Blue": 30
               },
-              "ActionComponent": "bouton_tourner_180"
+              "ActionComponent": "bouton_aller_a_cet_endroit"
             }
           },
           {
@@ -1939,7 +1939,7 @@
                 "Green": 255,
                 "Blue": 255
               },
-              "ActionComponent": "bouton_tourner_180"
+              "ActionComponent": "bouton_aller_a_cet_endroit"
             }
           },
           {
@@ -1981,14 +1981,14 @@
                 "Green": 255,
                 "Blue": 255
               },
-              "ActionComponent": "bouton_tourner_180"
+              "ActionComponent": "bouton_aller_a_cet_endroit"
             }
           },
           {
             "InteractionName": "changement_couleur_d_av",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_180"
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
             },
             "Action": {
               "Type": "ActionSetLabelColors",
@@ -2009,7 +2009,7 @@
             "InteractionName": "changement_couleur_d_g",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_180"
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
             },
             "Action": {
               "Type": "ActionSetLabelColors",
@@ -2049,14 +2049,14 @@
             }
           },
           {
-            "InteractionName": "fonction_tourner_180",
+            "InteractionName": "fonction_aller_la_bas",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_180"
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "moteurs_tourner_180"
+              "FunctionName": "moteurs_aller_la_bas"
             }
           },
           {
@@ -2187,6 +2187,7 @@
             "Y": 450,
             "Width": 20,
             "Height": 20,
+            "Visible": false,
             "Color": {
               "Red": 255
             },
@@ -2194,6 +2195,22 @@
             "EndY": 15.0,
             "LineWidth": 2.0,
             "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle1",
+            "X": 610,
+            "Y": 437,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 242
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 2.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
           }
         ],
         "Interactions": [

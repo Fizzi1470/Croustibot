@@ -3,8 +3,6 @@
 #include <gui_generated/test_lidar_screen/Test_lidarViewBase.hpp>
 #include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
 
-//bonjour
-
 uint16_t x, y;
 
 #include <touchgfx/widgets/canvas/Circle.hpp>
@@ -35,7 +33,7 @@ void Test_lidarView::setupScreen()
     for(uint16_t i = 0; i < buffer_amnt; i++)
     {
         //points[i].setPosition(i + 20, i + 20, 800, 480);
-    	points[i].setPosition(points_lidar_bas[i].x, points_lidar_bas[i].y, 5, 5);
+    	points[i].setPosition(points_lidar_bas[i*2].x, points_lidar_bas[i*2].y, 5, 5);
         points[i].setCenter(2, 2);
         points[i].setRadius(2);
         points[i].setLineWidth(0);
@@ -77,36 +75,35 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 #warning le 400 et 240 sont a modifier (c est censé être la position du robot)
 				points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
 				points[i].invalidate();
+
+				/*
+
+				Dans setPosition : (x du point 1, y du point 1, x du point 2 + coordonnées du robot, y du point 2 + coordonnées du robot)
+				Dans setEnd : (x du point 2, y du point 2)
+
+				*/
+//							lignes[i].setPosition(points_lidar_bas[i].x, points_lidar_bas[i].y, 400, 400);
+//							lignes[i].setPosition(300, 300, 400, 400);
+//							lignes[i].setEnd(400, 400);
+//							lignePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+//							lignes[i].setPainter(lignePainters[0]);
+//							lignes[i].invalidate();
 			}
-/*
-
-Dans setPosition : (x du point 1, y du point 1, x du point 2 + coordonnées du robot, y du point 2 + coordonnées du robot)
-Dans setEnd : (x du point 2, y du point 2)
-
-*/
-			//lignes[i].setPosition(points_lidar_bas[i].x, points_lidar_bas[i].y, 400, 400);
-				//lignes[i].setPosition(300, 300, 400, 400);
-				//lignes[i].setEnd(400, 400);
-				//lignePainter[0].setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-				//lignes[i].setPainter(lignePainters[0]);
-				//lignes[i].invalidate();
 
 			break;
 		}
+
 		case 0x201:
 		{
-			int16_t i = tab_recep_trames_can[fifo].data[5] << 8
-					| tab_recep_trames_can[fifo].data[4];
+			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
 
-			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8
-					| tab_recep_trames_can[fifo].data[0];
-			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8
-					| tab_recep_trames_can[fifo].data[2];
+			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
+			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
 
-			for (uint16_t i = 0; i < 100; i++) {
+			for (uint16_t i = 0; i < 100; i++)
+			{
 #warning le 400 et 240 sont a modifier (c est censé être la position du robot)
-				points[i].setXY(points_lidar_bas[i].x + 400,
-						points_lidar_bas[i].y + 240);
+				points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
 				points[i].invalidate();
 			}
 			break;

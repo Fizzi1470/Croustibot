@@ -113,7 +113,7 @@ void envoi_trame_can();
 // fonctions tests
 void moteurs_avancer();
 void moteurs_tourner_90();
-void moteurs_tourner_180();
+void moteurs_aller_la_bas();
 void moteurs_droite();
 void stop();
 void donnees_lidar_bas_avant();

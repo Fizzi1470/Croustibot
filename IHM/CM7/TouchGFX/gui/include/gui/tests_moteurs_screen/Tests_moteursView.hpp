@@ -15,7 +15,7 @@ public:
 
     void moteurs_avancer();
     void moteurs_tourner_90();
-    void moteurs_tourner_180();
+    void moteurs_aller_la_bas();
     virtual void stop();
 
 protected:

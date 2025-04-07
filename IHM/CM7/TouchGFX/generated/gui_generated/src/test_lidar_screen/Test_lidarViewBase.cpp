@@ -70,7 +70,17 @@ Test_lidarViewBase::Test_lidarViewBase() :
     ligne.setEnd(10, 15);
     ligne.setLineWidth(2);
     ligne.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    ligne.setVisible(false);
     add(ligne);
+
+    circle1.setPosition(610, 437, 10, 10);
+    circle1.setCenter(5, 5);
+    circle1.setRadius(2);
+    circle1.setLineWidth(0);
+    circle1.setArc(0, 360);
+    circle1Painter.setColor(touchgfx::Color::getColorFromRGB(242, 0, 0));
+    circle1.setPainter(circle1Painter);
+    add(circle1);
 }
 
 Test_lidarViewBase::~Test_lidarViewBase()

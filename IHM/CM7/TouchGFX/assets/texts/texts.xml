@@ -34,7 +34,7 @@
         <Translation Language="GB">Tourner de 90°</Translation>
       </Text>
       <Text Id="__SingleUse_Y14O" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Tourner de 180°</Translation>
+        <Translation Language="GB">GO (aller là-bas)</Translation>
       </Text>
       <Text Id="__SingleUse_KKOG" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Lidars</Translation>

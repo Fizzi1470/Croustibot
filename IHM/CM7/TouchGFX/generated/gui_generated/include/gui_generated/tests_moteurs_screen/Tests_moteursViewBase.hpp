@@ -31,7 +31,7 @@ public:
     {
         // Override and implement this function in Tests_moteurs
     }
-    virtual void moteurs_tourner_180()
+    virtual void moteurs_aller_la_bas()
     {
         // Override and implement this function in Tests_moteurs
     }
@@ -51,7 +51,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box fond;
     touchgfx::Container bloc_possibilites;
-    touchgfx::ButtonWithLabel bouton_tourner_180;
+    touchgfx::ButtonWithLabel bouton_aller_a_cet_endroit;
     touchgfx::ButtonWithLabel bouton_tourner_90;
     touchgfx::ButtonWithLabel bouton_avancer;
     touchgfx::ButtonWithLabel bouton_stop;

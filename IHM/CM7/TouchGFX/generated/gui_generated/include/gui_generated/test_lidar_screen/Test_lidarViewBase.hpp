@@ -61,6 +61,8 @@ protected:
     touchgfx::ScalableImage image_lidar_haut;
     touchgfx::Line ligne;
     touchgfx::PainterRGB888 lignePainter;
+    touchgfx::Circle circle1;
+    touchgfx::PainterRGB888 circle1Painter;
 
 private:
 
