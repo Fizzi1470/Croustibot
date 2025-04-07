@@ -16,12 +16,17 @@ void setPosition(loc_t* handle, float x, float y, float theta){
     handle->robot.y = y;
     handle->robot.t = theta;
 
-    handle->robot.trsl_spd = 0;
-    handle->robot.angular_spd = 0;
-    handle->robot.trvled_x = 0;
-    handle->robot.trvled_y = 0;
-    handle->robot.trvled_t = 0;
-    handle->robot.trvled_dist = 0;
+    handle->robot.x_delta = 0;
+    handle->robot.y_delta = 0;
+    handle->robot.t_delta = 0;
+
+    handle->robot.x_spd = 0;
+    handle->robot.y_spd = 0;
+    handle->robot.t_spd = 0;
+
+    handle->robot.x_accel = 0;
+    handle->robot.y_accel = 0;
+    handle->robot.t_accel = 0;
 
     handle->prev_robot = handle->robot;
 
@@ -39,28 +44,16 @@ void setPosition(loc_t* handle, float x, float y, float theta){
 
 // TODO : utiliser l'accélération
 // TODO : invalider une association si un autre point est trop proche (et qu'il y en a deux autres disponnibles)
-void updateField(loc_t* handle, lidar_point_t points[], uint16_t points_nb, uint32_t dt_ms){
+void updateField(loc_t* handle, lidar_point_t points[], uint16_t points_nb, uint32_t t_ms){
 
-    // first, we determine the speed of the robot
-    handle->robot.trvled_x = handle->robot.x - handle->prev_robot.x;
-    handle->robot.trvled_y = handle->robot.y - handle->prev_robot.y;
-    handle->robot.trvled_t = handle->robot.t - handle->prev_robot.t;
-
-    handle->robot.trvled_dist = sqrt(handle->robot.trvled_x*handle->robot.trvled_x + handle->robot.trvled_y*handle->robot.trvled_y); // distance traveled
-    handle->robot.trvl_t = atan2(handle->robot.trvled_y, handle->robot.trvled_x); // angle at which that distance was traveled
-
-    handle->robot.trsl_spd = ((float)dt_ms/1000.0) * handle->robot.trvled_dist; // speed at which that distance was traveled
-    handle->robot.trsl_spd_delta = (handle ->robot.trsl_spd - handle->prev_robot.trsl_spd);
-
-    handle->robot.angular_spd = ((float)dt_ms/1000.0) * handle->robot.trvled_t;
-    handle->robot.angular_spd_delta = (handle ->robot.angular_spd - handle->prev_robot.angular_spd);
-
+	float dt = (float)(t_ms - handle->robot.time) / 1000.0;
 
     printf("toler : ");
     //then, determine the tolerance we have on beacon positions according to current speed
     for(uint16_t i = 0; i < NUM_BEACONS; i++){
         // TODO : tolerance according to speed
-    	handle->tracked_beacons[i].tolerance = ((handle->tracked_beacons[i].dist + handle->robot.trvled_dist + handle->robot.trsl_spd_delta) * fabsf(handle->robot.trvled_t + handle->robot.angular_spd_delta)) + handle->robot.trvled_dist + handle->robot.trsl_spd_delta;
+    	//handle->tracked_beacons[i].tolerance = ((handle->tracked_beacons[i].dist + handle->robot.trvled_dist) * fabsf(handle->robot.trvled_t + handle->robot.angular_spd_delta)) + handle->robot.trvled_dist + handle->robot.trsl_spd_delta;
+    	handle->tracked_beacons[i].tolerance = fabsf(handle->robot.trsl_spd * dt) + fabsf(0.5*handle->robot.trsl_accel*dt*dt) + (handle->tracked_beacons[i].dist * ( fabsf(handle->robot.t_spd * dt) + fabsf(0.5*handle->robot.t_accel*dt*dt)));
     	handle->tracked_beacons[i].tolerance *= handle->tolerance_coef +1;
     	handle->tracked_beacons[i].tolerance += handle->tolerance_base;
 
@@ -69,11 +62,10 @@ void updateField(loc_t* handle, lidar_point_t points[], uint16_t points_nb, uint
     }
     printf("\n");
 
-    handle->prev_robot = handle->robot; // save current state for future calculations
 
 #ifdef VERBOSE
-    printf("travel x %.2f y %.2f trsl %.2f (towards %.4f), ang %.4f\n", handle->robot.trvled_x, handle->robot.trvled_y, handle->robot.trvled_dist, handle->robot.trvl_t, handle->robot.trvled_t);
-    printf("spd trsl %.2f rot %.4f\n", handle->robot.trsl_spd, handle->robot.angular_spd);
+    printf("travel x %.2f y %.2f trsl %.2f (towards %.4f), ang %.4f\n", handle->robot.x_delta, handle->robot.y_delta, handle->robot.trvled_dist, handle->robot.trvl_t, handle->robot.t_delta);
+    printf("spd x %.2f y %.2f t %.4f\n", handle->robot.x_spd, handle->robot.y_spd, handle->robot.t_spd);
 #endif
 
     // then we can start the tracking operations
@@ -84,8 +76,8 @@ void updateField(loc_t* handle, lidar_point_t points[], uint16_t points_nb, uint
         // calculate the absolute corrdinates of the beacons according to the current position, taking speed into account to determine the expected position at time of the measure
 
     	// todo : note : acc is not taken into account in the xy axies, but is in the t axis
-    	points[i].x = points[i].distance*cos(points[i].angle + handle->robot.t + handle->robot.trvled_t + handle->robot.angular_spd_delta) + handle->robot.x + handle->robot.trvled_x;
-        points[i].y = points[i].distance*sin(points[i].angle + handle->robot.t + handle->robot.trvled_t + handle->robot.angular_spd_delta) + handle->robot.y + handle->robot.trvled_y;
+    	points[i].x = points[i].distance*cos(points[i].angle + handle->robot.t + handle->robot.t_spd * dt + 0.5*handle->robot.t_accel*dt*dt) + handle->robot.x + handle->robot.x_spd * dt + 0.5*handle->robot.x_accel*dt*dt;
+        points[i].y = points[i].distance*sin(points[i].angle + handle->robot.t + handle->robot.t_spd * dt + 0.5*handle->robot.t_accel*dt*dt) + handle->robot.y + handle->robot.y_spd * dt + 0.5*handle->robot.y_accel*dt*dt;
 
         for(uint16_t j = 0; j < NUM_BEACONS; j++){ // then check if a real life beacon is indeed there
 #ifdef VERBOSE
@@ -192,7 +184,7 @@ static void angleFinder(robot_t* robot, point_t* ref, beacon_t* meas){ // needs 
 #endif
 }
 
-void computePosition(loc_t* handle){
+void computePosition(loc_t* handle, uint32_t t_ms){
     uint16_t nb_beacons = 0;
     for(uint16_t i = 0; i < NUM_BEACONS; i ++){ // first, figure out how many of the beacons we can see (and use)
         if(handle->tracked_beacons[i].lock) nb_beacons++;
@@ -223,4 +215,29 @@ void computePosition(loc_t* handle){
             printf("Not enough beacons !\n");
             break;
     }
+
+    handle->robot.time = t_ms;
+    float dt = (float)(handle->robot.time - handle->prev_robot.time) / 1000.0;
+
+    handle->robot.x_delta = handle->robot.x - handle->prev_robot.x;
+    handle->robot.y_delta = handle->robot.y - handle->prev_robot.y;
+    handle->robot.t_delta = handle->robot.t - handle->prev_robot.t;
+
+    handle->robot.x_spd = handle->robot.x_delta / (dt);
+    handle->robot.y_spd = handle->robot.y_delta / (dt);
+    handle->robot.t_spd = handle->robot.t_delta / (dt);
+
+    handle->robot.x_accel = (handle->robot.x_spd - handle->prev_robot.x_spd) / (dt);
+    handle->robot.y_accel = (handle->robot.y_spd - handle->prev_robot.y_spd) / (dt);
+    handle->robot.t_accel = (handle->robot.t_spd - handle->prev_robot.t_spd) / (dt);
+
+    handle->robot.trvled_dist = sqrt(handle->robot.x_delta*handle->robot.x_delta + handle->robot.y_delta*handle->robot.y_delta); // distance traveled
+    handle->robot.trvl_t = atan2(handle->robot.y_delta, handle->robot.x_delta); // angle at which that distance was traveled
+
+    handle->robot.trsl_spd = handle->robot.x_spd * cos(handle->robot.trvl_t) + handle->robot.y_spd * sin(handle->robot.trvl_t);
+
+    handle->robot.trsl_accel = (handle->robot.trsl_spd - handle->prev_robot.trsl_spd) / (dt);
+
+
+    handle->prev_robot = handle->robot; // save current state for future calculations
 }

@@ -16,19 +16,27 @@ typedef enum {
 } lidar_point_type_t;
 
 typedef struct {
-    float x;
+    uint32_t time;
+
+	float x;
     float y;
     float t;
 
-    float trsl_spd; // xy speed
-    float angular_spd; // angular speed
+    float x_delta;
+    float y_delta;
+    float t_delta;
 
-    float trsl_spd_delta;
-    float angular_spd_delta;
+    float x_spd;
+    float y_spd;
+    float t_spd;
 
-    float trvled_x; // distance traveled since last computation
-    float trvled_y;
-    float trvled_t;
+    float x_accel;
+    float y_accel;
+    float t_accel;
+
+    float trsl_spd;
+    float trsl_accel;
+
     float trvled_dist; // distance traveled since last computation
     float trvl_t; // angle at which this distance has been traveled
 } robot_t;
@@ -82,6 +90,6 @@ typedef struct {
 
 void setPosition(loc_t* handle, float x, float y, float theta);
 void updateField(loc_t* handle, lidar_point_t points[], uint16_t points_nb, uint32_t dt_ms);
-void computePosition(loc_t* handle);
+void computePosition(loc_t* handle, uint32_t t_ms);
 
 #endif /* INC_LOCALIZATION_H_ */

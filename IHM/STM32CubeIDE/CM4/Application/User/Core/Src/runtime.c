@@ -31,7 +31,7 @@ loc_t loc = {
 	.tolerance_coef = 0.5,
 };
 
-robot_t true_robot = { .x = 1400 - 150, .y = 150, .t = - M_PI/4};
+robot_t true_robot = { .x = 1400 - 150, .y = 150, .t = (3 * M_PI)/4};
 
 #define MIN_AMP_FILTER 1000
 #define MAX_GAP_FILTER 10
@@ -168,27 +168,26 @@ inline void loop(){
 */
 
 		for(uint16_t i = 0; i < pts_found; i++){
-			printf("beacon dist %.2f ang %.2f (x %.3f y %.3f rel ; x %.3f y %.3f abs)\n", remarkable_pts[i].distance, remarkable_pts[i].angle, remarkable_pts[i].distance * cos(remarkable_pts[i].angle), remarkable_pts[i].distance * sin(remarkable_pts[i].angle), remarkable_pts[i].distance * cos(remarkable_pts[i].angle) + loc.robot.x, remarkable_pts[i].distance * sin(remarkable_pts[i].angle) + loc.robot.y);
+			printf("beacon dist %.2f ang %.2f (x %.3f y %.3f rel ; x %.3f y %.3f abs)\n", remarkable_pts[i].distance, remarkable_pts[i].angle, remarkable_pts[i].distance * cos(remarkable_pts[i].angle), remarkable_pts[i].distance * sin(remarkable_pts[i].angle), remarkable_pts[i].distance * cos(remarkable_pts[i].angle + loc.robot.t) + loc.robot.x, remarkable_pts[i].distance * sin(remarkable_pts[i].angle + loc.robot.t) + loc.robot.y);
 		}
 
 		printf(">beac_nb:%df\n", pts_found);
 
 		//testingMove(&loc, &true_robot, lidar_pts, 20, 0.1);
 
-		updateField(&loc, remarkable_pts, pts_found, tick - last_tick);
-		computePosition(&loc);
+		updateField(&loc, remarkable_pts, pts_found, tick);
+		computePosition(&loc, tick);
 
-		printf("robot x %.2f y %.2f t %.4f trsl_spd %.2f rot_spd %.2f trvled %.2f\n",
+		printf("robot x %.2f y %.2f t %.4f trsl_spd %.2f rot_spd %.2f\n",
 				 loc.robot.x,
 		         loc.robot.y,
 		         loc.robot.t,
 		         loc.robot.trsl_spd,
-		         loc.robot.angular_spd,
-				 loc.robot.trvled_t
+		         loc.robot.t_spd
 		 );
 
 		printf(">pos:");
-		printf("%.f:%.f;%.f:%.f;", loc.field.x1, loc.field.y1, loc.field.x2, loc.field.y2);
+		printf("%.f:%.f;%.f:%.f;", loc.field.x1 - 200, loc.field.y1 - 200, loc.field.x2 + 200, loc.field.y2 + 200);
 		for(uint16_t i = 0; i < pts_found; i++){
 			printf("%.2f:%.2f;", remarkable_pts[i].x, remarkable_pts[i].y);
 		}
@@ -197,7 +196,7 @@ inline void loop(){
 
 		printf(">ang:%.2f\n", loc.robot.t);
 		printf(">trsl_spd:%.3f\n", loc.robot.trsl_spd);
-		printf(">rot_spd:%.5f\n", loc.robot.angular_spd);
+		printf(">rot_spd:%.5f\n", loc.robot.t_spd);
 
 		for(uint16_t i = 0; i < 3; i++){
 			if(loc.tracked_beacons[i].lock) printf(">toler%d:%.2f\n",i, loc.tracked_beacons[i].tolerance);
