@@ -11,6 +11,10 @@ public:
     virtual ~Test_lidarView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void donnees_lidar_bas_avant();
+    virtual void donnees_lidar_bas_arriere();
+    virtual void reception_can_lidars_test_lidar_bas_avant();
 protected:
 };
 
