@@ -1,7 +1,7 @@
 
 {
   "Application": {
-    "Name": "STM32H747I-DISCO",
+    "Name": "IHM",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "AvailableColorDepths": [ 24 ],
     "AvailableLCDs":
@@ -19,7 +19,7 @@
     "SubFamily": "STM32H747/757",
     "Platform": "m7",
     "Toolchain": "STM32CubeIDE",
-    "ProjectFile": "../../STM32H747I-DISCO.ioc",
+    "ProjectFile": "../../IHM.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [
     ],

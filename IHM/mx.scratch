@@ -3,10 +3,10 @@
   <FileVersion>3.1</FileVersion>
   <Workspace>
     <WorkspaceType>Multi-project</WorkspaceType>
-    <WorkspacePath>C:\Users\lisaf\Documents\GitHub\Croustibot\IHM\</WorkspacePath>
+    <WorkspacePath>C:\Users\Dany\Documents\Github\Croustibot\IHM\</WorkspacePath>
     <underRoot>false</underRoot>
     <TrustZone>0</TrustZone>
-    <HAL_Driver>C:\Applis\en.st-stm32cubeide_1.15.1_21094_20240412_1041_x86_64.exe\STM32Cube\Repository\STM32Cube_FW_H7_V1.12.1</HAL_Driver>
+    <HAL_Driver>C:\Users\Dany\STM32Cube\Repository\STM32Cube_FW_H7_V1.12.1</HAL_Driver>
     <CMSIS>Drivers/CMSIS</CMSIS>
     <Toolchain>STM32CubeIDE</Toolchain>
     <IocFile>IHM.ioc</IocFile>
@@ -71,19 +71,10 @@
           <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_exti.c</name>
         </file>
         <file>
-          <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c</name>
-        </file>
-        <file>
-          <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c</name>
-        </file>
-        <file>
           <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c</name>
         </file>
         <file>
           <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart_ex.c</name>
-        </file>
-        <file>
-          <name>Drivers\BSP\Components\lan8742\lan8742.c</name>
         </file>
         <file>
           <name>Middlewares\Third_Party\LwIP\src\netif\ppp\auth.c</name>
@@ -373,7 +364,7 @@
             <memory access="xrw" name="RAM" size="294912" start="0x10000000" />
             <memory access="rx" name="FLASH" size="1048576" start="0x8100000" />
           </memories>
-          <startup>C:\Applis\en.st-stm32cubeide_1.15.1_21094_20240412_1041_x86_64.exe\STM32Cube\Repository\STM32Cube_FW_H7_V1.12.1\Drivers\CMSIS\Device\ST\STM32H7xx\Source\Templates\gcc\startup_stm32h747xx.s</startup>
+          <startup>C:\Users\Dany\STM32Cube\Repository\STM32Cube_FW_H7_V1.12.1\Drivers\CMSIS\Device\ST\STM32H7xx\Source\Templates\gcc\startup_stm32h747xx.s</startup>
           <LinkSettings>
             <LinkAdditionalLibs />
           </LinkSettings>
@@ -942,6 +933,9 @@
           <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_qspi.c</name>
         </file>
         <file>
+          <name>Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_ll_delayblock.c</name>
+        </file>
+        <file>
           <name>Middlewares\Third_Party\FreeRTOS\Source\croutine.c</name>
         </file>
         <file>
@@ -1231,7 +1225,7 @@
             <memory access="xrw" name="RAM_D1" size="524288" start="0x24000000" />
             <memory access="rx" name="FLASH" size="1048576" start="0x8000000" />
           </memories>
-          <startup>C:\Applis\en.st-stm32cubeide_1.15.1_21094_20240412_1041_x86_64.exe\STM32Cube\Repository\STM32Cube_FW_H7_V1.12.1\Drivers\CMSIS\Device\ST\STM32H7xx\Source\Templates\gcc\startup_stm32h747xx.s</startup>
+          <startup>C:\Users\Dany\STM32Cube\Repository\STM32Cube_FW_H7_V1.12.1\Drivers\CMSIS\Device\ST\STM32H7xx\Source\Templates\gcc\startup_stm32h747xx.s</startup>
           <LinkSettings>
             <LinkAdditionalLibs />
           </LinkSettings>

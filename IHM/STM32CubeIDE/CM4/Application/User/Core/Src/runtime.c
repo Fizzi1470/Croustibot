@@ -31,7 +31,7 @@ loc_t loc = {
 	.tolerance_coef = 0.5,
 };
 
-robot_t true_robot = { .x = 1400 - 500, .y = 500, .t = - M_PI/4};
+robot_t true_robot = { .x = 1400 - 150, .y = 150, .t = - M_PI/4};
 
 #define MIN_AMP_FILTER 1000
 #define MAX_GAP_FILTER 10
