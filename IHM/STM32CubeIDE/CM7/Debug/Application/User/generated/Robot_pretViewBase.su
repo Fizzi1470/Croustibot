@@ -13,4 +13,4 @@ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_genera
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/robot_pret_screen/Robot_pretViewBase.cpp:45:1:virtual Robot_pretViewBase::~Robot_pretViewBase()	8	static
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/robot_pret_screen/Robot_pretViewBase.cpp:55:6:void Robot_pretViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	16	static
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/robot_pret_screen/Robot_pretViewBase.cpp:78:6:virtual void Robot_pretViewBase::handleTickEvent()	8	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/robot_pret_screen/Robot_pretViewBase.cpp:9:1:Robot_pretViewBase::Robot_pretViewBase()	112	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/robot_pret_screen/Robot_pretViewBase.cpp:9:1:Robot_pretViewBase::Robot_pretViewBase()	120	static

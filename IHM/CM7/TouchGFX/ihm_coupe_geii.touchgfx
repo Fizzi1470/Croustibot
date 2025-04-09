@@ -1681,16 +1681,16 @@
           {
             "Type": "Container",
             "Name": "bloc_possibilites",
-            "X": 155,
-            "Y": 83,
-            "Width": 491,
-            "Height": 356,
+            "X": 139,
+            "Y": 60,
+            "Width": 523,
+            "Height": 360,
             "Components": [
               {
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_aller_a_cet_endroit",
-                "X": 5,
-                "Y": 193,
+                "X": 21,
+                "Y": 49,
                 "Width": 480,
                 "Height": 60,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
@@ -1712,10 +1712,11 @@
               {
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_tourner_90",
-                "X": 5,
-                "Y": 106,
+                "X": 21,
+                "Y": 107,
                 "Width": 480,
                 "Height": 60,
+                "Visible": false,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
                 "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
                 "TextId": "__SingleUse_4ZSH",
@@ -1735,10 +1736,11 @@
               {
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_avancer",
-                "X": 5,
-                "Y": 15,
+                "X": 21,
+                "Y": 25,
                 "Width": 480,
                 "Height": 60,
+                "Visible": false,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
                 "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
                 "TextId": "__SingleUse_J7PO",
@@ -1758,8 +1760,8 @@
               {
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_stop",
-                "X": 5,
-                "Y": 285,
+                "X": 21,
+                "Y": 159,
                 "Width": 480,
                 "Height": 60,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_action.png",
@@ -1787,6 +1789,22 @@
             "Width": 110,
             "Height": 48,
             "TextId": "__SingleUse_OXSS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "texte_affichage_odo",
+            "X": 369,
+            "Y": 353,
+            "Width": 63,
+            "Height": 36,
+            "TextId": "__SingleUse_718S",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1853,180 +1871,6 @@
             }
           },
           {
-            "InteractionName": "changement_couleur_bouton_avancer",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_avancer"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              },
-              "ActionComponent": "bouton_avancer"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_bouton_droite",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_aller_a_cet_endroit"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              },
-              "ActionComponent": "bouton_aller_a_cet_endroit"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_bouton_gauche",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_90"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              },
-              "ActionComponent": "bouton_tourner_90"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_av_g",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_avancer"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_tourner_90"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_av_d",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_avancer"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_aller_a_cet_endroit"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_g_av",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_90"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_avancer"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_g_d",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_tourner_90"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_aller_a_cet_endroit"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_d_av",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_aller_a_cet_endroit"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_avancer"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_d_g",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_aller_a_cet_endroit"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_tourner_90"
-            }
-          },
-          {
             "InteractionName": "fonction_avancer",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -2068,6 +1912,82 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "stop"
+            }
+          },
+          {
+            "InteractionName": "changement_couleur_go",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
+            },
+            "Action": {
+              "Type": "ActionSetLabelColors",
+              "PressedColor": {
+                "Red": 255
+              },
+              "ReleasedColor": {
+                "Red": 255
+              },
+              "ActionComponent": "bouton_aller_a_cet_endroit"
+            }
+          },
+          {
+            "InteractionName": "changement_couleur_stop",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
+            },
+            "Action": {
+              "Type": "ActionSetLabelColors",
+              "PressedColor": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "ReleasedColor": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "ActionComponent": "bouton_stop"
+            }
+          },
+          {
+            "InteractionName": "changement_couleur_go_2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_stop"
+            },
+            "Action": {
+              "Type": "ActionSetLabelColors",
+              "PressedColor": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "ReleasedColor": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "ActionComponent": "bouton_aller_a_cet_endroit"
+            }
+          },
+          {
+            "InteractionName": "changement_couleur_stop_2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_aller_a_cet_endroit"
+            },
+            "Action": {
+              "Type": "ActionSetLabelColors",
+              "PressedColor": {
+                "Red": 255
+              },
+              "ReleasedColor": {
+                "Red": 255
+              },
+              "ActionComponent": "bouton_stop"
             }
           }
         ]
@@ -2203,6 +2123,7 @@
             "Y": 437,
             "Width": 10,
             "Height": 10,
+            "Visible": false,
             "Color": {
               "Red": 242
             },

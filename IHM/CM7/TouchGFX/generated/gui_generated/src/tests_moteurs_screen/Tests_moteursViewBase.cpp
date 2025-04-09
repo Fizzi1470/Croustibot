@@ -17,8 +17,8 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     fond.setColor(touchgfx::Color::getColorFromRGB(99, 0, 59));
     add(fond);
 
-    bloc_possibilites.setPosition(155, 83, 491, 356);
-    bouton_aller_a_cet_endroit.setXY(5, 193);
+    bloc_possibilites.setPosition(139, 60, 523, 360);
+    bouton_aller_a_cet_endroit.setXY(21, 49);
     bouton_aller_a_cet_endroit.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID));
     bouton_aller_a_cet_endroit.setLabelText(touchgfx::TypedText(T___SINGLEUSE_Y14O));
     bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -26,23 +26,25 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     bouton_aller_a_cet_endroit.setAction(buttonCallback);
     bloc_possibilites.add(bouton_aller_a_cet_endroit);
 
-    bouton_tourner_90.setXY(5, 106);
+    bouton_tourner_90.setXY(21, 107);
     bouton_tourner_90.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID));
     bouton_tourner_90.setLabelText(touchgfx::TypedText(T___SINGLEUSE_4ZSH));
     bouton_tourner_90.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     bouton_tourner_90.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bouton_tourner_90.setVisible(false);
     bouton_tourner_90.setAction(buttonCallback);
     bloc_possibilites.add(bouton_tourner_90);
 
-    bouton_avancer.setXY(5, 15);
+    bouton_avancer.setXY(21, 25);
     bouton_avancer.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID));
     bouton_avancer.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J7PO));
     bouton_avancer.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     bouton_avancer.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bouton_avancer.setVisible(false);
     bouton_avancer.setAction(buttonCallback);
     bloc_possibilites.add(bouton_avancer);
 
-    bouton_stop.setXY(5, 285);
+    bouton_stop.setXY(21, 159);
     bouton_stop.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_ACTION_ID));
     bouton_stop.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5Z0P));
     bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -57,6 +59,12 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     texte_menu_tests_moteurs.setLinespacing(0);
     texte_menu_tests_moteurs.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OXSS));
     add(texte_menu_tests_moteurs);
+
+    texte_affichage_odo.setXY(369, 353);
+    texte_affichage_odo.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    texte_affichage_odo.setLinespacing(0);
+    texte_affichage_odo.setTypedText(touchgfx::TypedText(T___SINGLEUSE_718S));
+    add(texte_affichage_odo);
 
     bouton_retour.setXY(0, 420);
     bouton_retour.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_CONTENT_REPLY_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
@@ -99,84 +107,54 @@ void Tests_moteursViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
     }
     if (&src == &bouton_avancer)
     {
-        //changement_couleur_bouton_avancer
-        //When bouton_avancer clicked change label colors of bouton_avancer
-        //Set label colors on bouton_avancer. Released color - R:235, G:30, B:30, Pressed color - R:0, G:0, B:0
-        bouton_avancer.setLabelColor(touchgfx::Color::getColorFromRGB(235, 30, 30));
-        bouton_avancer.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
-        bouton_avancer.invalidate();
-        //changement_couleur_av_g
-        //When bouton_avancer clicked change label colors of bouton_tourner_90
-        //Set label colors on bouton_tourner_90. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
-        bouton_tourner_90.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_tourner_90.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_tourner_90.invalidate();
-        //changement_couleur_av_d
-        //When bouton_avancer clicked change label colors of bouton_aller_a_cet_endroit
-        //Set label colors on bouton_aller_a_cet_endroit. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
-        bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_aller_a_cet_endroit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_aller_a_cet_endroit.invalidate();
         //fonction_avancer
         //When bouton_avancer clicked call virtual function
         //Call moteurs_avancer
         moteurs_avancer();
     }
-    if (&src == &bouton_aller_a_cet_endroit)
-    {
-        //changement_couleur_bouton_droite
-        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_aller_a_cet_endroit
-        //Set label colors on bouton_aller_a_cet_endroit. Released color - R:235, G:30, B:30, Pressed color - R:0, G:0, B:0
-        bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(235, 30, 30));
-        bouton_aller_a_cet_endroit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
-        bouton_aller_a_cet_endroit.invalidate();
-        //changement_couleur_d_av
-        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_avancer
-        //Set label colors on bouton_avancer. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
-        bouton_avancer.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_avancer.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_avancer.invalidate();
-        //changement_couleur_d_g
-        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_tourner_90
-        //Set label colors on bouton_tourner_90. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
-        bouton_tourner_90.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_tourner_90.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_tourner_90.invalidate();
-        //fonction_aller_la_bas
-        //When bouton_aller_a_cet_endroit clicked call virtual function
-        //Call moteurs_aller_la_bas
-        moteurs_aller_la_bas();
-    }
     if (&src == &bouton_tourner_90)
     {
-        //changement_couleur_bouton_gauche
-        //When bouton_tourner_90 clicked change label colors of bouton_tourner_90
-        //Set label colors on bouton_tourner_90. Released color - R:235, G:30, B:30, Pressed color - R:0, G:0, B:0
-        bouton_tourner_90.setLabelColor(touchgfx::Color::getColorFromRGB(235, 30, 30));
-        bouton_tourner_90.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
-        bouton_tourner_90.invalidate();
-        //changement_couleur_g_av
-        //When bouton_tourner_90 clicked change label colors of bouton_avancer
-        //Set label colors on bouton_avancer. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
-        bouton_avancer.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_avancer.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_avancer.invalidate();
-        //changement_couleur_g_d
-        //When bouton_tourner_90 clicked change label colors of bouton_aller_a_cet_endroit
-        //Set label colors on bouton_aller_a_cet_endroit. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
-        bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_aller_a_cet_endroit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_aller_a_cet_endroit.invalidate();
         //fonction_tourner_90
         //When bouton_tourner_90 clicked call virtual function
         //Call moteurs_tourner_90
         moteurs_tourner_90();
+    }
+    if (&src == &bouton_aller_a_cet_endroit)
+    {
+        //fonction_aller_la_bas
+        //When bouton_aller_a_cet_endroit clicked call virtual function
+        //Call moteurs_aller_la_bas
+        moteurs_aller_la_bas();
+        //changement_couleur_go
+        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_aller_a_cet_endroit
+        //Set label colors on bouton_aller_a_cet_endroit. Released color - R:255, G:0, B:0, Pressed color - R:255, G:0, B:0
+        bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        bouton_aller_a_cet_endroit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        bouton_aller_a_cet_endroit.invalidate();
+        //changement_couleur_stop
+        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_stop
+        //Set label colors on bouton_stop. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
+        bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        bouton_stop.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        bouton_stop.invalidate();
+        //changement_couleur_stop_2
+        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_stop
+        //Set label colors on bouton_stop. Released color - R:255, G:0, B:0, Pressed color - R:255, G:0, B:0
+        bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        bouton_stop.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        bouton_stop.invalidate();
     }
     if (&src == &bouton_stop)
     {
         //fonction_stop
         //When bouton_stop clicked call virtual function
         //Call stop
-        stop();
+        stop();
+        //changement_couleur_go_2
+        //When bouton_stop clicked change label colors of bouton_aller_a_cet_endroit
+        //Set label colors on bouton_aller_a_cet_endroit. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
+        bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        bouton_aller_a_cet_endroit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+        bouton_aller_a_cet_endroit.invalidate();
     }
 }

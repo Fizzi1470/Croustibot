@@ -2,6 +2,8 @@
 #include "main.h"
 #include <gui_generated/tests_moteurs_screen/Tests_moteursViewBase.hpp>
 
+touchgfx::TextArea texte_affichage_odo;
+
 Tests_moteursView::Tests_moteursView()
 {
 
@@ -10,6 +12,10 @@ Tests_moteursView::Tests_moteursView()
 void Tests_moteursView::setupScreen()
 {
     Tests_moteursViewBase::setupScreen();
+
+//    float my_var_float = 3.14f;
+//    touchgfx::Unicode::snprintfFloat(texte_affichage_odoBuffer, TEXTE_AFFICHAGE_ODO_SIZE, "My float %.2f", my_var_float);
+//    texte_affichage_odo.invalidate();
 }
 
 void Tests_moteursView::tearDownScreen()
@@ -54,8 +60,8 @@ void Tests_moteursView::moteurs_tourner_90()
 
 void Tests_moteursView::moteurs_aller_la_bas()
 {
-	uint16_t distance = 12000;
-	uint16_t angle = 0;
+	uint16_t distance = 7000;
+	uint16_t angle = 720;
 	T_CAN_trame_tx trame_tx_moteurs = {0};
 
 	trame_tx_moteurs.header.Identifier = 0x101;

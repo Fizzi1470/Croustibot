@@ -80,6 +80,7 @@ Test_lidarViewBase::Test_lidarViewBase() :
     circle1.setArc(0, 360);
     circle1Painter.setColor(touchgfx::Color::getColorFromRGB(242, 0, 0));
     circle1.setPainter(circle1Painter);
+    circle1.setVisible(false);
     add(circle1);
 }
 

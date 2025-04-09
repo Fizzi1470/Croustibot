@@ -111,11 +111,6 @@ void envoi_trame_can();
 //void can_periodique();
 
 // fonctions tests
-float pos_rob_x;
-float pos_rob_y;
-float pos_rob_t;
-float pos_abs_rob_x;
-float pos_abs_rob_y;
 void moteurs_avancer();
 void moteurs_tourner_90();
 void moteurs_aller_la_bas();

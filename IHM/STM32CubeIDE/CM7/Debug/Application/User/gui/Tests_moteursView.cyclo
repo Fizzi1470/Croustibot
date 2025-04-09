@@ -1,12 +1,15 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:15:6:virtual void Tests_moteursView::tearDownScreen()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:21:6:virtual void Tests_moteursView::moteurs_avancer()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:38:6:virtual void Tests_moteursView::moteurs_tourner_90()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:55:6:virtual void Tests_moteursView::moteurs_aller_la_bas()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:80:6:virtual void Tests_moteursView::stop()	1
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:21:6:virtual void Tests_moteursView::tearDownScreen()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:27:6:virtual void Tests_moteursView::moteurs_avancer()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:44:6:virtual void Tests_moteursView::moteurs_tourner_90()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:61:6:virtual void Tests_moteursView::moteurs_aller_la_bas()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:85:6:virtual void Tests_moteursView::stop()	1
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/tests_moteurs_screen/Tests_moteursView.hpp:12:13:Tests_moteursView::~Tests_moteursView()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/tests_moteurs_screen/Tests_moteursView.hpp:12:13:virtual Tests_moteursView::~Tests_moteursView()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:5:1:Tests_moteursView::Tests_moteursView()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:10:6:virtual void Tests_moteursView::setupScreen()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:7:1:Tests_moteursView::Tests_moteursView()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:100:1:cpp)	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:12:6:virtual void Tests_moteursView::setupScreen()	1

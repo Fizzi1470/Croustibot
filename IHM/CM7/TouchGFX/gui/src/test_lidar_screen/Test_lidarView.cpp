@@ -3,21 +3,20 @@
 #include <gui_generated/test_lidar_screen/Test_lidarViewBase.hpp>
 #include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
 
-uint16_t x, y;
-extern float pos_rob_x = 100.0;
-extern float pos_rob_y = 100.0;
-extern float pos_rob_t = 3.14;
-extern float pos_abs_rob_x;
-extern float pos_abs_rob_y;
-
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 #include <touchgfx/mixins/MoveAnimator.hpp>
 
+uint16_t x, y;
+float pos_rob_x = 0.0f;
+float pos_rob_y = 0.0f;
+float pos_rob_t = 0.0f;
+float pos_abs_rob_x;
+float pos_abs_rob_y;
+
 touchgfx::MoveAnimator< touchgfx::Circle > points[100];
 touchgfx::PainterRGB888 pointPainters[1];
 touchgfx::PainterRGB888 lignePainters[1];
-
 touchgfx::Line lignes[10];
 
 struct {
@@ -29,6 +28,10 @@ struct {
 #warning chelou un peu
 Test_lidarView::Test_lidarView(){}
 
+int16_t map(int16_t x, int16_t in_min, int16_t in_max, int16_t out_min, int16_t out_max)
+{
+	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 void Test_lidarView::setupScreen()
 {
@@ -71,19 +74,11 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 		{
 			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
 
-			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
-			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
+			int16_t pt_x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
+			int16_t pt_y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
 
-			pos_abs_rob_x = pos_rob_x + points_lidar_bas[i].x * cos(pos_rob_t) - points_lidar_bas[i].y * sin(pos_rob_t);
-			pos_abs_rob_y = pos_rob_y + points_lidar_bas[i].y * sin(pos_rob_t) - points_lidar_bas[i].x * cos(pos_rob_t);
-
-
-			for (uint16_t i = 0; i < 100; i++)
-			{
-#warning le 400 et 240 sont a modifier (c est censé être la position du robot sur l ecran)
-				//points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
-				points[i].setXY(pos_abs_rob_x, pos_abs_rob_y);
-				points[i].invalidate();
+			points_lidar_bas[i].x = pos_rob_x + pt_x * cos(pos_rob_t) - pt_y * sin(pos_rob_t);
+			points_lidar_bas[i].y = pos_rob_y + pt_y * sin(pos_rob_t) + pt_x * cos(pos_rob_t);
 
 				/*
 
@@ -97,28 +92,34 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 //							lignePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
 //							lignes[i].setPainter(lignePainters[0]);
 //							lignes[i].invalidate();
-			}
+
 
 			break;
 		}
 
 		case 0x201:
 		{
-			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
+//			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
+//
+//			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
+//			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
 
-			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
-			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
-
-			for (uint16_t i = 0; i < 100; i++)
-			{
-#warning le 400 et 240 sont a modifier (c est censé être la position du robot)
-				points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
-				points[i].invalidate();
-			}
 			break;
 		}
 		}
+
 	}
+	for (uint16_t i = 0; i < 100; i++)
+		{
+
+			int16_t pt_x_ecran = map(points_lidar_bas[i].x, 0, 8000, 181, 610);
+			int16_t pt_y_ecran = map(points_lidar_bas[i].y, 0, 8000, 31, 437);
+
+			//points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
+			points[i].setXY(pt_x_ecran, pt_y_ecran);
+			points[i].invalidate();
+		}
+
 }
 
 void Test_lidarView::donnees_lidar_bas_avant()
