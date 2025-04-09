@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/tgfx_jpeg_utils.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/target/generated/tgfx_jpeg_utils.c \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/target/generated/tgfx_jpeg_utils.c \
  ../../../Utilities/JPEG/jpeg_utils.h \
  ../../../CM7/Core/Inc/jpeg_utils_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \

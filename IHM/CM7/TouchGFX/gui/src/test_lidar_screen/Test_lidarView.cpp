@@ -4,11 +4,11 @@
 #include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
 
 uint16_t x, y;
-extern float pos_rob_x = 100.0;
-extern float pos_rob_y = 100.0;
-extern float pos_rob_t = 3.14;
-extern float pos_abs_rob_x;
-extern float pos_abs_rob_y;
+float pos_rob_x = 100.0;
+float pos_rob_y = 100.0;
+float pos_rob_t = 3.14;
+float pos_abs_rob_x;
+float pos_abs_rob_y;
 
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>

@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jquant1.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jquant1.c \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jquant1.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

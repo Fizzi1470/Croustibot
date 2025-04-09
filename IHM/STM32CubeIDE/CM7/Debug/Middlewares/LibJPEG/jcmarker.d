@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jcmarker.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcmarker.c \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcmarker.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

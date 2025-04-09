@@ -1,5 +1,5 @@
 Application/User/gui/Tests_moteursView.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/tests_moteurs_screen/Tests_moteursView.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/tests_moteurs_screen/Tests_moteursViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

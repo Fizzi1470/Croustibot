@@ -1,6 +1,7 @@
 "./Application/User/Core/freertos.o"
 "./Application/User/Core/gfx_callbacks.o"
 "./Application/User/Core/main.o"
+"./Application/User/Core/pathfinder.o"
 "./Application/User/Core/stm32h7xx_hal_msp.o"
 "./Application/User/Core/stm32h7xx_hal_timebase_tim.o"
 "./Application/User/Core/stm32h7xx_it.o"

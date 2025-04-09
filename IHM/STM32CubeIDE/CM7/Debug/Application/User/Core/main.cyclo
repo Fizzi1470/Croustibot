@@ -1,5 +1,5 @@
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:898:13:TouchGFX_Task	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:297:6:SystemClock_Config	4
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:159:5:main	29
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:988:6:HAL_TIM_PeriodElapsedCallback	2
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:1005:6:Error_Handler	1
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/Core/Src/main.c:893:13:TouchGFX_Task	1
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/Core/Src/main.c:292:6:SystemClock_Config	4
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/Core/Src/main.c:154:5:main	29
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/Core/Src/main.c:983:6:HAL_TIM_PeriodElapsedCallback	2
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/Core/Src/main.c:1000:6:Error_Handler	1

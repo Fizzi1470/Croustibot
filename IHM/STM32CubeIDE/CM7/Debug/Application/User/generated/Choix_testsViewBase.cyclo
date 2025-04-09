@@ -4,12 +4,12 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<Choix_testsViewBase, const touchgfx::AbstractButton&>::~Callback()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:99:1:Choix_testsViewBase::~Choix_testsViewBase()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:104:6:virtual void Choix_testsViewBase::setupScreen()	1
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:99:1:Choix_testsViewBase::~Choix_testsViewBase()	1
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:104:6:virtual void Choix_testsViewBase::setupScreen()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = Choix_testsViewBase; T1 = const touchgfx::AbstractButton&]	2
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = Choix_testsViewBase; T1 = const touchgfx::AbstractButton&]	3
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<Choix_testsViewBase, const touchgfx::AbstractButton&>::~Callback()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:99:1:virtual Choix_testsViewBase::~Choix_testsViewBase()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:109:6:void Choix_testsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	7
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:9:1:Choix_testsViewBase::Choix_testsViewBase()	3
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:99:1:virtual Choix_testsViewBase::~Choix_testsViewBase()	1
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:109:6:void Choix_testsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	7
+C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp:9:1:Choix_testsViewBase::Choix_testsViewBase()	3

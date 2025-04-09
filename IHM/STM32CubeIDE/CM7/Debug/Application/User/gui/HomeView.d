@@ -1,5 +1,5 @@
 Application/User/gui/HomeView.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/home_screen/HomeView.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/home_screen/HomeViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

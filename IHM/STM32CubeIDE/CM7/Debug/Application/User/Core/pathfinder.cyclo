@@ -1,0 +1,9 @@
+../Application/User/Core/pathfinder.cpp:247:13:void _visit(pathfinder_t*, int32_t, int32_t)	9
+../Application/User/Core/pathfinder.cpp:343:13:void _setOccupancy(pathfinder_t*, int32_t, int32_t, occupancy_status_t)	4
+../Application/User/Core/pathfinder.cpp:170:13:void _retrace(pathfinder_t*, int32_t, int32_t, int32_t, int32_t, int8_t, int8_t)	14
+../Application/User/Core/pathfinder.cpp:15:10:uint32_t _dist(int32_t, int32_t, int32_t, int32_t)	2
+../Application/User/Core/pathfinder.cpp:17:6:void path_init(pathfinder_t*)	3
+../Application/User/Core/pathfinder.cpp:30:6:void path_print(map_element_t (*)[100])	9
+../Application/User/Core/pathfinder.cpp:287:6:bool path_process(pathfinder_t*)	24
+../Application/User/Core/pathfinder.cpp:336:6:void path_setPos(pathfinder_t*, int32_t, int32_t)	3
+../Application/User/Core/pathfinder.cpp:348:6:void path_addObstacle(pathfinder_t*, int32_t, int32_t, uint8_t)	9

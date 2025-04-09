@@ -1,5 +1,5 @@
 Application/User/gui/Robot_pretPresenter.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretPresenter.cpp \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_pret_screen/Robot_pretPresenter.cpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_pret_screen/Robot_pretView.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/robot_pret_screen/Robot_pretViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

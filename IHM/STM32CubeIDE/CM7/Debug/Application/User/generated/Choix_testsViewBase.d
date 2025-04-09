@@ -1,5 +1,5 @@
 Application/User/generated/Choix_testsViewBase.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp \
+ C:/Users/Dany/Documents/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_tests_screen/Choix_testsViewBase.cpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_tests_screen/Choix_testsViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
