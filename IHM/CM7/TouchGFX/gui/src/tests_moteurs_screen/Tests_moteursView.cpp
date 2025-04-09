@@ -54,8 +54,8 @@ void Tests_moteursView::moteurs_tourner_90()
 
 void Tests_moteursView::moteurs_aller_la_bas()
 {
-	uint16_t distance = 0;
-	uint16_t angle = 90;
+	uint16_t distance = 12000;
+	uint16_t angle = 0;
 	T_CAN_trame_tx trame_tx_moteurs = {0};
 
 	trame_tx_moteurs.header.Identifier = 0x101;
@@ -69,9 +69,9 @@ void Tests_moteursView::moteurs_aller_la_bas()
 	trame_tx_moteurs.header.MessageMarker = 0;
 
 	trame_tx_moteurs.data[0] = (uint8_t)distance;
-	trame_tx_moteurs.data[1] = (uint8_t)distance >> 8;
+	trame_tx_moteurs.data[1] = (uint8_t)(distance >> 8);
 	trame_tx_moteurs.data[2] = (uint8_t)angle;
-	trame_tx_moteurs.data[3] = (uint8_t)angle >> 8;
+	trame_tx_moteurs.data[3] = (uint8_t)(angle >> 8);
 
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_moteurs.header, trame_tx_moteurs.data);
 }

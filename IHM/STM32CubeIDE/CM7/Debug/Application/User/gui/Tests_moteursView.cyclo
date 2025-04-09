@@ -5,7 +5,7 @@ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteur
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:21:6:virtual void Tests_moteursView::moteurs_avancer()	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:38:6:virtual void Tests_moteursView::moteurs_tourner_90()	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:55:6:virtual void Tests_moteursView::moteurs_aller_la_bas()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:79:6:virtual void Tests_moteursView::stop()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:80:6:virtual void Tests_moteursView::stop()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/tests_moteurs_screen/Tests_moteursView.hpp:12:13:Tests_moteursView::~Tests_moteursView()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/tests_moteurs_screen/Tests_moteursView.hpp:12:13:virtual Tests_moteursView::~Tests_moteursView()	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/tests_moteurs_screen/Tests_moteursView.cpp:5:1:Tests_moteursView::Tests_moteursView()	1

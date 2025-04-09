@@ -4,6 +4,11 @@
 #include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
 
 uint16_t x, y;
+extern float pos_rob_x = 100.0;
+extern float pos_rob_y = 100.0;
+extern float pos_rob_t = 3.14;
+extern float pos_abs_rob_x;
+extern float pos_abs_rob_y;
 
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
@@ -69,11 +74,15 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
 			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
 
+			pos_abs_rob_x = pos_rob_x + points_lidar_bas[i].x * cos(pos_rob_t) - points_lidar_bas[i].y * sin(pos_rob_t);
+			pos_abs_rob_y = pos_rob_y + points_lidar_bas[i].y * sin(pos_rob_t) - points_lidar_bas[i].x * cos(pos_rob_t);
+
 
 			for (uint16_t i = 0; i < 100; i++)
 			{
-#warning le 400 et 240 sont a modifier (c est censé être la position du robot)
-				points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
+#warning le 400 et 240 sont a modifier (c est censé être la position du robot sur l ecran)
+				//points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
+				points[i].setXY(pos_abs_rob_x, pos_abs_rob_y);
 				points[i].invalidate();
 
 				/*
