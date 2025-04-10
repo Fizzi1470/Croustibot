@@ -132,13 +132,7 @@ void strategie_5();
 void strategie_6();
 
 // fonction lancement du robot
-int tirette = 0;
 void attente_tirette();
-uint32_t *tab_coord_point_A;
-uint32_t *tab_coord_point_B;
-uint32_t *tab_coord_point_C;
-void reception_can_lidars_en_match();
-
 
 /* USER CODE END PFP */
 

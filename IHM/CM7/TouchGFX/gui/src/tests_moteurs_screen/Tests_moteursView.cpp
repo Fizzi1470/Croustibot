@@ -2,8 +2,6 @@
 #include "main.h"
 #include <gui_generated/tests_moteurs_screen/Tests_moteursViewBase.hpp>
 
-touchgfx::TextArea texte_affichage_odo;
-
 Tests_moteursView::Tests_moteursView()
 {
 
@@ -12,10 +10,6 @@ Tests_moteursView::Tests_moteursView()
 void Tests_moteursView::setupScreen()
 {
     Tests_moteursViewBase::setupScreen();
-
-//    float my_var_float = 3.14f;
-//    touchgfx::Unicode::snprintfFloat(texte_affichage_odoBuffer, TEXTE_AFFICHAGE_ODO_SIZE, "My float %.2f", my_var_float);
-//    texte_affichage_odo.invalidate();
 }
 
 void Tests_moteursView::tearDownScreen()

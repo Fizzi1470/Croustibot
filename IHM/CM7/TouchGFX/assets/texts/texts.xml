@@ -6,11 +6,8 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_718S" Alignment="Center" TypographyId="good_typo">
+      <Text Id="__SingleUse_KKZB" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">odo</Translation>
-      </Text>
-      <Text Id="__SingleUse_J5LX" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">TEST</Translation>
       </Text>
       <Text Id="__SingleUse_G58B" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">BON COURAGE CROUSTIBOT !!!&#10;&#10;(qui peut nous bottre ??)</Translation>
@@ -18,11 +15,8 @@
       <Text Id="__SingleUse_5Z0P" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">STOP</Translation>
       </Text>
-      <Text Id="__SingleUse_OTEQ" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Position départ</Translation>
-      </Text>
       <Text Id="__SingleUse_HJ3M" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Le robot est prêt&#10;&#10;Enlever la tirette pour tout défoncer&#10;&#10;(si tout fonctionne bien c'est grâce à Brumich)</Translation>
+        <Translation Language="GB">Le robot est prêt&#10;&#10;Enlever la tirette pour tout défoncer&#10;&#10;(Merci à Brumich pour ce beau projet)</Translation>
       </Text>
       <Text Id="__SingleUse_5T8D" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Stratégie 6</Translation>
@@ -37,7 +31,7 @@
         <Translation Language="GB">Tourner de 90°</Translation>
       </Text>
       <Text Id="__SingleUse_Y14O" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">GO (aller là-bas)</Translation>
+        <Translation Language="GB">Objectif (go go go !!)</Translation>
       </Text>
       <Text Id="__SingleUse_KKOG" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Lidars</Translation>
@@ -72,11 +66,11 @@
       <Text Id="__SingleUse_1C0D" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Stratégie 3</Translation>
       </Text>
-      <Text Id="__SingleUse_GRQ1" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Stratégie 2</Translation>
+      <Text Id="__SingleUse_GRQ1" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">Stratégie test</Translation>
       </Text>
-      <Text Id="__SingleUse_XFJD" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">Stratégie 1</Translation>
+      <Text Id="__SingleUse_XFJD" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">Ramenez la coupe à la maison</Translation>
       </Text>
       <Text Id="__SingleUse_T2NW" Alignment="Left" TypographyId="good_typo">
         <Translation Language="GB">Sélectionner une stratégie</Translation>
@@ -93,10 +87,11 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdanab.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="good_typo" Font="verdanab.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_00" Font="verdanab.ttf" Size="45" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_01" Font="verdanab.ttf" Size="26" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

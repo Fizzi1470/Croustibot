@@ -60,11 +60,11 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     texte_menu_tests_moteurs.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OXSS));
     add(texte_menu_tests_moteurs);
 
-    texte_affichage_odo.setXY(369, 353);
-    texte_affichage_odo.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    texte_affichage_odo.setLinespacing(0);
-    texte_affichage_odo.setTypedText(touchgfx::TypedText(T___SINGLEUSE_718S));
-    add(texte_affichage_odo);
+    texte_menu_tests_moteurs_1.setXY(382, 346);
+    texte_menu_tests_moteurs_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    texte_menu_tests_moteurs_1.setLinespacing(0);
+    texte_menu_tests_moteurs_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KKZB));
+    add(texte_menu_tests_moteurs_1);
 
     bouton_retour.setXY(0, 420);
     bouton_retour.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_CONTENT_REPLY_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
@@ -136,12 +136,6 @@ void Tests_moteursViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
         //Set label colors on bouton_stop. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
         bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
         bouton_stop.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_stop.invalidate();
-        //changement_couleur_stop_2
-        //When bouton_aller_a_cet_endroit clicked change label colors of bouton_stop
-        //Set label colors on bouton_stop. Released color - R:255, G:0, B:0, Pressed color - R:255, G:0, B:0
-        bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-        bouton_stop.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 0, 0));
         bouton_stop.invalidate();
     }
     if (&src == &bouton_stop)
@@ -155,6 +149,12 @@ void Tests_moteursViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
         //Set label colors on bouton_aller_a_cet_endroit. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
         bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
         bouton_aller_a_cet_endroit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-        bouton_aller_a_cet_endroit.invalidate();
+        bouton_aller_a_cet_endroit.invalidate();
+        //changement_couleur_stop_2
+        //When bouton_stop clicked change label colors of bouton_stop
+        //Set label colors on bouton_stop. Released color - R:255, G:0, B:0, Pressed color - R:255, G:0, B:0
+        bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        bouton_stop.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        bouton_stop.invalidate();
     }
 }

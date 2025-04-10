@@ -23,7 +23,7 @@ Robot_pretViewBase::Robot_pretViewBase() :
     texte_mode_competition.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8Y5L));
     add(texte_mode_competition);
 
-    texte_mode_competition_1.setXY(7, 150);
+    texte_mode_competition_1.setXY(78, 150);
     texte_mode_competition_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     texte_mode_competition_1.setLinespacing(0);
     texte_mode_competition_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HJ3M));
@@ -80,9 +80,12 @@ void Robot_pretViewBase::handleTickEvent()
     //When every N tick call virtual function
     //Call attente_tirette
     attente_tirette();
+}
 
+void Robot_pretViewBase::changeToRobot_en_match()
+{
     //vers_robot_en_match
-    //When fonction_attente_tirette completed change screen to Robot_en_match
+    //When changeToRobot_en_match is called change screen to Robot_en_match
     //Go to Robot_en_match with no screen transition
     application().gotoRobot_en_matchScreenNoTransition();
 }

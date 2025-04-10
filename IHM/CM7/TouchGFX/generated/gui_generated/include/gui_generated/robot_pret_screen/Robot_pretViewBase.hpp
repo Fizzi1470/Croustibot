@@ -20,6 +20,11 @@ public:
     virtual void handleTickEvent();
 
     /*
+     * Custom Actions
+     */
+    virtual void changeToRobot_en_match();
+
+    /*
      * Virtual Action Handlers
      */
     virtual void attente_tirette()

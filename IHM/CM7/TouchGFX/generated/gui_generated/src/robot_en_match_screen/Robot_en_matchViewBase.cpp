@@ -31,11 +31,3 @@ void Robot_en_matchViewBase::setupScreen()
 {
 
 }
-
-void Robot_en_matchViewBase::handleTickEvent()
-{
-    //fonction_reception_can_lidars_en_match
-    //When every N tick call virtual function
-    //Call reception_can_lidars_en_match
-    reception_can_lidars_en_match();
-}

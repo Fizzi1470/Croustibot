@@ -31,10 +31,6 @@ public:
     {
         // Override and implement this function in Choix_strategie
     }
-    virtual void strategie_2()
-    {
-        // Override and implement this function in Choix_strategie
-    }
 
 protected:
     FrontendApplication& application() {

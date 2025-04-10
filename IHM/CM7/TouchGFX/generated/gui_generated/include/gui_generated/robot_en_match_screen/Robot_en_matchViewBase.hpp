@@ -16,15 +16,6 @@ public:
     Robot_en_matchViewBase();
     virtual ~Robot_en_matchViewBase();
     virtual void setupScreen();
-    virtual void handleTickEvent();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void reception_can_lidars_en_match()
-    {
-        // Override and implement this function in Robot_en_match
-    }
 
 protected:
     FrontendApplication& application() {

@@ -33,7 +33,6 @@ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_s
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp:60:6:virtual void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()	5
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB888.hpp:36:5:touchgfx::AbstractPainterRGB888::AbstractPainterRGB888()	4
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp:29:1:Test_lidarView::Test_lidarView()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp:31:9:int16_t map(int16_t, int16_t, int16_t, int16_t, int16_t)	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp:134:1:cpp)	6
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp:134:1:cpp)	3
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/test_lidar_screen/Test_lidarView.cpp:36:6:virtual void Test_lidarView::setupScreen()	2

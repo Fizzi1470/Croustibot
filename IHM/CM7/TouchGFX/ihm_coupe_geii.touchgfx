@@ -18,7 +18,7 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "bouton_strategies",
-            "X": 440,
+            "X": 244,
             "Y": 180,
             "Width": 312,
             "Height": 60,
@@ -41,36 +41,13 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "bouton_tests",
-            "X": 440,
-            "Y": 297,
+            "X": 244,
+            "Y": 301,
             "Width": 312,
             "Height": 60,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
             "TextId": "__SingleUse_G913",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_60\\medium_round_disabled.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "bouton_position_depart",
-            "X": 56,
-            "Y": 180,
-            "Width": 312,
-            "Height": 60,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
-            "TextId": "__SingleUse_OTEQ",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -107,29 +84,6 @@
             "Height": 82,
             "Filename": "logo_iut.png",
             "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "X": 18,
-            "Y": 415,
-            "Width": 240,
-            "Height": 50,
-            "Visible": false,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_disabled.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_round_disabled.png",
-            "TextId": "__SingleUse_J5LX",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0"
           }
         ],
         "Interactions": [
@@ -155,29 +109,6 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Choix_tests"
-            }
-          },
-          {
-            "InteractionName": "fonction_position_depart",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_position_depart"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "pos_depart"
-            }
-          },
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel1"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Robot_en_match"
             }
           }
         ]
@@ -215,10 +146,10 @@
           {
             "Type": "TextArea",
             "Name": "texte_mode_competition",
-            "X": 607,
-            "Y": 10,
-            "Width": 178,
-            "Height": 24,
+            "X": 610,
+            "Y": 8,
+            "Width": 181,
+            "Height": 22,
             "TextId": "__SingleUse_ZH0S",
             "TextRotation": "0",
             "Color": {
@@ -398,82 +329,10 @@
             }
           },
           {
-            "InteractionName": "changement_couleur_bouton_strat_3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_bouton_strat_4",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_bouton_strat_5",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              }
-            }
-          },
-          {
             "InteractionName": "affichage_bouton_valider_2",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "bouton_strat_2"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "bouton_valider"
-            }
-          },
-          {
-            "InteractionName": "affichage_bouton_valider_3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "bouton_valider"
-            }
-          },
-          {
-            "InteractionName": "affichage_bouton_valider_4",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "bouton_valider"
-            }
-          },
-          {
-            "InteractionName": "affichage_bouton_valider_5",
-            "Trigger": {
-              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionShow",
@@ -514,66 +373,6 @@
             }
           },
           {
-            "InteractionName": "changement_couleur_1_3",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_1"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_1_4",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_1"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_1_5",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_1"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
             "InteractionName": "changement_couleur_2_1",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -592,508 +391,6 @@
                 "Blue": 255
               },
               "ActionComponent": "bouton_strat_1"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_2_3",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_2"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_2_4",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_2"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_2_5",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_2"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_3_1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_1"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_3_2",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_2"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_3_4",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_3_5",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_4_1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_1"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_4_2",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_2"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_4_3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_4_5",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_5_1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_1"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_5_2",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_2"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_5_3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_5_4",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_1_6",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_1"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_2_6",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_strat_2"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_3_6",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_4_6",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_5_6",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_6_1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_1"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_6_2",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ActionComponent": "bouton_strat_2"
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_6_3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_6_4",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_6_5",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "PressedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              },
-              "ReleasedColor": {
-                "Red": 255,
-                "Green": 255,
-                "Blue": 255
-              }
-            }
-          },
-          {
-            "InteractionName": "changement_couleur_bouton_strat_6",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionSetLabelColors",
-              "ReleasedColor": {
-                "Red": 235,
-                "Green": 30,
-                "Blue": 30
-              }
             }
           },
           {
@@ -1138,57 +435,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "strategie_2"
-            }
-          },
-          {
-            "InteractionName": "fonction_strat_3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "strategie_3"
-            }
-          },
-          {
-            "InteractionName": "fonction_strat_4",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "strategie_4"
-            }
-          },
-          {
-            "InteractionName": "fonction_strat_5",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "strategie_5"
-            }
-          },
-          {
-            "InteractionName": "fonction_strat_6",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "strategie_6"
-            }
-          },
-          {
-            "InteractionName": "affichage_bouton_valider_6",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "bouton_valider"
+              "FunctionName": "strategie_1"
             }
           }
         ]
@@ -1212,8 +459,8 @@
             "Name": "texte_mode_competition",
             "X": 607,
             "Y": 10,
-            "Width": 178,
-            "Height": 24,
+            "Width": 181,
+            "Height": 22,
             "TextId": "__SingleUse_8Y5L",
             "TextRotation": "0",
             "Color": {
@@ -1226,9 +473,9 @@
           {
             "Type": "TextArea",
             "Name": "texte_mode_competition_1",
-            "X": 7,
+            "X": 78,
             "Y": 150,
-            "Width": 786,
+            "Width": 644,
             "Height": 180,
             "TextId": "__SingleUse_HJ3M",
             "TextRotation": "0",
@@ -1323,14 +570,19 @@
           {
             "InteractionName": "vers_robot_en_match",
             "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "fonction_attente_tirette"
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Robot_pret changeToRobot_en_match"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Robot_en_match"
             }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "changeToRobot_en_match"
           }
         ]
       },
@@ -1365,19 +617,7 @@
             "AutoSize": true
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "fonction_reception_can_lidars_en_match",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 1
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "reception_can_lidars_en_match"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "Choix_tests",
@@ -1799,12 +1039,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "texte_affichage_odo",
-            "X": 369,
-            "Y": 353,
-            "Width": 63,
-            "Height": 36,
-            "TextId": "__SingleUse_718S",
+            "Name": "texte_menu_tests_moteurs_1",
+            "X": 382,
+            "Y": 346,
+            "Width": 36,
+            "Height": 24,
+            "TextId": "__SingleUse_KKZB",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1977,7 +1217,7 @@
             "InteractionName": "changement_couleur_stop_2",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_aller_a_cet_endroit"
+              "TriggerComponent": "bouton_stop"
             },
             "Action": {
               "Type": "ActionSetLabelColors",

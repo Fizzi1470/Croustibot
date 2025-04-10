@@ -56,7 +56,7 @@ protected:
     touchgfx::ButtonWithLabel bouton_avancer;
     touchgfx::ButtonWithLabel bouton_stop;
     touchgfx::TextArea texte_menu_tests_moteurs;
-    touchgfx::TextArea texte_affichage_odo;
+    touchgfx::TextArea texte_menu_tests_moteurs_1;
     touchgfx::ButtonWithIcon bouton_retour;
     touchgfx::ButtonWithIcon bouton_home;
 

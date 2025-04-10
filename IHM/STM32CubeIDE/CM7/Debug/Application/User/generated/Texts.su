@@ -15,6 +15,6 @@ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:31:32:touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(touchgfx::TextDirection)	8	static
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:45:6:void touchgfx::TextProvider::initializeInternal()	8	static
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:50:6:)	32	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:111:6:static void touchgfx::Texts::setLanguage(touchgfx::LanguageId)	16	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:141:6:static void touchgfx::Texts::setTranslation(touchgfx::LanguageId, const void*)	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:146:39:const touchgfx::Unicode::UnicodeChar* touchgfx::Texts::getText(touchgfx::TypedTextId) const	0	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:109:6:static void touchgfx::Texts::setLanguage(touchgfx::LanguageId)	16	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:139:6:static void touchgfx::Texts::setTranslation(touchgfx::LanguageId, const void*)	0	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/Texts.cpp:144:39:const touchgfx::Unicode::UnicodeChar* touchgfx::Texts::getText(touchgfx::TypedTextId) const	0	static

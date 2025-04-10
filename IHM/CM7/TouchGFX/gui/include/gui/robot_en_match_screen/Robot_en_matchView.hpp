@@ -11,7 +11,6 @@ public:
     virtual ~Robot_en_matchView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void reception_can_lidars_en_match();
 
 protected:
 };

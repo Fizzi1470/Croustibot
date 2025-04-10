@@ -28,7 +28,7 @@ struct {
 #warning chelou un peu
 Test_lidarView::Test_lidarView(){}
 
-int16_t map(int16_t x, int16_t in_min, int16_t in_max, int16_t out_min, int16_t out_max)
+static int16_t map(int16_t x, int16_t in_min, int16_t in_max, int16_t out_min, int16_t out_max)
 {
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
@@ -70,7 +70,7 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 		default:
 			break;
 
-		case 0x200:
+		case 0x600:
 		{
 			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
 
@@ -97,7 +97,7 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 			break;
 		}
 
-		case 0x201:
+		case 0x601:
 		{
 //			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
 //

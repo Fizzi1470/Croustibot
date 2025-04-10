@@ -23,7 +23,7 @@ Choix_strategieViewBase::Choix_strategieViewBase() :
     bouton_retour.setAction(buttonCallback);
     add(bouton_retour);
 
-    texte_mode_competition.setXY(607, 10);
+    texte_mode_competition.setXY(610, 8);
     texte_mode_competition.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     texte_mode_competition.setLinespacing(0);
     texte_mode_competition.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZH0S));
@@ -134,8 +134,8 @@ void Choix_strategieViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         bouton_strat_1.invalidate();
         //fonction_strat_2
         //When bouton_strat_2 clicked call virtual function
-        //Call strategie_2
-        strategie_2();
+        //Call strategie_1
+        strategie_1();
     }
     if (&src == &bouton_retour)
     {
