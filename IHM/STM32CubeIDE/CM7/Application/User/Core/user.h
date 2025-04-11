@@ -10,11 +10,16 @@
 
 #include "main.h"
 
-#define FIFO_SIZE 32
+#define FIFO_SIZE 256
+
+typedef struct  {
+	uint16_t first_read;
+	uint16_t mess_amnt;
+	bool mess_avail;
+} fifo_params_t;
 
 extern T_CAN_trame_rx tab_recep_trames_can[FIFO_SIZE];
 
-int32_t read_fifo();
-
+fifo_params_t read_fifo();
 
 #endif /* APPLICATION_USER_CORE_USER_H_ */

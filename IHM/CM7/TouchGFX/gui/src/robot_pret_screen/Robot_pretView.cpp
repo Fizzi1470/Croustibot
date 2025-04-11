@@ -22,15 +22,16 @@ void Robot_pretView::tearDownScreen()
 
 void Robot_pretView::attente_tirette()
 {
-	int32_t to_read = read_fifo();
+ 	fifo_params_t fifo = read_fifo();
 
-	for(uint16_t fifo = 0; fifo < to_read; fifo++)
+	if(fifo.mess_avail){
+	for(uint16_t i_fifo = 0; i_fifo < fifo.mess_amnt; i_fifo++)
 	{
+		uint16_t read_index = (fifo.first_read + i_fifo) % FIFO_SIZE;
 
-		switch (tab_recep_trames_can[fifo].header.Identifier)
+		switch (tab_recep_trames_can[read_index].header.Identifier)
 		{
-			default:
-				break;
+			default: break;
 
 			case 0x211:
 			{
@@ -43,5 +44,6 @@ void Robot_pretView::attente_tirette()
 				changeToRobot_en_match();
 			}
 		}
+	}
 	}
 }

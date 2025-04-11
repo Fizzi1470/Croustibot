@@ -59,26 +59,25 @@ void Test_lidarView::tearDownScreen()
 
 void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 {
-	int32_t to_read = read_fifo();
+ 	fifo_params_t fifo = read_fifo();
 
-	//if (fifo != -1)
-	for(uint16_t fifo = 0; fifo < to_read; fifo++)
-	{
+	if(fifo.mess_avail){
+	for(uint16_t i_fifo = fifo.first_read; i_fifo < fifo.mess_amnt; i_fifo++){
 
-		switch (tab_recep_trames_can[fifo].header.Identifier)
-		{
-		default:
-			break;
+		uint16_t read_index = i_fifo % FIFO_SIZE;
+
+		switch (tab_recep_trames_can[read_index].header.Identifier){
+
+		default: break;
 
 		case 0x600:
-		{
-			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
+			int16_t pt_i = tab_recep_trames_can[read_index].data[5] << 8 | tab_recep_trames_can[read_index].data[4];
 
-			int16_t pt_x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
-			int16_t pt_y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
+			int16_t pt_x = tab_recep_trames_can[read_index].data[1] << 8 | tab_recep_trames_can[read_index].data[0];
+			int16_t pt_y = tab_recep_trames_can[read_index].data[3] << 8 | tab_recep_trames_can[read_index].data[2];
 
-			points_lidar_bas[i].x = pos_rob_x + pt_x * cos(pos_rob_t) - pt_y * sin(pos_rob_t);
-			points_lidar_bas[i].y = pos_rob_y + pt_y * sin(pos_rob_t) + pt_x * cos(pos_rob_t);
+			points_lidar_bas[pt_i].x = pos_rob_x + pt_x * cos(pos_rob_t) - pt_y * sin(pos_rob_t);
+			points_lidar_bas[pt_i].y = pos_rob_y + pt_y * sin(pos_rob_t) + pt_x * cos(pos_rob_t);
 
 				/*
 
@@ -95,31 +94,27 @@ void Test_lidarView::reception_can_lidars_test_lidar_bas_avant()
 
 
 			break;
-		}
 
-		case 0x601:
-		{
+//		case 0x601:
 //			int16_t i = tab_recep_trames_can[fifo].data[5] << 8 | tab_recep_trames_can[fifo].data[4];
 //
 //			points_lidar_bas[i].x = tab_recep_trames_can[fifo].data[1] << 8 | tab_recep_trames_can[fifo].data[0];
 //			points_lidar_bas[i].y = tab_recep_trames_can[fifo].data[3] << 8 | tab_recep_trames_can[fifo].data[2];
-
-			break;
+//
+//			break;
 		}
-		}
-
+	}
 	}
 	for (uint16_t i = 0; i < 100; i++)
-		{
+	{
 
-			int16_t pt_x_ecran = map(points_lidar_bas[i].x, 0, 8000, 181, 610);
-			int16_t pt_y_ecran = map(points_lidar_bas[i].y, 0, 8000, 31, 437);
+		int16_t pt_x_ecran = map(points_lidar_bas[i].x, 0, 8000, 181, 610);
+		int16_t pt_y_ecran = map(points_lidar_bas[i].y, 0, 8000, 31, 437);
 
-			//points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
-			points[i].setXY(pt_x_ecran, pt_y_ecran);
-			points[i].invalidate();
-		}
-
+		//points[i].setXY(points_lidar_bas[i].x + 400, points_lidar_bas[i].y + 240);
+		points[i].setXY(pt_x_ecran, pt_y_ecran);
+		points[i].invalidate();
+	}
 }
 
 void Test_lidarView::donnees_lidar_bas_avant()
