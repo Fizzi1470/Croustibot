@@ -158,3 +158,11 @@ void Tests_moteursViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
         bouton_stop.invalidate();
     }
 }
+
+void Tests_moteursViewBase::handleTickEvent()
+{
+    //fonction_active_tout_le_tps
+    //When every N tick call virtual function
+    //Call active_tout_le_tps
+    active_tout_le_tps();
+}

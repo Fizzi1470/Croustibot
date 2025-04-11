@@ -66,8 +66,8 @@
             "Name": "texte_menu_principal",
             "X": 640,
             "Y": 10,
-            "Width": 145,
-            "Height": 24,
+            "Width": 150,
+            "Height": 22,
             "TextId": "__SingleUse_G9ZK",
             "TextRotation": "0",
             "Color": {
@@ -1026,8 +1026,8 @@
             "Name": "texte_menu_tests_moteurs",
             "X": 672,
             "Y": 6,
-            "Width": 110,
-            "Height": 48,
+            "Width": 111,
+            "Height": 44,
             "TextId": "__SingleUse_OXSS",
             "TextRotation": "0",
             "Color": {
@@ -1042,8 +1042,8 @@
             "Name": "texte_menu_tests_moteurs_1",
             "X": 382,
             "Y": 346,
-            "Width": 36,
-            "Height": 24,
+            "Width": 37,
+            "Height": 22,
             "TextId": "__SingleUse_KKZB",
             "TextRotation": "0",
             "Color": {
@@ -1229,6 +1229,17 @@
               },
               "ActionComponent": "bouton_stop"
             }
+          },
+          {
+            "InteractionName": "fonction_active_tout_le_tps",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "active_tout_le_tps"
+            }
           }
         ]
       },
@@ -1251,8 +1262,8 @@
             "Name": "texte_menu_tests_lidar_1",
             "X": 672,
             "Y": 6,
-            "Width": 110,
-            "Height": 48,
+            "Width": 111,
+            "Height": 44,
             "TextId": "__SingleUse_WWBO",
             "TextRotation": "0",
             "Color": {

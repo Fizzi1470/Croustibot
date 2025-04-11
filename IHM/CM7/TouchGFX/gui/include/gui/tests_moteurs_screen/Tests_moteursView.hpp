@@ -17,6 +17,7 @@ public:
     void moteurs_tourner_90();
     void moteurs_aller_la_bas();
     virtual void stop();
+    void active_tout_le_tps();
 
 protected:
 };

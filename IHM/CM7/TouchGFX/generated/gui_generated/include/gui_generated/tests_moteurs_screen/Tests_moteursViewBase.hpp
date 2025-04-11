@@ -19,6 +19,7 @@ public:
     Tests_moteursViewBase();
     virtual ~Tests_moteursViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
 
     /*
      * Virtual Action Handlers
@@ -36,6 +37,10 @@ public:
         // Override and implement this function in Tests_moteurs
     }
     virtual void stop()
+    {
+        // Override and implement this function in Tests_moteurs
+    }
+    virtual void active_tout_le_tps()
     {
         // Override and implement this function in Tests_moteurs
     }

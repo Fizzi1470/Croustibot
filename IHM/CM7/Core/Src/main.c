@@ -116,6 +116,7 @@ void moteurs_tourner_90();
 void moteurs_aller_la_bas();
 void moteurs_droite();
 void stop();
+//void active_tout_le_tps();
 void donnees_lidar_bas_avant();
 void donnees_lidar_bas_arriere();
 void donnees_lidar_haut();
