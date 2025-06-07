@@ -19,6 +19,22 @@ public:
     virtual ~HomeViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void asserv_oui()
+    {
+        // Override and implement this function in Home
+    }
+    virtual void asserv_non()
+    {
+        // Override and implement this function in Home
+    }
+    virtual void pos_init()
+    {
+        // Override and implement this function in Home
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -30,6 +46,9 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box fond;
     touchgfx::ButtonWithLabel bouton_strategies;
+    touchgfx::ButtonWithLabel bouton_asserv_oui;
+    touchgfx::ButtonWithLabel bouton_asserv_non;
+    touchgfx::ButtonWithLabel bouton_pos_init;
     touchgfx::ButtonWithLabel bouton_tests;
     touchgfx::TextArea texte_menu_principal;
     touchgfx::ScalableImage image_logo_iut;

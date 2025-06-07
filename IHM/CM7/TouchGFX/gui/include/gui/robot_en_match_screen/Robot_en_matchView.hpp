@@ -11,6 +11,7 @@ public:
     virtual ~Robot_en_matchView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void robot_en_match_tick();
 
 protected:
 };

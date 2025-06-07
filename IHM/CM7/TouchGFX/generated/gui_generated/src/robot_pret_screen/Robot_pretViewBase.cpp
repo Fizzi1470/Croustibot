@@ -29,6 +29,13 @@ Robot_pretViewBase::Robot_pretViewBase() :
     texte_mode_competition_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HJ3M));
     add(texte_mode_competition_1);
 
+    texte_mode_competition_1_1.setXY(188, 171);
+    texte_mode_competition_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    texte_mode_competition_1_1.setLinespacing(0);
+    texte_mode_competition_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_G3AS));
+    texte_mode_competition_1_1.setVisible(false);
+    add(texte_mode_competition_1_1);
+
     bouton_home.setXY(0, 0);
     bouton_home.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_OUTLINE_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_OUTLINE_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_HOME_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
     bouton_home.setIconXY(5, 5);

@@ -9,6 +9,7 @@
 #include <gui/robot_en_match_screen/Robot_en_matchPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 
 class Robot_en_matchViewBase : public touchgfx::View<Robot_en_matchPresenter>
 {
@@ -16,6 +17,15 @@ public:
     Robot_en_matchViewBase();
     virtual ~Robot_en_matchViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void robot_en_match_tick()
+    {
+        // Override and implement this function in Robot_en_match
+    }
 
 protected:
     FrontendApplication& application() {
@@ -28,6 +38,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box fond;
     touchgfx::TextArea texte_mode_competition_1;
+    touchgfx::ScalableImage image_logo_iut;
 
 private:
 

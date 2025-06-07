@@ -44,6 +44,7 @@ protected:
     touchgfx::Box fond;
     touchgfx::TextArea texte_mode_competition;
     touchgfx::TextArea texte_mode_competition_1;
+    touchgfx::TextArea texte_mode_competition_1_1;
     touchgfx::ButtonWithIcon bouton_home;
     touchgfx::ButtonWithIcon bouton_retour;
 

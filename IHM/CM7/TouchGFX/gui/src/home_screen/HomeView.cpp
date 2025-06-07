@@ -19,33 +19,50 @@ void HomeView::tearDownScreen()
     HomeViewBase::tearDownScreen();
 }
 
-void HomeView::pos_depart()
+void HomeView::asserv_oui()
 {
-	HAL_NVIC_SystemReset();
+	T_CAN_trame_tx trame_tx_moteurs = {0};
+
+	trame_tx_moteurs.header.Identifier = 0x90;
+	trame_tx_moteurs.header.IdType = FDCAN_STANDARD_ID;
+	trame_tx_moteurs.header.TxFrameType = FDCAN_DATA_FRAME;
+	trame_tx_moteurs.header.DataLength = 0;
+	trame_tx_moteurs.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+	trame_tx_moteurs.header.BitRateSwitch = FDCAN_BRS_OFF;
+	trame_tx_moteurs.header.FDFormat = FDCAN_CLASSIC_CAN;
+	trame_tx_moteurs.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+	trame_tx_moteurs.header.MessageMarker = 0;
+
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_moteurs.header, trame_tx_moteurs.data);
 }
 
-void HomeView::envoi_trame_can()
+void HomeView::asserv_non()
 {
-	//HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
-	static uint8_t cpt = 0;
-	T_CAN_trame_tx trame_tx;
 
-	trame_tx.header.Identifier = 0x7B0;
-	trame_tx.header.IdType = FDCAN_STANDARD_ID;
-	trame_tx.header.TxFrameType = FDCAN_DATA_FRAME;
-	trame_tx.header.DataLength = 2;
-	trame_tx.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
-	trame_tx.header.BitRateSwitch = FDCAN_BRS_OFF;
-	trame_tx.header.FDFormat = FDCAN_CLASSIC_CAN;
-	trame_tx.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
-	trame_tx.header.MessageMarker = 0;
-
-	trame_tx.data[0] = (uint8_t)(cpt >> 8);
-	trame_tx.data[1] = (uint8_t)cpt;
-
-	cpt++;
-
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx.header, trame_tx.data);
-
-	//NVIC_SystemReset();
 }
+
+//void HomeView::envoi_trame_can()
+//{
+//	//HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//	static uint8_t cpt = 0;
+//	T_CAN_trame_tx trame_tx;
+//
+//	trame_tx.header.Identifier = 0x7B0;
+//	trame_tx.header.IdType = FDCAN_STANDARD_ID;
+//	trame_tx.header.TxFrameType = FDCAN_DATA_FRAME;
+//	trame_tx.header.DataLength = 2;
+//	trame_tx.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+//	trame_tx.header.BitRateSwitch = FDCAN_BRS_OFF;
+//	trame_tx.header.FDFormat = FDCAN_CLASSIC_CAN;
+//	trame_tx.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+//	trame_tx.header.MessageMarker = 0;
+//
+//	trame_tx.data[0] = (uint8_t)(cpt >> 8);
+//	trame_tx.data[1] = (uint8_t)cpt;
+//
+//	cpt++;
+//
+//	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx.header, trame_tx.data);
+//
+//	//NVIC_SystemReset();
+//}

@@ -4,6 +4,7 @@
 #include <gui_generated/robot_en_match_screen/Robot_en_matchViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <images/BitmapDatabase.hpp>
 
 Robot_en_matchViewBase::Robot_en_matchViewBase()
 {
@@ -15,11 +16,16 @@ Robot_en_matchViewBase::Robot_en_matchViewBase()
     fond.setColor(touchgfx::Color::getColorFromRGB(99, 0, 59));
     add(fond);
 
-    texte_mode_competition_1.setXY(129, 186);
+    texte_mode_competition_1.setXY(6, 220);
     texte_mode_competition_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     texte_mode_competition_1.setLinespacing(0);
     texte_mode_competition_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_G58B));
     add(texte_mode_competition_1);
+
+    image_logo_iut.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_IUT_ID));
+    image_logo_iut.setPosition(0, 0, 800, 128);
+    image_logo_iut.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(image_logo_iut);
 }
 
 Robot_en_matchViewBase::~Robot_en_matchViewBase()
@@ -30,4 +36,12 @@ Robot_en_matchViewBase::~Robot_en_matchViewBase()
 void Robot_en_matchViewBase::setupScreen()
 {
 
+}
+
+void Robot_en_matchViewBase::handleTickEvent()
+{
+    //fonction_robot_en_match_tick
+    //When every N tick call virtual function
+    //Call robot_en_match_tick
+    robot_en_match_tick();
 }

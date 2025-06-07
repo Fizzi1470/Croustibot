@@ -6,11 +6,23 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_P4G3" Alignment="Center" TypographyId="good_typo">
+        <Translation Language="GB">Asserv NON</Translation>
+      </Text>
+      <Text Id="__SingleUse_YIIS" Alignment="Center" TypographyId="good_typo">
+        <Translation Language="GB">Asserv OUI</Translation>
+      </Text>
+      <Text Id="__SingleUse_NDZF" Alignment="Center" TypographyId="good_typo">
+        <Translation Language="GB">Position initiale</Translation>
+      </Text>
+      <Text Id="__SingleUse_G3AS" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Le robot est prêt&#10;&#10;Enlever la tirette</Translation>
+      </Text>
       <Text Id="__SingleUse_KKZB" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">odo</Translation>
       </Text>
-      <Text Id="__SingleUse_G58B" Alignment="Center" TypographyId="good_typo">
-        <Translation Language="GB">BON COURAGE CROUSTIBOT !!!&#10;&#10;(qui peut nous bottre ??)</Translation>
+      <Text Id="__SingleUse_G58B" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">BON COURAGE CROUSTIBOT !!!&#10;&#10;(qui peut nous bottre ??)&#10;</Translation>
       </Text>
       <Text Id="__SingleUse_5Z0P" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">STOP</Translation>
@@ -39,7 +51,7 @@
       <Text Id="__SingleUse_8TIH" Alignment="Center" TypographyId="good_typo">
         <Translation Language="GB">Moteurs</Translation>
       </Text>
-      <Text Id="__SingleUse_P977" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_P977" Alignment="Left" TypographyId="good_typo">
         <Translation Language="GB">Sélectionner le test à réaliser</Translation>
       </Text>
       <Text Id="__SingleUse_WWBO" Alignment="Center" TypographyId="Default">

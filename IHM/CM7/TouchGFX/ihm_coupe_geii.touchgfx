@@ -18,8 +18,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "bouton_strategies",
-            "X": 244,
-            "Y": 180,
+            "X": 250,
+            "Y": 145,
             "Width": 312,
             "Height": 60,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
@@ -40,9 +40,80 @@
           },
           {
             "Type": "ButtonWithLabel",
+            "Name": "bouton_asserv_oui",
+            "X": 61,
+            "Y": 157,
+            "Width": 312,
+            "Height": 60,
+            "Visible": false,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
+            "TextId": "__SingleUse_YIIS",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_60\\medium_round_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "bouton_asserv_non",
+            "X": 431,
+            "Y": 155,
+            "Width": 312,
+            "Height": 60,
+            "Visible": false,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
+            "TextId": "__SingleUse_P4G3",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_60\\medium_round_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "bouton_pos_init",
+            "X": 250,
+            "Y": 337,
+            "Width": 312,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
+            "TextId": "__SingleUse_NDZF",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_60\\medium_round_disabled.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
             "Name": "bouton_tests",
-            "X": 244,
-            "Y": 301,
+            "X": 250,
+            "Y": 240,
             "Width": 312,
             "Height": 60,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_disabled.png",
@@ -109,6 +180,39 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Choix_tests"
+            }
+          },
+          {
+            "InteractionName": "fonction_asserv_oui",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_asserv_oui"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "asserv_oui"
+            }
+          },
+          {
+            "InteractionName": "fonction_asserv_non",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_asserv_non"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "asserv_non"
+            }
+          },
+          {
+            "InteractionName": "fonction_position_initiale",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_pos_init"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "pos_init"
             }
           }
         ]
@@ -252,7 +356,6 @@
             "Y": 420,
             "Width": 228,
             "Height": 60,
-            "Visible": false,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_small_round_disabled.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_small_round_disabled.png",
             "TextId": "__SingleUse_6K80",
@@ -487,6 +590,23 @@
             "AutoSize": true
           },
           {
+            "Type": "TextArea",
+            "Name": "texte_mode_competition_1_1",
+            "X": 188,
+            "Y": 171,
+            "Width": 424,
+            "Height": 162,
+            "Visible": false,
+            "TextId": "__SingleUse_G3AS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
             "Type": "ButtonWithIcon",
             "Name": "bouton_home",
             "Width": 60,
@@ -603,10 +723,10 @@
           {
             "Type": "TextArea",
             "Name": "texte_mode_competition_1",
-            "X": 129,
-            "Y": 186,
-            "Width": 524,
-            "Height": 108,
+            "X": 6,
+            "Y": 220,
+            "Width": 789,
+            "Height": 216,
             "TextId": "__SingleUse_G58B",
             "TextRotation": "0",
             "Color": {
@@ -615,9 +735,29 @@
               "Blue": 255
             },
             "AutoSize": true
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "image_logo_iut",
+            "Width": 800,
+            "Height": 128,
+            "Filename": "logo_iut.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "fonction_robot_en_match_tick",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "robot_en_match_tick"
+            }
+          }
+        ]
       },
       {
         "Name": "Choix_tests",
@@ -652,10 +792,10 @@
           {
             "Type": "TextArea",
             "Name": "texte_choix_tests",
-            "X": 253,
-            "Y": 48,
-            "Width": 294,
-            "Height": 24,
+            "X": 153,
+            "Y": 49,
+            "Width": 495,
+            "Height": 36,
             "TextId": "__SingleUse_P977",
             "TextRotation": "0",
             "Color": {
@@ -670,8 +810,8 @@
             "Name": "texte_menu_tests",
             "X": 672,
             "Y": 6,
-            "Width": 110,
-            "Height": 24,
+            "Width": 111,
+            "Height": 22,
             "TextId": "__SingleUse_ZJLH",
             "TextRotation": "0",
             "Color": {
@@ -766,9 +906,9 @@
           {
             "Type": "ScalableImage",
             "Name": "image_lidar_bas",
-            "X": 330,
+            "X": 392,
             "Y": 134,
-            "Width": 230,
+            "Width": 168,
             "Height": 156,
             "Filename": "lidar1.png",
             "ScalingAlgorithm": "Nearest-neighbor"
@@ -776,9 +916,9 @@
           {
             "Type": "ScalableImage",
             "Name": "image_lidar_haut",
-            "X": 569,
-            "Y": 134,
-            "Width": 187,
+            "X": 568,
+            "Y": 136,
+            "Width": 168,
             "Height": 156,
             "Filename": "lidar2.png",
             "ScalingAlgorithm": "Nearest-neighbor"
@@ -808,7 +948,7 @@
           {
             "Type": "Button",
             "Name": "button1_1",
-            "X": 357,
+            "X": 388,
             "Y": 127,
             "Width": 176,
             "Height": 175,
@@ -820,8 +960,8 @@
           {
             "Type": "Button",
             "Name": "button1_1_1",
-            "X": 574,
-            "Y": 127,
+            "X": 564,
+            "Y": 125,
             "Width": 176,
             "Height": 175,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_large_fill_pressed.png",
@@ -902,6 +1042,18 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Test_lidar"
             }
+          },
+          {
+            "InteractionName": "vers_test_lidar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1_1_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Test_lidar"
+            }
           }
         ]
       },
@@ -930,7 +1082,7 @@
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_aller_a_cet_endroit",
                 "X": 21,
-                "Y": 49,
+                "Y": 98,
                 "Width": 480,
                 "Height": 60,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_disabled.png",
@@ -1001,7 +1153,7 @@
                 "Type": "ButtonWithLabel",
                 "Name": "bouton_stop",
                 "X": 21,
-                "Y": 159,
+                "Y": 210,
                 "Width": 480,
                 "Height": 60,
                 "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_large_round_action.png",
@@ -1044,6 +1196,7 @@
             "Y": 346,
             "Width": 37,
             "Height": 22,
+            "Visible": false,
             "TextId": "__SingleUse_KKZB",
             "TextRotation": "0",
             "Color": {

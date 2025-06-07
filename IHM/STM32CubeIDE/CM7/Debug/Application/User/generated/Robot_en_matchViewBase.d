@@ -49,8 +49,11 @@ Application/User/generated/Robot_en_matchViewBase.o: \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
+ ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
- ../../CM7/../../CM7/TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
+ ../../CM7/../../CM7/TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ ../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/robot_en_match_screen/Robot_en_matchViewBase.hpp:
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
@@ -100,5 +103,8 @@ Application/User/generated/Robot_en_matchViewBase.o: \
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
+../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 ../../CM7/../../CM7/TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
+../../CM7/../../CM7/TouchGFX/generated/images/include/images/BitmapDatabase.hpp:

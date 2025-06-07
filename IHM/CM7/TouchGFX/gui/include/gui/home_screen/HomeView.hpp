@@ -12,9 +12,11 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    virtual void pos_depart();
-    virtual void envoi_trame_can();
+//    virtual void pos_depart();
+//    virtual void envoi_trame_can();
     //virtual void can_periodique();
+    virtual void asserv_non();
+    virtual void asserv_oui();
 
 protected:
 };

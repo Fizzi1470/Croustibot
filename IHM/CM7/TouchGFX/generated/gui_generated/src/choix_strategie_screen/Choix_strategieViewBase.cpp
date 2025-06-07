@@ -65,7 +65,6 @@ Choix_strategieViewBase::Choix_strategieViewBase() :
     bouton_valider.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6K80));
     bouton_valider.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     bouton_valider.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    bouton_valider.setVisible(false);
     bouton_valider.setAction(buttonCallback);
     add(bouton_valider);
 }

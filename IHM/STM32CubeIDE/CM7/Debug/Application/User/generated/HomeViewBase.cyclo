@@ -3,13 +3,16 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/home_screen/HomeViewBase.hpp:25:18:virtual void HomeViewBase::asserv_oui()	1
+../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/home_screen/HomeViewBase.hpp:29:18:virtual void HomeViewBase::asserv_non()	1
+../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/home_screen/HomeViewBase.hpp:33:18:virtual void HomeViewBase::pos_init()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<HomeViewBase, const touchgfx::AbstractButton&>::~Callback()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:48:1:HomeViewBase::~HomeViewBase()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:53:6:virtual void HomeViewBase::setupScreen()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:74:1:HomeViewBase::~HomeViewBase()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:79:6:virtual void HomeViewBase::setupScreen()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = HomeViewBase; T1 = const touchgfx::AbstractButton&]	2
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = HomeViewBase; T1 = const touchgfx::AbstractButton&]	3
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<HomeViewBase, const touchgfx::AbstractButton&>::~Callback()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:48:1:virtual HomeViewBase::~HomeViewBase()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:58:6:void HomeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	3
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:9:1:HomeViewBase::HomeViewBase()	3
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:74:1:virtual HomeViewBase::~HomeViewBase()	1
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:84:6:void HomeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	6
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/home_screen/HomeViewBase.cpp:9:1:HomeViewBase::HomeViewBase()	6

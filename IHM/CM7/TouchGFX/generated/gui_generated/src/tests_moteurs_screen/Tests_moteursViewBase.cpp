@@ -18,7 +18,7 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     add(fond);
 
     bloc_possibilites.setPosition(139, 60, 523, 360);
-    bouton_aller_a_cet_endroit.setXY(21, 49);
+    bouton_aller_a_cet_endroit.setXY(21, 98);
     bouton_aller_a_cet_endroit.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_DISABLED_ID));
     bouton_aller_a_cet_endroit.setLabelText(touchgfx::TypedText(T___SINGLEUSE_Y14O));
     bouton_aller_a_cet_endroit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -44,7 +44,7 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     bouton_avancer.setAction(buttonCallback);
     bloc_possibilites.add(bouton_avancer);
 
-    bouton_stop.setXY(21, 159);
+    bouton_stop.setXY(21, 210);
     bouton_stop.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_LARGE_ROUND_ACTION_ID));
     bouton_stop.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5Z0P));
     bouton_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -64,6 +64,7 @@ Tests_moteursViewBase::Tests_moteursViewBase() :
     texte_menu_tests_moteurs_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     texte_menu_tests_moteurs_1.setLinespacing(0);
     texte_menu_tests_moteurs_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KKZB));
+    texte_menu_tests_moteurs_1.setVisible(false);
     add(texte_menu_tests_moteurs_1);
 
     bouton_retour.setXY(0, 420);

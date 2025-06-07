@@ -23,7 +23,7 @@ Choix_testsViewBase::Choix_testsViewBase() :
     bouton_retour.setAction(buttonCallback);
     add(bouton_retour);
 
-    texte_choix_tests.setXY(253, 48);
+    texte_choix_tests.setXY(153, 49);
     texte_choix_tests.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     texte_choix_tests.setLinespacing(0);
     texte_choix_tests.setTypedText(touchgfx::TypedText(T___SINGLEUSE_P977));
@@ -66,12 +66,12 @@ Choix_testsViewBase::Choix_testsViewBase() :
     add(image_moteur);
 
     image_lidar_bas.setBitmap(touchgfx::Bitmap(BITMAP_LIDAR1_ID));
-    image_lidar_bas.setPosition(330, 134, 230, 156);
+    image_lidar_bas.setPosition(392, 134, 168, 156);
     image_lidar_bas.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(image_lidar_bas);
 
     image_lidar_haut.setBitmap(touchgfx::Bitmap(BITMAP_LIDAR2_ID));
-    image_lidar_haut.setPosition(569, 134, 187, 156);
+    image_lidar_haut.setPosition(568, 136, 168, 156);
     image_lidar_haut.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(image_lidar_haut);
 
@@ -84,15 +84,16 @@ Choix_testsViewBase::Choix_testsViewBase() :
     button1.setAction(buttonCallback);
     add(button1);
 
-    button1_1.setXY(357, 127);
+    button1_1.setXY(388, 127);
     button1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_PRESSED_ID));
     button1_1.setAlpha(0);
     button1_1.setAction(buttonCallback);
     add(button1_1);
 
-    button1_1_1.setXY(574, 127);
+    button1_1_1.setXY(564, 125);
     button1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_LARGE_FILL_PRESSED_ID));
     button1_1_1.setAlpha(0);
+    button1_1_1.setAction(buttonCallback);
     add(button1_1_1);
 }
 
@@ -147,6 +148,13 @@ void Choix_testsViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
     {
         //vers_test_lidar_1_1
         //When button1_1 clicked change screen to Test_lidar
+        //Go to Test_lidar with no screen transition
+        application().gotoTest_lidarScreenNoTransition();
+    }
+    if (&src == &button1_1_1)
+    {
+        //vers_test_lidar
+        //When button1_1_1 clicked change screen to Test_lidar
         //Go to Test_lidar with no screen transition
         application().gotoTest_lidarScreenNoTransition();
     }

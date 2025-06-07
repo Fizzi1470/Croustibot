@@ -108,6 +108,11 @@ void pos_depart();
 // fonction envoi d'une trame CAN
 void envoi_trame_can();
 
+// fonctions asserv
+void asserv_oui();
+void asserv_non();
+void robot_en_match_tick();
+
 //void can_periodique();
 
 // fonctions tests
