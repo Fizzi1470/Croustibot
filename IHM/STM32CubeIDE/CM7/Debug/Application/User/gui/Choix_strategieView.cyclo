@@ -4,11 +4,6 @@
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:18:6:virtual void Choix_strategieView::tearDownScreen()	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:23:6:virtual void Choix_strategieView::strategie_1()	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:28:6:virtual void Choix_strategieView::strategie_2()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:33:6:virtual void Choix_strategieView::strategie_3()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:38:6:virtual void Choix_strategieView::strategie_4()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:43:6:virtual void Choix_strategieView::strategie_5()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:48:6:virtual void Choix_strategieView::strategie_6()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:53:6:virtual void Choix_strategieView::valider_strat()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategieView.hpp:11:13:Choix_strategieView::~Choix_strategieView()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategieView.hpp:11:13:virtual Choix_strategieView::~Choix_strategieView()	1
 C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategieView.cpp:8:1:Choix_strategieView::Choix_strategieView()	1

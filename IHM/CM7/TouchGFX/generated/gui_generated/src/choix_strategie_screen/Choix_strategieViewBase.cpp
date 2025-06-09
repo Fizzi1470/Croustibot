@@ -60,13 +60,13 @@ Choix_strategieViewBase::Choix_strategieViewBase() :
     bouton_home.setAction(buttonCallback);
     add(bouton_home);
 
-    bouton_valider.setXY(572, 420);
-    bouton_valider.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_DISABLED_ID));
-    bouton_valider.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6K80));
-    bouton_valider.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    bouton_valider.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    bouton_valider.setAction(buttonCallback);
-    add(bouton_valider);
+    bouton_valider_1.setXY(572, 420);
+    bouton_valider_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_DISABLED_ID));
+    bouton_valider_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6K80));
+    bouton_valider_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bouton_valider_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bouton_valider_1.setAction(buttonCallback);
+    add(bouton_valider_1);
 }
 
 Choix_strategieViewBase::~Choix_strategieViewBase()
@@ -97,10 +97,10 @@ void Choix_strategieViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         bouton_strat_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
         bouton_strat_1.invalidate();
         //affichage_bouton_valider_1
-        //When bouton_strat_1 clicked show bouton_valider
-        //Show bouton_valider
-        bouton_valider.setVisible(true);
-        bouton_valider.invalidate();
+        //When bouton_strat_1 clicked show bouton_valider_1
+        //Show bouton_valider_1
+        bouton_valider_1.setVisible(true);
+        bouton_valider_1.invalidate();
         //changement_couleur_1_2
         //When bouton_strat_1 clicked change label colors of bouton_strat_2
         //Set label colors on bouton_strat_2. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
@@ -121,10 +121,10 @@ void Choix_strategieViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         bouton_strat_2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
         bouton_strat_2.invalidate();
         //affichage_bouton_valider_2
-        //When bouton_strat_2 clicked show bouton_valider
-        //Show bouton_valider
-        bouton_valider.setVisible(true);
-        bouton_valider.invalidate();
+        //When bouton_strat_2 clicked show bouton_strat_2
+        //Show bouton_strat_2
+        bouton_strat_2.setVisible(true);
+        bouton_strat_2.invalidate();
         //changement_couleur_2_1
         //When bouton_strat_2 clicked change label colors of bouton_strat_1
         //Set label colors on bouton_strat_1. Released color - R:255, G:255, B:255, Pressed color - R:255, G:255, B:255
@@ -143,15 +143,11 @@ void Choix_strategieViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Go to Home with no screen transition
         application().gotoHomeScreenNoTransition();
     }
-    if (&src == &bouton_valider)
+    if (&src == &bouton_valider_1)
     {
         //vers_robot_pret
-        //When bouton_valider clicked change screen to Robot_pret
+        //When bouton_valider_1 clicked change screen to Robot_pret
         //Go to Robot_pret with no screen transition
-        application().gotoRobot_pretScreenNoTransition();
-        //fonction_valider_strat
-        //When bouton_valider clicked call virtual function
-        //Call valider_strat
-        valider_strat();
+        application().gotoRobot_pretScreenNoTransition();
     }
 }

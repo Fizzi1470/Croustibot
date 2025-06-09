@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-#define FIFO_SIZE 256
+#define FIFO_SIZE 1024
 
 typedef struct  {
 	uint16_t first_read;

@@ -14,12 +14,8 @@ public:
 
     virtual void strategie_1();
     virtual void strategie_2();
-    virtual void strategie_3();
-    virtual void strategie_4();
-    virtual void strategie_5();
-    virtual void strategie_6();
 
-    virtual void valider_strat();
+   // virtual void valider_strat();
 
 protected:
 };

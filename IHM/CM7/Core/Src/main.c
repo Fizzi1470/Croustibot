@@ -129,13 +129,8 @@ void reception_can_lidars_test_lidar_bas_avant();
 
 // fonctions strategies
 int strat = 0;
-void valider_strat();
 void strategie_1();
 void strategie_2();
-void strategie_3();
-void strategie_4();
-void strategie_5();
-void strategie_6();
 
 // fonction lancement du robot
 void attente_tirette();

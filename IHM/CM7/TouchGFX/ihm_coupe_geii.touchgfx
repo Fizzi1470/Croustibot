@@ -351,7 +351,7 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "bouton_valider",
+            "Name": "bouton_valider_1",
             "X": 572,
             "Y": 420,
             "Width": 228,
@@ -412,7 +412,7 @@
             },
             "Action": {
               "Type": "ActionShow",
-              "ActionComponent": "bouton_valider"
+              "ActionComponent": "bouton_valider_1"
             }
           },
           {
@@ -439,7 +439,7 @@
             },
             "Action": {
               "Type": "ActionShow",
-              "ActionComponent": "bouton_valider"
+              "ActionComponent": "bouton_strat_2"
             }
           },
           {
@@ -500,7 +500,7 @@
             "InteractionName": "vers_robot_pret",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_valider"
+              "TriggerComponent": "bouton_valider_1"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -517,17 +517,6 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "strategie_1"
-            }
-          },
-          {
-            "InteractionName": "fonction_valider_strat",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "bouton_valider"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "valider_strat"
             }
           },
           {

@@ -27,10 +27,6 @@ public:
     {
         // Override and implement this function in Choix_strategie
     }
-    virtual void valider_strat()
-    {
-        // Override and implement this function in Choix_strategie
-    }
 
 protected:
     FrontendApplication& application() {
@@ -49,7 +45,7 @@ protected:
     touchgfx::ButtonWithLabel bouton_strat_2;
     touchgfx::ButtonWithLabel bouton_strat_1;
     touchgfx::ButtonWithIcon bouton_home;
-    touchgfx::ButtonWithLabel bouton_valider;
+    touchgfx::ButtonWithLabel bouton_valider_1;
 
 private:
 
