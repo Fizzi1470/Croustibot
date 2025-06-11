@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jccolor.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jccolor.c \
+ E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jccolor.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jcapimin.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcapimin.c \
+ E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcapimin.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

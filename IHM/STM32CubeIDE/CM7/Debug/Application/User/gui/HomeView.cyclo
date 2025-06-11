@@ -2,10 +2,10 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/home_screen/HomeViewBase.hpp:33:18:virtual void HomeViewBase::pos_init()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:17:6:virtual void HomeView::tearDownScreen()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:39:6:virtual void HomeView::asserv_non()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:22:6:virtual void HomeView::asserv_oui()	1
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:17:6:virtual void HomeView::tearDownScreen()	1
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:39:6:virtual void HomeView::asserv_non()	1
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:22:6:virtual void HomeView::asserv_oui()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/home_screen/HomeView.hpp:11:13:HomeView::~HomeView()	1
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/home_screen/HomeView.hpp:11:13:virtual HomeView::~HomeView()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:7:1:HomeView::HomeView()	1
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:12:6:virtual void HomeView::setupScreen()	1
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:7:1:HomeView::HomeView()	1
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/home_screen/HomeView.cpp:12:6:virtual void HomeView::setupScreen()	1

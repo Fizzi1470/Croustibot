@@ -1,5 +1,5 @@
 Application/User/generated/ApplicationFontProvider.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp \
+ E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp \
  ../../CM7/../../CM7/TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/FontManager.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

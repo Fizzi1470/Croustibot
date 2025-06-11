@@ -1,5 +1,5 @@
 Application/User/gui/Choix_strategiePresenter.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategiePresenter.cpp \
+ E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/choix_strategie_screen/Choix_strategiePresenter.cpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/choix_strategie_screen/Choix_strategieView.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

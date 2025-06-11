@@ -1,6 +1,6 @@
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:68:43:const touchgfx::TypedText::TypedTextData* TypedTextDatabase::getInstance(touchgfx::LanguageId)	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:73:10:uint16_t TypedTextDatabase::getInstanceSize()	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:78:24:const touchgfx::Font** TypedTextDatabase::getFonts()	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:83:23:const touchgfx::Font* TypedTextDatabase::setFont(touchgfx::FontId, const touchgfx::Font*)	0	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:90:6:void TypedTextDatabase::resetFont(touchgfx::FontId)	8	static
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:114:1:cpp)	8	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:68:43:const touchgfx::TypedText::TypedTextData* TypedTextDatabase::getInstance(touchgfx::LanguageId)	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:73:10:uint16_t TypedTextDatabase::getInstanceSize()	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:78:24:const touchgfx::Font** TypedTextDatabase::getFonts()	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:83:23:const touchgfx::Font* TypedTextDatabase::setFont(touchgfx::FontId, const touchgfx::Font*)	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:90:6:void TypedTextDatabase::resetFont(touchgfx::FontId)	8	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:114:1:cpp)	8	static
