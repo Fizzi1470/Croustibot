@@ -10,13 +10,24 @@ volatile void* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
 //volatile ringbuff_t* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
 #include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
 
-
 void coms_read(void (*callback)(buff_point_t* addr)){
     size_t len;
     void* addr;
 
-	while ((len = ringbuff_get_linear_block_read_length((ringbuff_t*)rb_cm4_to_cm7)) > 0) {
+	while ((len = ringbuff_get_linear_block_read_length((ringbuff_t*)rb_cm4_to_cm7)) >= sizeof(buff_point_t)) {
 		addr = ringbuff_get_linear_block_read_address((ringbuff_t*)rb_cm4_to_cm7);
+
+		RINGBUFF_VOLATILE ringbuff_t* buff = (ringbuff_t*)rb_cm4_to_cm7;
+/*
+		uint8_t size = sizeof(buff_point_t);
+		uint8_t buffer[size];
+		for(uint8_t i = 0; i < size; i ++){
+			buffer[size - i -1] = *((uint8_t*)addr + i);
+		}
+*/
+		if(buff->r > 1020) {
+			;
+		}
 
 		/* Transmit data */
 		if(callback != NULL) callback((buff_point_t*) addr);

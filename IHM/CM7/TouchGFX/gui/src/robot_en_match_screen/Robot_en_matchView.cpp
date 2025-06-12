@@ -168,11 +168,13 @@ uint32_t received = 0;
 uint32_t seen = 0;
 
 
-buff_point_t pts[100];
+#define RET_MAX 50
+buff_point_t pts[RET_MAX];
 uint16_t ret_index = 0;
 void retreive(buff_point_t* pt){
 	pts[ret_index] = *pt;
 	ret_index++;
+	if(ret_index >= RET_MAX) ret_index = 0;
 }
 
 void Robot_en_matchView::robot_en_match_tick() {
@@ -276,7 +278,6 @@ void Robot_en_matchView::robot_en_match_tick() {
 		}
 	}
 
-	ret_index = 0;
 	coms_read(retreive);
 
 	//aller jusqu'à la diagonale puis stop puis angle inverse pour aller jusqu'à l'arrivée
