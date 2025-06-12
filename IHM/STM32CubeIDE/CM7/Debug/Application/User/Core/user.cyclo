@@ -1,2 +1,0 @@
-../Application/User/Core/user.cpp:11:6:void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef*, uint32_t)	1
-../Application/User/Core/user.cpp:23:15:fifo_params_t read_fifo()	6

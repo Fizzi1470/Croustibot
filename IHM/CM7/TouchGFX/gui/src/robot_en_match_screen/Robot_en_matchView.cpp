@@ -29,7 +29,24 @@ int16_t x_rob = 0, y_rob = 0;
 float t_rob = 0;
 int16_t x_dest = 0, y_dest = 0;
 
-bool detect_obstacle = 0;
+bool avoid = false;
+
+union {
+	struct {
+		int16_t x, y;
+	} xy;
+	struct {
+		float angle;
+		float distance;
+	} rd;
+} waypoints[] = {
+	{.rd = {-30, 10000}},
+	{.xy = {ARRIVEE_X, ARRIVEE_Y}},
+};
+
+uint16_t move = 0;
+
+bool diago = false;
 
 void robot_stop(){
 
@@ -89,6 +106,16 @@ void robot_resume(){
 }
 
 
+void next_move(){
+	if(waypoints[move].rd.angle == 0 && waypoints[move].rd.distance == 0) {
+		robot_goto(waypoints[move].xy.x, waypoints[move].xy.y);
+	} else {
+		robot_moveby(waypoints[move].rd.distance, waypoints[move].rd.angle);
+	}
+
+	if(move < sizeof(waypoints) / sizeof(waypoints[0])) move++;
+}
+
 
 Robot_en_matchView::Robot_en_matchView() {
 
@@ -98,7 +125,8 @@ void Robot_en_matchView::setupScreen() {
 	Robot_en_matchViewBase::setupScreen();
 
 	if (strat == 1) {
-		robot_moveby(10000, -45);
+		next_move();
+		robot_moveby(10000, -30);
 	}
 }
 
@@ -130,15 +158,16 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 			case 0x05 : // stop (envoyé par les lidars)
 				//robot_stop(); NON ! cette trame est déjà envoyée par les lidars
+				avoid = true;
 				break;
 
 			case 0x06 : // reprise (envoyé par les lidars)
+				avoid = false;
 				robot_resume();
 				break;
 
 			case 0x10 : // fin de mouvement
-				robot_goto(ARRIVEE_X, ARRIVEE_Y);
-
+				if(!avoid) next_move();
 				break;
 
 			case 0x150: // telemetrie
@@ -181,8 +210,10 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 	//aller jusqu'à la diagonale puis stop puis angle inverse pour aller jusqu'à l'arrivée
 	if (strat == 1) {
-		if ((x_rob + y_rob) > 8000) {
+		if ((x_rob + y_rob) > 8000 && diago == false) {
 			robot_stop();
+			next_move();
+			diago = true;
 		}
 	}
 }
