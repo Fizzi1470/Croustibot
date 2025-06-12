@@ -1,5 +1,5 @@
 Application/User/generated/Choix_strategieViewBase.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp \
+ /Shared/Github/Croustibot/IHM/CM7/TouchGFX/generated/gui_generated/src/choix_strategie_screen/Choix_strategieViewBase.cpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/choix_strategie_screen/Choix_strategieViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

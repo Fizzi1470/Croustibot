@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jcmaster.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcmaster.c \
+ /Shared/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcmaster.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

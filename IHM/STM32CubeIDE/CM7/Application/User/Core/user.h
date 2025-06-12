@@ -10,6 +10,10 @@
 
 #include "main.h"
 
+typedef struct {
+	float dist, angle;
+} buff_point_t;
+
 #define FIFO_SIZE 1024
 
 typedef struct  {
@@ -21,5 +25,7 @@ typedef struct  {
 extern T_CAN_trame_rx tab_recep_trames_can[FIFO_SIZE];
 
 fifo_params_t read_fifo();
+
+void coms_read(void (*callback)(buff_point_t* addr));
 
 #endif /* APPLICATION_USER_CORE_USER_H_ */

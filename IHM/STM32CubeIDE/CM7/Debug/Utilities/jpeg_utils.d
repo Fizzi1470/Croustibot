@@ -1,6 +1,6 @@
 Utilities/jpeg_utils.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Utilities/JPEG/jpeg_utils.c \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Utilities/JPEG/jpeg_utils.h \
+ /Shared/Github/Croustibot/IHM/Utilities/JPEG/jpeg_utils.c \
+ /Shared/Github/Croustibot/IHM/Utilities/JPEG/jpeg_utils.h \
  ../../../CM7/Core/Inc/jpeg_utils_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h \
@@ -45,7 +45,7 @@ Utilities/jpeg_utils.o: \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
-C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Utilities/JPEG/jpeg_utils.h:
+/Shared/Github/Croustibot/IHM/Utilities/JPEG/jpeg_utils.h:
 ../../../CM7/Core/Inc/jpeg_utils_conf.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h:

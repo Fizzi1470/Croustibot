@@ -24,6 +24,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "../../../../../STM32CubeIDE/CM7/Application/User/Core/ringbuff.h"
+#include "../../../../../STM32CubeIDE/CM7/Application/User/Core/common.h"
+volatile void* rb_cm4_to_cm7_main = (void *)BUFF_CM4_TO_CM7_ADDR;
+volatile void* rb_cm7_to_cm4_main = (void *)BUFF_CM7_TO_CM4_ADDR;
+//volatile ringbuff_t* rb_cm4_to_cm7 = (void *)BUFF_CM4_TO_CM7_ADDR;
+//volatile ringbuff_t* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
 
 /* USER CODE END Includes */
 
@@ -224,6 +230,10 @@ Error_Handler();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
+
+
+	ringbuff_init((ringbuff_t*)rb_cm4_to_cm7_main, (void *)BUFFDATA_CM7_TO_CM4_ADDR, BUFFDATA_CM7_TO_CM4_LEN);
+	ringbuff_init((ringbuff_t*)rb_cm7_to_cm4_main, (void *)BUFFDATA_CM4_TO_CM7_ADDR, BUFFDATA_CM4_TO_CM7_LEN);
 
   HAL_FDCAN_Start(&hfdcan1);
   HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, FDCAN_RX_FIFO0);

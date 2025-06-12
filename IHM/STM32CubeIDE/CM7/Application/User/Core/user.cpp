@@ -2,6 +2,30 @@
 
 #include "main.h"
 
+#include "common.h"
+#include "ringbuff.h"
+volatile void* rb_cm4_to_cm7 = (void *)BUFF_CM4_TO_CM7_ADDR;
+volatile void* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
+//volatile ringbuff_t* rb_cm4_to_cm7 = (void *)BUFF_CM4_TO_CM7_ADDR;
+//volatile ringbuff_t* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
+#include "../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h"
+
+
+void coms_read(void (*callback)(buff_point_t* addr)){
+    size_t len;
+    void* addr;
+
+	while ((len = ringbuff_get_linear_block_read_length((ringbuff_t*)rb_cm4_to_cm7)) > 0) {
+		addr = ringbuff_get_linear_block_read_address((ringbuff_t*)rb_cm4_to_cm7);
+
+		/* Transmit data */
+		if(callback != NULL) callback((buff_point_t*) addr);
+
+		/* Mark buffer as read */
+		ringbuff_skip((ringbuff_t*)rb_cm4_to_cm7, sizeof(buff_point_t));
+	}
+}
+
 
 int32_t index_lecture = 0;
 int32_t index_ecriture = 0;

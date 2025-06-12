@@ -55,7 +55,9 @@ Application/User/Core/user.o: ../Application/User/Core/user.cpp \
  ../../../Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_errno.h \
  ../../../Drivers/BSP/STM32H747I-Discovery/../Components/otm8009a/otm8009a.h \
  ../../../Drivers/BSP/STM32H747I-Discovery/../Components/otm8009a/otm8009a_reg.h \
- ../../../Drivers/CMSIS/Include/cmsis_compiler.h
+ ../../../Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../Application/User/Core/common.h ../Application/User/Core/ringbuff.h \
+ ../Application/User/Core/../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h
 ../Application/User/Core/../Core/user.h:
 ../../../CM7/Core/Inc/main.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -114,3 +116,6 @@ Application/User/Core/user.o: ../Application/User/Core/user.cpp \
 ../../../Drivers/BSP/STM32H747I-Discovery/../Components/otm8009a/otm8009a.h:
 ../../../Drivers/BSP/STM32H747I-Discovery/../Components/otm8009a/otm8009a_reg.h:
 ../../../Drivers/CMSIS/Include/cmsis_compiler.h:
+../Application/User/Core/common.h:
+../Application/User/Core/ringbuff.h:
+../Application/User/Core/../../../../../STM32CubeIDE/CM7/Application/User/Core/user.h:

@@ -1,5 +1,5 @@
 Application/User/Core/main.o: \
- C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c \
+ /Shared/Github/Croustibot/IHM/CM7/Core/Src/main.c \
  ../../../CM7/Core/Inc/main.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h \
@@ -68,7 +68,10 @@ Application/User/Core/main.o: \
  ../../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../../../CM7/TouchGFX/App/app_touchgfx.h
+ ../../../CM7/TouchGFX/App/app_touchgfx.h \
+ ../../../Middlewares/Third_Party/FreeRTOS/Source/include/../../../../../STM32CubeIDE/CM7/Application/User/Core/ringbuff.h \
+ ../../../Middlewares/Third_Party/FreeRTOS/Source/include/../../../../../STM32CubeIDE/CM7/Application/User/Core/common.h \
+ ../../../Middlewares/Third_Party/FreeRTOS/Source/include/../../../../../STM32CubeIDE/CM7/Application/User/Core/ringbuff.h
 ../../../CM7/Core/Inc/main.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h:
@@ -138,3 +141,6 @@ Application/User/Core/main.o: \
 ../../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../../../CM7/TouchGFX/App/app_touchgfx.h:
+../../../Middlewares/Third_Party/FreeRTOS/Source/include/../../../../../STM32CubeIDE/CM7/Application/User/Core/ringbuff.h:
+../../../Middlewares/Third_Party/FreeRTOS/Source/include/../../../../../STM32CubeIDE/CM7/Application/User/Core/common.h:
+../../../Middlewares/Third_Party/FreeRTOS/Source/include/../../../../../STM32CubeIDE/CM7/Application/User/Core/ringbuff.h:
