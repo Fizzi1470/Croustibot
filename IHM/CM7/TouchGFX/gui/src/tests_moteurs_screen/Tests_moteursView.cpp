@@ -55,8 +55,8 @@ void Tests_moteursView::moteurs_tourner_90()
 
 void Tests_moteursView::moteurs_aller_la_bas()
 {
-	uint16_t distance = 0;
-	uint16_t angle = 360;
+	uint16_t distance = 2000;
+	uint16_t angle = 0;
 	T_CAN_trame_tx trame_tx_moteurs = {0};
 
 	trame_tx_moteurs.header.Identifier = 0x101;
