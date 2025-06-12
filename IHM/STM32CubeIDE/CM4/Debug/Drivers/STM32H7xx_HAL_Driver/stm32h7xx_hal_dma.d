@@ -1,5 +1,5 @@
 Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_dma.o: \
- C:/Users/Dany/Documents/Github/Croustibot/IHM/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c \
+ /Shared/Github/Croustibot/IHM/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM4/Core/Inc/stm32h7xx_hal_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \

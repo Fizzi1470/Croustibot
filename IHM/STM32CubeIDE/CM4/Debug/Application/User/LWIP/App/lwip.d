@@ -1,6 +1,6 @@
 Application/User/LWIP/App/lwip.o: \
- C:/Users/Dany/Documents/Github/Croustibot/IHM/CM4/LWIP/App/lwip.c \
- C:/Users/Dany/Documents/Github/Croustibot/IHM/CM4/LWIP/App/lwip.h \
+ /Shared/Github/Croustibot/IHM/CM4/LWIP/App/lwip.c \
+ /Shared/Github/Croustibot/IHM/CM4/LWIP/App/lwip.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
  ../../../CM4/LWIP/Target/lwipopts.h ../../../CM4/Core/Inc/main.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
@@ -65,7 +65,7 @@ Application/User/LWIP/App/lwip.o: \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../../../CM4/LWIP/Target/ethernetif.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/init.h
-C:/Users/Dany/Documents/Github/Croustibot/IHM/CM4/LWIP/App/lwip.h:
+/Shared/Github/Croustibot/IHM/CM4/LWIP/App/lwip.h:
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:
 ../../../CM4/LWIP/Target/lwipopts.h:
 ../../../CM4/Core/Inc/main.h:

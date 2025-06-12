@@ -46,7 +46,7 @@ static err_t _tcpReceivedCallback(void *ctrl_void, struct tcp_pcb *pcb, struct p
 	printf("R2000_LL : %s : TCP Response received of length %d (total %d)\n", ctrl->label, p->len, p->tot_len);
 	#endif
 
-	if(p->len > 2000) return; // TODO why the fuck is this required ?
+	if(p->len > 2000) return ERR_OK; // TODO why the fuck is this required ?
 
 	tcp_recved(pcb,p->len); // acknowledge the data (cannot do it at the end as we might close the pcb before doing so)
 

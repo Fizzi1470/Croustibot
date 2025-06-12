@@ -1,5 +1,5 @@
 Application/User/LWIP/Target/ethernetif.o: \
- C:/Users/Dany/Documents/Github/Croustibot/IHM/CM4/LWIP/Target/ethernetif.c \
+ /Shared/Github/Croustibot/IHM/CM4/LWIP/Target/ethernetif.c \
  ../../../CM4/Core/Inc/main.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM4/Core/Inc/stm32h7xx_hal_conf.h \
@@ -63,7 +63,7 @@ Application/User/LWIP/Target/ethernetif.o: \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip4.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/prot/etharp.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/ethip6.h \
- C:/Users/Dany/Documents/Github/Croustibot/IHM/CM4/LWIP/Target/ethernetif.h \
+ /Shared/Github/Croustibot/IHM/CM4/LWIP/Target/ethernetif.h \
  ../../../Drivers/BSP/Components/lan8742/lan8742.h
 ../../../CM4/Core/Inc/main.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -128,5 +128,5 @@ Application/User/LWIP/Target/ethernetif.o: \
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip4.h:
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/prot/etharp.h:
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/ethip6.h:
-C:/Users/Dany/Documents/Github/Croustibot/IHM/CM4/LWIP/Target/ethernetif.h:
+/Shared/Github/Croustibot/IHM/CM4/LWIP/Target/ethernetif.h:
 ../../../Drivers/BSP/Components/lan8742/lan8742.h:

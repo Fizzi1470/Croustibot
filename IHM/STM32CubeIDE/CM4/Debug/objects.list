@@ -4,6 +4,7 @@
 "./Application/User/Core/Src/R2000_data.o"
 "./Application/User/Core/Src/loc.o"
 "./Application/User/Core/Src/parser.o"
+"./Application/User/Core/Src/ringbuff.o"
 "./Application/User/Core/Src/runtime.o"
 "./Application/User/Core/main.o"
 "./Application/User/Core/stm32h7xx_hal_msp.o"

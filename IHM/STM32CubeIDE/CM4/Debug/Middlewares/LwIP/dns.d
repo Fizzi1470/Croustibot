@@ -1,5 +1,5 @@
 Middlewares/LwIP/dns.o: \
- C:/Users/Dany/Documents/Github/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/core/dns.c \
+ /Shared/Github/Croustibot/IHM/Middlewares/Third_Party/LwIP/src/core/dns.c \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h \
  ../../../CM4/LWIP/Target/lwipopts.h ../../../CM4/Core/Inc/main.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \

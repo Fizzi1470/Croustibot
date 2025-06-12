@@ -2,19 +2,20 @@
 #include "R2000.h"
 #include "loc.h"
 
+#include "common.h"
+#include "ringbuff.h"
+volatile ringbuff_t* rb_cm4_to_cm7 = (void *)BUFF_CM4_TO_CM7_ADDR;
+volatile ringbuff_t* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
+typedef struct {
+	float dist, angle;
+} buff_point_t;
+
 #include <math.h>
 
 R2000_t lidar;
-
+/*
 loc_t loc = {
 	.field = {
-		/*
-		 .beacons = {
-			{.x = 1400 - 40, .y = 1997 - 40},
-			{.x = 40, .y = 1997 - 40},
-			{.x = 40, .y = 40},
-		},
-		*/
 		.beacons = {
 				{.x = 0, .y = 1998 - 1400},
 				{.x = 0, .y = 1998},
@@ -32,13 +33,15 @@ loc_t loc = {
 };
 
 robot_t true_robot = { .x = 1400 - 150, .y = 150, .t = (3 * M_PI)/4};
-
+*/
 #define MIN_AMP_FILTER 1000
 #define MAX_GAP_FILTER 10
 #define BEACON_RADIUS 40
 lidar_point_t remarkable_pts[MAX_POINTS_PER_SCAN] = {0};
 
 uint32_t last_tick = 0;
+
+/*
 
 float _random(float min, float max){
     int random = rand()%(int)(max*100.0 - min*100.0 +1);
@@ -89,7 +92,7 @@ void testingMove(loc_t* handle, robot_t* true_robot, lidar_point_t points[], flo
 
     printf("simulated robot :\nx %.2f y %.2f t %.4f\n", true_robot->x, true_robot->y, true_robot->t);
 }
-
+*/
 static uint16_t _isolateBeacons(R2000_data_point_t* buff, uint16_t buff_amnt, uint16_t buff_max, lidar_point_t* lidar_filtered){
 	uint16_t last_valid = 0;
 	uint16_t valid_amnt = 0;
@@ -138,14 +141,15 @@ static uint16_t _isolateBeacons(R2000_data_point_t* buff, uint16_t buff_amnt, ui
 	return out_index;
 }
 
-
 inline void setup(){
+    while (!ringbuff_is_ready(rb_cm4_to_cm7) || !ringbuff_is_ready(rb_cm7_to_cm4)) {}
+
 	lidarInit(&lidar,192,168,1,4);
 	lidarPrintLocalIP(&lidar);
 
 	startDataStreamUDP(lidar.address);
 
-    setPosition(&loc, true_robot.x, true_robot.y, true_robot.t);
+    //setPosition(&loc, true_robot.x, true_robot.y, true_robot.t);
 }
 
 inline void loop(){
@@ -154,18 +158,40 @@ inline void loop(){
 	if(full_scan_ready){
 		uint32_t tick = HAL_GetTick();
 
+		printf("\n\nfull scan %d/%d pts, %.1f Hz\n\r", points_received, points_to_be_received, 1000.0/((float)(tick - last_tick)));
+
+		uint16_t pts_found = _isolateBeacons(lidar_points, points_received, points_to_be_received, remarkable_pts);
+
+		for(uint16_t i = 0; i < pts_found; i++){
+			printf("beacon dist %.2f ang %.2f (x %.3f y %.3f rel)\n\r", remarkable_pts[i].distance, remarkable_pts[i].angle, remarkable_pts[i].distance * cos(remarkable_pts[i].angle), remarkable_pts[i].distance * sin(remarkable_pts[i].angle));
+			buff_point_t point = {
+            	.dist = remarkable_pts[i].distance,
+				.angle = remarkable_pts[i].angle,
+            };
+			ringbuff_write(rb_cm4_to_cm7, &point, sizeof(buff_point_t));
+		}
+
+		last_tick = tick;
+		full_scan_ready = false;
+		points_received = 0;
+	}
+
+	/*
+	if(full_scan_ready){
+		uint32_t tick = HAL_GetTick();
+
 		printf("\n\nfull scan %d/%d pts, %.1f Hz\n", points_received, points_to_be_received, 1000.0/((float)(tick - last_tick)));
 
 		uint16_t pts_found = _isolateBeacons(lidar_points, points_received, points_to_be_received, remarkable_pts);
-/*
-		printf(">valid_pts:");
-		printf("%.f:%.f;%.f:%.f;", loc.field.x1, loc.field.y1, loc.field.x2, loc.field.y2);
-		for(uint16_t i = 0; i < points_received; i++){
-			if(lidar_points[i].amplitude > 150)
-				printf("%.2f:%.2f;", lidar_points[i].distance * cos((((float)i * M_PI) / points_to_be_received) - loc.robot.t) + loc.robot.x, lidar_points[i].distance * sin((((float)i * M_PI) / points_to_be_received) - loc.robot.t) + loc.robot.y);
-		}
-		printf("|xy,clr\n");
-*/
+
+		//printf(">valid_pts:");
+		//printf("%.f:%.f;%.f:%.f;", loc.field.x1, loc.field.y1, loc.field.x2, loc.field.y2);
+		//for(uint16_t i = 0; i < points_received; i++){
+		//	if(lidar_points[i].amplitude > 150)
+		//		printf("%.2f:%.2f;", lidar_points[i].distance * cos((((float)i * M_PI) / points_to_be_received) - loc.robot.t) + loc.robot.x, lidar_points[i].distance * sin((((float)i * M_PI) / points_to_be_received) - loc.robot.t) + loc.robot.y);
+		//}
+		//printf("|xy,clr\n");
+
 
 		for(uint16_t i = 0; i < pts_found; i++){
 			printf("beacon dist %.2f ang %.2f (x %.3f y %.3f rel ; x %.3f y %.3f abs)\n", remarkable_pts[i].distance, remarkable_pts[i].angle, remarkable_pts[i].distance * cos(remarkable_pts[i].angle), remarkable_pts[i].distance * sin(remarkable_pts[i].angle), remarkable_pts[i].distance * cos(remarkable_pts[i].angle + loc.robot.t) + loc.robot.x, remarkable_pts[i].distance * sin(remarkable_pts[i].angle + loc.robot.t) + loc.robot.y);
@@ -206,4 +232,5 @@ inline void loop(){
 		points_received = 0;
 		last_tick = tick;
 	}
+*/
 }
