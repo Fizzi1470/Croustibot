@@ -34,6 +34,8 @@ bool avoid = false;
 typedef enum {
 	xy,
 	rd,
+	rd_abs,
+	done,
 } mov_type_t;
 
 struct {
@@ -43,8 +45,9 @@ struct {
 		struct{float angle, distance;};
 	};
 } waypoints[] = {
-	{.type = rd, .angle = -30, .distance = 10000},
+	{.type = rd_abs, .angle = -30, .distance = 10000},
 	{.type = xy, .x = ARRIVEE_X, .y = ARRIVEE_Y},
+	{.type = done},
 };
 
 uint16_t move = 0;
@@ -98,7 +101,9 @@ void robot_goto(int16_t x, int16_t y){
 	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_consigne.header, trame_tx_consigne.data);
 }
 
-void robot_moveby(float distance, float angle){
+void robot_moveby(float distance, float angle, bool abs){
+	if(!abs) angle -= t_rob;
+
 	angle = -angle /  180 * M_PI;
 
 	robot_goto(x_rob + lroundf(distance * cos(angle)), y_rob + lroundf(distance * sin(angle)));
@@ -110,13 +115,22 @@ void robot_resume(){
 
 
 void next_move(){
-	if(waypoints[move].type == xy) {
+	switch (waypoints[move].type){
+	case xy :
 		robot_goto(waypoints[move].x, waypoints[move].y);
-	} else {
-		robot_moveby(waypoints[move].distance, waypoints[move].angle);
+		move++;
+		break;
+	case rd :
+		robot_moveby(waypoints[move].distance, waypoints[move].angle, 0);
+		move++;
+		break;
+	case rd_abs :
+		robot_moveby(waypoints[move].distance, waypoints[move].angle, 1);
+		move++;
+		break;
+	case done :
+		break;
 	}
-
-	if(move < sizeof(waypoints) / sizeof(waypoints[0])) move++;
 }
 
 
@@ -129,7 +143,6 @@ void Robot_en_matchView::setupScreen() {
 
 	if (strat == 1) {
 		next_move();
-		robot_moveby(10000, -30);
 	}
 }
 
