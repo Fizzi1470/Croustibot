@@ -10,8 +10,8 @@
 
 #define MAX_LIDAR_DIST 9000
 
-#define ARRIVEE_X 7000
-#define ARRIVEE_Y 7000
+#define ARRIVEE_X 7250
+#define ARRIVEE_Y 7250
 
 extern int tirette;
 extern int strat;
@@ -31,17 +31,20 @@ int16_t x_dest = 0, y_dest = 0;
 
 bool avoid = false;
 
-union {
-	struct {
-		int16_t x, y;
-	} xy;
-	struct {
-		float angle;
-		float distance;
-	} rd;
+typedef enum {
+	xy,
+	rd,
+} mov_type_t;
+
+struct {
+	mov_type_t type;
+	union {
+		struct{int16_t x, y;};
+		struct{float angle, distance;};
+	};
 } waypoints[] = {
-	{.rd = {-30, 10000}},
-	{.xy = {ARRIVEE_X, ARRIVEE_Y}},
+	{.type = rd, .angle = -30, .distance = 10000},
+	{.type = xy, .x = ARRIVEE_X, .y = ARRIVEE_Y},
 };
 
 uint16_t move = 0;
@@ -107,10 +110,10 @@ void robot_resume(){
 
 
 void next_move(){
-	if(waypoints[move].rd.angle == 0 && waypoints[move].rd.distance == 0) {
-		robot_goto(waypoints[move].xy.x, waypoints[move].xy.y);
+	if(waypoints[move].type == xy) {
+		robot_goto(waypoints[move].x, waypoints[move].y);
 	} else {
-		robot_moveby(waypoints[move].rd.distance, waypoints[move].rd.angle);
+		robot_moveby(waypoints[move].distance, waypoints[move].angle);
 	}
 
 	if(move < sizeof(waypoints) / sizeof(waypoints[0])) move++;
@@ -126,6 +129,7 @@ void Robot_en_matchView::setupScreen() {
 
 	if (strat == 1) {
 		next_move();
+		robot_moveby(10000, -30);
 	}
 }
 
