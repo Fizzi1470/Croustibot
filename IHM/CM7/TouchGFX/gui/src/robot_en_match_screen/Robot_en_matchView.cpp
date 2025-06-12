@@ -29,6 +29,7 @@ int16_t x_rob = 0, y_rob = 0;
 float t_rob = 0;
 int16_t x_dest = 0, y_dest = 0;
 
+bool manuel = false;
 bool avoid = false;
 
 typedef enum {
@@ -102,7 +103,7 @@ void robot_goto(int16_t x, int16_t y){
 }
 
 void robot_moveby(float distance, float angle, bool abs){
-	if(!abs) angle -= t_rob;
+	if(!abs) angle += t_rob;
 
 	angle = -angle /  180 * M_PI;
 
@@ -179,11 +180,11 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 			case 0x06 : // reprise (envoyé par les lidars)
 				avoid = false;
-				robot_resume();
+				if(!manuel) robot_resume();
 				break;
 
 			case 0x10 : // fin de mouvement
-				if(!avoid) next_move();
+				if(!avoid && !manuel) next_move();
 				break;
 
 			case 0x150: // telemetrie
