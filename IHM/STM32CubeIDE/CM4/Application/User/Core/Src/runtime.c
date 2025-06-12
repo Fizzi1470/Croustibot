@@ -168,7 +168,7 @@ inline void loop(){
             	.dist = remarkable_pts[i].distance,
 				.angle = remarkable_pts[i].angle,
             };
-			ringbuff_write(rb_cm4_to_cm7, &point, sizeof(buff_point_t));
+			if(ringbuff_get_free(rb_cm4_to_cm7) >= sizeof(buff_point_t)) ringbuff_write(rb_cm4_to_cm7, &point, sizeof(buff_point_t));
 		}
 
 		last_tick = tick;
