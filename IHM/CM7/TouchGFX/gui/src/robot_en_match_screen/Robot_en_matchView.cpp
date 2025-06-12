@@ -126,7 +126,6 @@ void Robot_en_matchView::setupScreen() {
 
 	if (strat == 1) {
 		next_move();
-		robot_moveby(10000, -30);
 	}
 }
 
