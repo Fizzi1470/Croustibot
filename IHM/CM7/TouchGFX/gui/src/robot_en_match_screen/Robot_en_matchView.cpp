@@ -102,7 +102,7 @@ void robot_goto(int16_t x, int16_t y){
 }
 
 void robot_moveby(float distance, float angle, bool abs){
-	if(!abs) angle -= t_rob;
+	if(!abs) angle += t_rob;
 
 	angle = -angle /  180 * M_PI;
 
@@ -156,6 +156,8 @@ uint32_t seen = 0;
 
 void Robot_en_matchView::robot_en_match_tick() {
 
+	sta
+
 	fifo_params_t fifo = read_fifo();
 
 	received += fifo.mess_amnt;
@@ -175,6 +177,7 @@ void Robot_en_matchView::robot_en_match_tick() {
 			case 0x05 : // stop (envoyé par les lidars)
 				//robot_stop(); NON ! cette trame est déjà envoyée par les lidars
 				avoid = true;
+				tick_debut_stop = HAL_GetTick();
 				break;
 
 			case 0x06 : // reprise (envoyé par les lidars)
