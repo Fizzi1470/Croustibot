@@ -1,5 +1,5 @@
-E:/Github/Croustibot/IHM/CM7/Core/Src/main.c:888:13:TouchGFX_Task	8	static
-E:/Github/Croustibot/IHM/CM7/Core/Src/main.c:287:6:SystemClock_Config	120	static,ignoring_inline_asm
-E:/Github/Croustibot/IHM/CM7/Core/Src/main.c:149:5:main	272	static,ignoring_inline_asm
-E:/Github/Croustibot/IHM/CM7/Core/Src/main.c:978:6:HAL_TIM_PeriodElapsedCallback	8	static
-E:/Github/Croustibot/IHM/CM7/Core/Src/main.c:995:6:Error_Handler	0	static,ignoring_inline_asm
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:888:13:TouchGFX_Task	8	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:287:6:SystemClock_Config	120	static,ignoring_inline_asm
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:149:5:main	272	static,ignoring_inline_asm
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:978:6:HAL_TIM_PeriodElapsedCallback	8	static
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/Core/Src/main.c:995:6:Error_Handler	0	static,ignoring_inline_asm

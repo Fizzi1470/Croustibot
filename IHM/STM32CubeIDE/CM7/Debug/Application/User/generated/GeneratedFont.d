@@ -1,5 +1,5 @@
 Application/User/generated/GeneratedFont.o: \
- E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/GeneratedFont.cpp \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/GeneratedFont.cpp \
  ../../CM7/../../CM7/TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

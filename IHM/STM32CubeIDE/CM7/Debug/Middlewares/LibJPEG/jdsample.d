@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jdsample.o: \
- E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jdsample.c \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jdsample.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

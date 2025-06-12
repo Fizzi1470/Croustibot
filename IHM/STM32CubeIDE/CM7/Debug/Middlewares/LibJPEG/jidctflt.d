@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jidctflt.o: \
- E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jidctflt.c \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jidctflt.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

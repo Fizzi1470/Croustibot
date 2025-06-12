@@ -33,29 +33,27 @@ bool manuel = false;
 bool avoid = false;
 
 typedef enum {
-	xy,
-	rd,
-	rd_abs,
-	done,
+	xy, rd, rd_abs, done,
 } mov_type_t;
 
 struct {
 	mov_type_t type;
 	union {
-		struct{int16_t x, y;};
-		struct{float angle, distance;};
+		struct {
+			int16_t x, y;
+		};
+		struct {
+			float angle, distance;
+		};
 	};
-} waypoints[] = {
-	{.type = rd_abs, .angle = -30, .distance = 10000},
-	{.type = xy, .x = ARRIVEE_X, .y = ARRIVEE_Y},
-	{.type = done},
-};
+} waypoints[] = { { .type = rd_abs, .angle = -30, .distance = 10000 }, { .type =
+		xy, .x = ARRIVEE_X, .y = ARRIVEE_Y }, { .type = done }, };
 
 uint16_t move = 0;
 
 bool diago = false;
 
-void robot_stop(){
+void robot_stop() {
 
 	T_CAN_trame_tx trame_tx_moteurs = { 0 };
 
@@ -69,18 +67,20 @@ void robot_stop(){
 	trame_tx_moteurs.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
 	trame_tx_moteurs.header.MessageMarker = 0;
 
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_moteurs.header, trame_tx_moteurs.data);
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_moteurs.header,
+			trame_tx_moteurs.data);
 
 }
 
-void robot_goto(int16_t x, int16_t y){
-	x_dest = x, y_dest = y;
+void robot_moveby(float dist, float angle, bool abs_angle) {
+	if(abs_angle) angle -= t_rob;
 
-	uint16_t distance = sqrt(((x_dest - x_rob) * (x_dest - x_rob)) + ((y_dest - y_rob) * (y_dest - y_rob)));
+	float angle_rad = -angle / 180.0 * M_PI;
 
-	float angle_to_dest = atan2((y_dest - y_rob), (x_dest - x_rob)) * -180.0 / M_PI;
+	x_dest += dist * cos(angle_rad), y_dest += dist * sin(angle_rad);
 
-	int16_t angle_diz_deg = (int16_t)(angle_to_dest - t_rob) * 100;
+	int16_t distance = lroundf(dist);
+	int16_t angle_diz_deg = lroundf(angle * 100);
 
 	T_CAN_trame_tx trame_tx_consigne = { 0 };
 
@@ -99,41 +99,40 @@ void robot_goto(int16_t x, int16_t y){
 	trame_tx_consigne.data[2] = angle_diz_deg & 0xFF;
 	trame_tx_consigne.data[3] = (angle_diz_deg >> 8) & 0xFF;
 
-	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_consigne.header, trame_tx_consigne.data);
+	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &trame_tx_consigne.header,
+			trame_tx_consigne.data);
 }
 
-void robot_moveby(float distance, float angle, bool abs){
-	if(!abs) angle += t_rob;
+void robot_goto(float x, float y) {
+	float distance = sqrt(((x - x_rob) * (x - x_rob)) + ((y - y_rob) * (y - y_rob)));
 
-	angle = -angle /  180 * M_PI;
+	volatile float angle_to_dest = atan2((y - y_rob), (x - x_rob)) * -180.0 / M_PI;
 
-	robot_goto(x_rob + lroundf(distance * cos(angle)), y_rob + lroundf(distance * sin(angle)));
+	robot_moveby(distance, angle_to_dest, true);
 }
 
-void robot_resume(){
+void robot_resume() {
 	robot_goto(x_dest, y_dest);
 }
 
-
-void next_move(){
-	switch (waypoints[move].type){
-	case xy :
+void next_move() {
+	switch (waypoints[move].type) {
+	case xy:
 		robot_goto(waypoints[move].x, waypoints[move].y);
 		move++;
 		break;
-	case rd :
+	case rd:
 		robot_moveby(waypoints[move].distance, waypoints[move].angle, 0);
 		move++;
 		break;
-	case rd_abs :
+	case rd_abs:
 		robot_moveby(waypoints[move].distance, waypoints[move].angle, 1);
 		move++;
 		break;
-	case done :
+	case done:
 		break;
 	}
 }
-
 
 Robot_en_matchView::Robot_en_matchView() {
 
@@ -157,66 +156,96 @@ uint32_t seen = 0;
 
 void Robot_en_matchView::robot_en_match_tick() {
 
-	sta
+	static uint32_t tick_debut_stop = 0;
+	static uint8_t etat_evitement = 0;
 
-	fifo_params_t fifo = read_fifo();
+	fifo_params_t
+	fifo = read_fifo();
 
 	received += fifo.mess_amnt;
 
 	if (fifo.mess_avail) {
-		for (uint16_t i_fifo = fifo.first_read; i_fifo < fifo.mess_amnt + fifo.first_read; i_fifo++) {
+		for (uint16_t i_fifo = fifo.first_read;
+				i_fifo < fifo.mess_amnt + fifo.first_read; i_fifo++) {
 
 			uint16_t read_index = i_fifo % FIFO_SIZE;
-			seen ++;
+			seen++;
 
 			int16_t t_rob_dix = 0;
 
 			switch (tab_recep_trames_can[read_index].header.Identifier) {
 
-
-
-			case 0x05 : // stop (envoyé par les lidars)
+			case 0x05: // stop (envoyé par les lidars)
 				//robot_stop(); NON ! cette trame est déjà envoyée par les lidars
 				avoid = true;
 				tick_debut_stop = HAL_GetTick();
 				break;
 
-			case 0x06 : // reprise (envoyé par les lidars)
+			case 0x06: // reprise (envoyé par les lidars)
 				avoid = false;
-				if(!manuel) robot_resume();
+				if (!manuel)
+					robot_resume();
 				break;
 
-			case 0x10 : // fin de mouvement
-				if(!avoid && !manuel) next_move();
+			case 0x10: // fin de mouvement
+				if (!avoid && !manuel)
+					next_move();
+				else if(manuel)
+				{
+					switch(etat_evitement)
+					{
+					case 0:
+						robot_moveby(550, 0, 0);
+						etat_evitement ++;
+						break;
+
+					case 1:
+						manuel = false;
+						robot_resume();
+						etat_evitement = 0;
+						break;
+					}
+				}
 				break;
 
 			case 0x150: // telemetrie
-				x_rob = tab_recep_trames_can[read_index].data[1] << 8 | tab_recep_trames_can[read_index].data[0];
-				y_rob = tab_recep_trames_can[read_index].data[3] << 8 | tab_recep_trames_can[read_index].data[2];
-				t_rob_dix = tab_recep_trames_can[read_index].data[5] << 8 | tab_recep_trames_can[read_index].data[4];
+				x_rob = tab_recep_trames_can[read_index].data[1] << 8
+						| tab_recep_trames_can[read_index].data[0];
+				y_rob = tab_recep_trames_can[read_index].data[3] << 8
+						| tab_recep_trames_can[read_index].data[2];
+				t_rob_dix = tab_recep_trames_can[read_index].data[5] << 8
+						| tab_recep_trames_can[read_index].data[4];
 
-				t_rob = (float)t_rob_dix / 100.0;
+				t_rob = (float) t_rob_dix / 100.0;
 				break;
 
-			case 0x400 ... 0x4FF : // lidar avant
-				start_angle = (tab_recep_trames_can[read_index].header.Identifier - 0x400) * 8;
+			case 0x400 ... 0x4FF: // lidar avant
+				start_angle =
+						(tab_recep_trames_can[read_index].header.Identifier
+								- 0x400) * 8;
 
 				start_angle += 270;
 				start_angle %= 360;
 
-				for(uint16_t i = 0; i < 8; i++){
-					points_lidar_match[start_angle + i].distance = tab_recep_trames_can[read_index].data[i] * MAX_LIDAR_DIST / 255;
+				for (uint16_t i = 0; i < 8; i++) {
+					points_lidar_match[start_angle + i].distance =
+							tab_recep_trames_can[read_index].data[i]
+									* MAX_LIDAR_DIST / 255;
 				}
 
 				break;
-			case 0x500 ... 0x5FF : // lidar arriere
-				start_angle = (tab_recep_trames_can[read_index].header.Identifier - 0x500) * 8;
+			case 0x500 ... 0x5FF: // lidar arriere
+				start_angle =
+						(tab_recep_trames_can[read_index].header.Identifier
+								- 0x500) * 8;
 
 				start_angle += 270 + 180;
 				start_angle %= 360;
 
-				for(uint16_t i = 0; i < 8; i++){
-					points_lidar_match[start_angle + i].distance = tab_recep_trames_can[read_index].data[i] * MAX_LIDAR_DIST / 255;
+				for (uint16_t i = 0; i < 8; i++) {
+					points_lidar_match[start_angle + i].distance =
+							tab_recep_trames_can[read_index].data[i]
+									* MAX_LIDAR_DIST / 255;
 				}
 
 				break;
@@ -235,5 +264,15 @@ void Robot_en_matchView::robot_en_match_tick() {
 			next_move();
 			diago = true;
 		}
+
+		if (avoid == true) {
+			if (HAL_GetTick() - tick_debut_stop >= 1000) {
+				manuel = true;
+				avoid = false;
+				robot_moveby(0, 90, 0);
+
+			}
+		}
+
 	}
 }

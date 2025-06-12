@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jcinit.o: \
- E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcinit.c \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jcinit.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \
