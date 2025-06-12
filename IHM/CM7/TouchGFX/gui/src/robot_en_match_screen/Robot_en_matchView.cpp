@@ -27,7 +27,7 @@ lidar_pt_t points_lidar_match[360] = { 0 };
 
 int16_t x_rob = 0, y_rob = 0;
 float t_rob = 0;
-int16_t x_dest = 0, y_dest = 0;
+float x_dest = 0, y_dest = 0;
 
 bool manuel = false;
 bool avoid = false;
@@ -46,8 +46,11 @@ struct {
 			float angle, distance;
 		};
 	};
-} waypoints[] = { { .type = rd_abs, .angle = -30, .distance = 10000 }, { .type =
-		xy, .x = ARRIVEE_X, .y = ARRIVEE_Y }, { .type = done }, };
+} waypoints[] = {
+		{ .type = rd_abs, .angle = -30, .distance = 10000 },
+		{ .type =xy, .x = ARRIVEE_X, .y = ARRIVEE_Y },
+		{ .type = done },
+};
 
 uint16_t move = 0;
 
@@ -73,11 +76,16 @@ void robot_stop() {
 }
 
 void robot_moveby(float dist, float angle, bool abs_angle) {
-	if(abs_angle) angle -= t_rob;
+	if (abs_angle)
+		angle -= t_rob;
 
 	float angle_rad = -angle / 180.0 * M_PI;
 
-	x_dest += dist * cos(angle_rad), y_dest += dist * sin(angle_rad);
+	if (!abs_angle && angle == 0)
+		angle_rad = -t_rob / 180.0 * M_PI;
+
+	x_dest = x_rob + dist * cos(angle_rad), y_dest = y_rob
+			+ dist * sin(angle_rad);
 
 	int16_t distance = lroundf(dist);
 	int16_t angle_diz_deg = lroundf(angle * 100);
@@ -103,12 +111,17 @@ void robot_moveby(float dist, float angle, bool abs_angle) {
 			trame_tx_consigne.data);
 }
 
+float goto_x = 0, goto_y = 0, goto_atan = 0, goto_angle = 0;
 void robot_goto(float x, float y) {
-	float distance = sqrt(((x - x_rob) * (x - x_rob)) + ((y - y_rob) * (y - y_rob)));
+	goto_x = x, goto_y = y;
 
-	volatile float angle_to_dest = atan2((y - y_rob), (x - x_rob)) * -180.0 / M_PI;
+	float distance = sqrt(
+			((x - x_rob) * (x - x_rob)) + ((y - y_rob) * (y - y_rob)));
 
-	robot_moveby(distance, angle_to_dest, true);
+	goto_atan = atan2((y - y_rob), (x - x_rob));
+	goto_angle = goto_atan * -180.0 / M_PI;
+
+	robot_moveby(distance, goto_angle, true);
 }
 
 void robot_resume() {
@@ -119,7 +132,7 @@ void next_move() {
 	switch (waypoints[move].type) {
 	case xy:
 		robot_goto(waypoints[move].x, waypoints[move].y);
-		move++;
+ 		move++;
 		break;
 	case rd:
 		robot_moveby(waypoints[move].distance, waypoints[move].angle, 0);
@@ -158,9 +171,9 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 	static uint32_t tick_debut_stop = 0;
 	static uint8_t etat_evitement = 0;
+	static uint8_t etat_homolo = 10;
 
-	fifo_params_t
-	fifo = read_fifo();
+	fifo_params_t fifo = read_fifo();
 
 	received += fifo.mess_amnt;
 
@@ -190,13 +203,11 @@ void Robot_en_matchView::robot_en_match_tick() {
 			case 0x10: // fin de mouvement
 				if (!avoid && !manuel)
 					next_move();
-				else if(manuel)
-				{
-					switch(etat_evitement)
-					{
+				else if (manuel) {
+					switch (etat_evitement) {
 					case 0:
 						robot_moveby(550, 0, 0);
-						etat_evitement ++;
+						etat_evitement++;
 						break;
 
 					case 1:
@@ -261,7 +272,7 @@ void Robot_en_matchView::robot_en_match_tick() {
 	if (strat == 1) {
 		if ((x_rob + y_rob) > 8000 && diago == false) {
 			robot_stop();
-			next_move();
+			//move--;
 			diago = true;
 		}
 
@@ -273,6 +284,23 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 			}
 		}
+
+//		switch (etat_homolo) {
+//		case 10:
+//			robot_moveby(550, 0, 0);
+//			if(avoid == true)
+//			{
+//				etat_homolo = etat_homolo + 10;
+//				avoid == false;
+//			}
+//
+//			break;
+//
+//		case 20:
+//			robot_moveby(sqrt(((ARRIVEE_X-x_rob)*(ARRIVEE_X-x_rob)) + ((ARRIVEE_X-x_rob)*(ARRIVEE_X-x_rob))), )
+//		}
+//
+//		robot_moveby(6000, 1, 0);
 
 	}
 }

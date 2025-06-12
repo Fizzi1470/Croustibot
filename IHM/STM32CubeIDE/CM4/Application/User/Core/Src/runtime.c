@@ -8,22 +8,15 @@ R2000_t lidar;
 
 loc_t loc = {
 	.field = {
-		/*
-		 .beacons = {
-			{.x = 1400 - 40, .y = 1997 - 40},
-			{.x = 40, .y = 1997 - 40},
-			{.x = 40, .y = 40},
-		},
-		*/
 		.beacons = {
-				{.x = 0, .y = 1998 - 1400},
-				{.x = 0, .y = 1998},
-				{.x = 1400, .y = 1998 - 600},
+				{.x = 8000 + 40, .y = 8000 + 40},
+				{.x = 6000, .y = - 80},
+				{.x = - 80, .y = 6000},
 		},
 
 		.x1 = 0,
-		.y1 = 1997,
-		.x2 = 1400,
+		.y1 = 8000,
+		.x2 = 8000,
 		.y2 = 0,
 	},
 
@@ -31,7 +24,7 @@ loc_t loc = {
 	.tolerance_coef = 0.5,
 };
 
-robot_t true_robot = { .x = 1400 - 500, .y = 500, .t = - M_PI/4};
+robot_t true_robot = { .x = 160, .y = 160, .t = 0};
 
 #define MIN_AMP_FILTER 1000
 #define MAX_GAP_FILTER 10

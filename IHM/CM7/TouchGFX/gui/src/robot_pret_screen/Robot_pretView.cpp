@@ -5,6 +5,10 @@
 
 int tirette = 0;
 
+extern int16_t x_rob, y_rob;
+extern float t_rob;
+int16_t t_rob_dix = 0;
+
 Robot_pretView::Robot_pretView()
 {
 
@@ -32,6 +36,17 @@ void Robot_pretView::attente_tirette()
 		switch (tab_recep_trames_can[read_index].header.Identifier)
 		{
 			default: break;
+
+			case 0x150: // telemetrie
+							x_rob = tab_recep_trames_can[read_index].data[1] << 8
+									| tab_recep_trames_can[read_index].data[0];
+							y_rob = tab_recep_trames_can[read_index].data[3] << 8
+									| tab_recep_trames_can[read_index].data[2];
+							t_rob_dix = tab_recep_trames_can[read_index].data[5] << 8
+									| tab_recep_trames_can[read_index].data[4];
+
+							t_rob = (float) t_rob_dix / 100.0;
+							break;
 
 			case 0x211:
 			{

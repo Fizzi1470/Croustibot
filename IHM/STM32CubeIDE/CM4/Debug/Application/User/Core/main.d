@@ -64,7 +64,8 @@ Application/User/Core/main.o: \
  ../../../Middlewares/Third_Party/LwIP/src/include/netif/ethernet.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
  ../../../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
- ../../../CM4/LWIP/Target/ethernetif.h
+ ../../../CM4/LWIP/Target/ethernetif.h \
+ C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/runtime.h
 ../../../CM4/Core/Inc/main.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../../../CM4/Core/Inc/stm32h7xx_hal_conf.h:
@@ -130,3 +131,4 @@ Application/User/Core/main.o: \
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h:
 ../../../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 ../../../CM4/LWIP/Target/ethernetif.h:
+C:/Users/lisaf/Documents/GitHub/Croustibot/IHM/STM32CubeIDE/CM4/Application/User/Core/Inc/runtime.h:
