@@ -44,6 +44,8 @@ float t_dest = 0;
 
 bool manuel = false;
 bool avoid = false;
+bool timeout = false;
+bool diago = false;
 
 typedef enum {
 	xy, rd, rd_abs, dest_dist, dest, done,
@@ -68,8 +70,6 @@ struct {
 };
 
 uint16_t move = 0;
-
-bool diago = false;
 
 void robot_stop() {
 
@@ -275,7 +275,6 @@ void Robot_en_matchView::robot_en_match_tick() {
 			case 0x05: // stop (envoyé par les lidars)
 				//robot_stop(); NON ! cette trame est déjà envoyée par les lidars
 				avoid = true;
-				tick_debut_stop = HAL_GetTick();
 				break;
 
 			case 0x06: // reprise (envoyé par les lidars)
@@ -285,21 +284,19 @@ void Robot_en_matchView::robot_en_match_tick() {
 				break;
 
 			case 0x10: // fin de mouvement
-				if (!avoid && !manuel)
+				if (!avoid && !manuel) {
 					next_move();
-				else if (manuel) {
+				} else if (manuel) {
 					switch (etat_evitement) {
 					case 0:
-						robot_moveby(550, 0, 0);
-						etat_evitement++;
-						break;
-
-					case 1:
 						manuel = false;
 						robot_resume();
 						etat_evitement = 0;
 						break;
 					}
+				} else if(avoid){
+					tick_debut_stop = HAL_GetTick();
+					timeout = true;
 				}
 				break;
 
@@ -364,14 +361,17 @@ void Robot_en_matchView::robot_en_match_tick() {
 		}
 
 		if (avoid == true) {
-			if (HAL_GetTick() - tick_debut_stop >= 1000) {
+			if (HAL_GetTick() - tick_debut_stop >= 1000 && timeout) {
 				manuel = true;
-				avoid = false;
+				timeout = false;
+				etat_evitement = 0;
 
-				if((x_rob - y_rob) > 0) { // vrai si a droite de la piste
-					robot_moveby(0, 90, 0);
+				int16_t diff = x_rob - y_rob; // positif a droite
+
+				if(diff > 0) {
+					robot_moveby(550, 90, 0);
 				} else {
-					robot_moveby(0, -90, 0);
+					robot_moveby(550, -90, 0);
 				}
 			}
 		}
