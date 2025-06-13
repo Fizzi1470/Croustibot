@@ -147,9 +147,9 @@ void robot_goto_dest(){
 }
 
 void robot_resume() {
-	//robot_goto_dest();
+	robot_goto_dest();
 	//robot_goto(ARRIVE_X, ARRIVE_Y);
-	robot_goto(x_dest, y_dest, 0);
+	//robot_goto(x_dest, y_dest, 0);
 }
 
 void next_move() {
@@ -292,8 +292,13 @@ void Robot_en_matchView::robot_en_match_tick() {
 				if (!avoid && !manuel) {
 					next_move();
 				} else if (manuel) {
-					switch (etat_evitement) {
-					case 0 :
+					if (etat_evitement == 1 && !avoid) {
+						look_at = 0;
+						manuel = false;
+						etat_evitement = 0;
+						robot_resume();
+						break;
+					} else {
 						if(x_rob < 1000 || y_rob > 7000) { // très proche du mur de gauche ou haut, forcer par la droite
 							robot_moveby(1000, 90, 0, 0);
 							look_at = 1;
@@ -310,13 +315,6 @@ void Robot_en_matchView::robot_en_match_tick() {
 							}
 						}
 						etat_evitement++;
-						break;
-					case 1:
-						look_at = 0;
-						manuel = false;
-						etat_evitement = 0;
-						robot_resume();
-						break;
 					}
 				}
 				break;
@@ -392,6 +390,8 @@ void Robot_en_matchView::robot_en_match_tick() {
 			//move--;
 			diago = true;
 		}
+
+#warning et si il est en avoid quand il passe la diago ?
 	}
 
 //		switch (etat_homolo) {
