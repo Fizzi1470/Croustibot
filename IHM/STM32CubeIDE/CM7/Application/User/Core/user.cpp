@@ -25,10 +25,6 @@ void coms_read(void (*callback)(buff_point_t* addr)){
 			buffer[size - i -1] = *((uint8_t*)addr + i);
 		}
 */
-		if(buff->r > 1020) {
-			;
-		}
-
 		/* Transmit data */
 		if(callback != NULL) callback((buff_point_t*) addr);
 
