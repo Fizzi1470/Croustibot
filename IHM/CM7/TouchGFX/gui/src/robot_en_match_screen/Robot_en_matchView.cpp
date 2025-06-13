@@ -93,15 +93,22 @@ void robot_stop() {
 
 }
 
-volatile float last_angle = 0;
+volatile bool last_abs = false;
+volatile float last_angle = 0, last_angle_post = 0;
+volatile int16_t last_angle_diz = 0;
 void robot_moveby(float dist, float angle, bool abs_angle, bool save_dest) {
 	last_angle = angle;
+	last_abs = abs_angle;
+
 	if (abs_angle){
 		angle -= t_rob;
 
 		while(angle > 180) angle -= 360;
 		while(angle < 180) angle += 360;
 	}
+
+	last_angle_post = angle;
+
 	float angle_rad = -angle / 180.0 * M_PI;
 
 	if (!abs_angle && angle == 0) angle_rad = -t_rob / 180.0 * M_PI;
@@ -109,7 +116,9 @@ void robot_moveby(float dist, float angle, bool abs_angle, bool save_dest) {
 	if(save_dest) x_dest = x_rob + dist * cos(angle_rad), y_dest = y_rob + dist * sin(angle_rad);
 
 	int16_t distance = lroundf(dist);
-	volatile int16_t angle_diz_deg = lroundf(angle * 100);
+	int16_t angle_diz_deg = lroundf(angle * 10);
+
+	last_angle_diz = angle_diz_deg;
 
 	T_CAN_trame_tx trame_tx_consigne = { 0 };
 
@@ -323,17 +332,17 @@ void Robot_en_matchView::robot_en_match_tick() {
 						break;
 					} else {
 						if(x_rob < 1000 || y_rob > 7000) { // très proche du mur de gauche ou haut, forcer par la droite
-							robot_moveby(1000, 90, 0, 0);
+							robot_moveby(750, 80, 0, 0);
 							look_at = 1;
 						} else if (y_rob < 1000 || x_rob > 7000) { // très proche du mur du bas ou droite, forcer par la gauche
-							robot_moveby(1000, -90, 0, 0);
+							robot_moveby(750, -80, 0, 0);
 							look_at = 2;
 						} else { // sinon, ça dépénd de quel coté du terrain on est
 							if(x_rob - y_rob > 0) {
-								robot_moveby(1000, 90, 0, 0);
+								robot_moveby(750, 80, 0, 0);
 								look_at = 1;
 							} else {
-								robot_moveby(1000, -90, 0, 0);
+								robot_moveby(750, -80, 0, 0);
 								look_at = 2;
 							}
 						}

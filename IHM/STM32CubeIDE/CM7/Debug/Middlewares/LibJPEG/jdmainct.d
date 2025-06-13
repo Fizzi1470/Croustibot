@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jdmainct.o: \
- /Shared/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jdmainct.c \
+ E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jdmainct.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

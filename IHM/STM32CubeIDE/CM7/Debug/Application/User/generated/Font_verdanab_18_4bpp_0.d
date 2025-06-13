@@ -1,5 +1,5 @@
 Application/User/generated/Font_verdanab_18_4bpp_0.o: \
- /Shared/Github/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/Font_verdanab_18_4bpp_0.cpp \
+ E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/Font_verdanab_18_4bpp_0.cpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:

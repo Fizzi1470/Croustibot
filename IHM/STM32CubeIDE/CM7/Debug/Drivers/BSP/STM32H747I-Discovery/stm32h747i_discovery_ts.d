@@ -1,7 +1,7 @@
 Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.o: \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.c \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.h \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_conf.h \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.c \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.h \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -45,14 +45,14 @@ Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.o: \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_errno.h \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/Common/ts.h \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06.h \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06_reg.h \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_errno.h \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/Common/ts.h \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06.h \
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06_reg.h \
  ../../../CM7/Core/Inc/ft6x06_conf.h \
- /Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_bus.h
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.h:
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_conf.h:
+ E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_bus.h
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.h:
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_conf.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
@@ -96,9 +96,9 @@ Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_ts.o: \
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_errno.h:
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/Common/ts.h:
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06.h:
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06_reg.h:
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_errno.h:
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/Common/ts.h:
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06.h:
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/../Components/ft6x06/ft6x06_reg.h:
 ../../../CM7/Core/Inc/ft6x06_conf.h:
-/Shared/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_bus.h:
+E:/Github/Croustibot/IHM/Drivers/BSP/STM32H747I-Discovery/stm32h747i_discovery_bus.h:

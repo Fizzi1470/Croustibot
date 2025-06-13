@@ -1,5 +1,5 @@
 Application/User/generated/VectorFontRendererBuffers.o: \
- /Shared/Github/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/VectorFontRendererBuffers.cpp \
+ E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/fonts/src/VectorFontRendererBuffers.cpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

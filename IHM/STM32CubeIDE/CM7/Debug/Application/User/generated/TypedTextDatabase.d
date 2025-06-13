@@ -1,5 +1,5 @@
 Application/User/generated/TypedTextDatabase.o: \
- /Shared/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
+ E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

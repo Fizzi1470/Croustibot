@@ -1,4 +1,4 @@
-../Application/User/Core/ringbuff.c:58:1:ringbuff_init	0	static
+../Application/User/Core/ringbuff.c:58:1:ringbuff_init	4	static
 ../Application/User/Core/ringbuff.c:82:1:ringbuff_is_ready	0	static
 ../Application/User/Core/ringbuff.c:93:1:ringbuff_free	0	static
 ../Application/User/Core/ringbuff.c:105:1:ringbuff_set_evt_fn	0	static

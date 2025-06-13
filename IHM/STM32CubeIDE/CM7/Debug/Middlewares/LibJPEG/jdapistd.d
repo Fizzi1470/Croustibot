@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jdapistd.o: \
- /Shared/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jdapistd.c \
+ E:/Github/Croustibot/IHM/Middlewares/Third_Party/LibJPEG/source/jdapistd.c \
  ../../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../../CM7/LIBJPEG/Target/jconfig.h \
  ../../../CM7/LIBJPEG/Target/jdata_conf.h \

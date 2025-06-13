@@ -1,2 +1,2 @@
-/Shared/Github/Croustibot/IHM/CM7/TouchGFX/generated/images/src/BitmapDatabase.cpp:53:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	0	static
-/Shared/Github/Croustibot/IHM/CM7/TouchGFX/generated/images/src/BitmapDatabase.cpp:58:10:uint16_t BitmapDatabase::getInstanceSize()	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/images/src/BitmapDatabase.cpp:53:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/generated/images/src/BitmapDatabase.cpp:58:10:uint16_t BitmapDatabase::getInstanceSize()	0	static
