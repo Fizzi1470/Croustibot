@@ -50,6 +50,8 @@ bool almost = false;
 
 int look_at = 0;
 
+uint8_t etat_evitement = 0;
+
 typedef enum {
 	xy, rd, rd_abs, dest_dist, dest, done,
 } mov_type_t;
@@ -93,18 +95,22 @@ void robot_stop() {
 
 }
 
+volatile float last_t_rob = 0;
+buff_point_t last_ray_to_dest = {0};
 volatile bool last_abs = false;
 volatile float last_angle = 0, last_angle_post = 0;
 volatile int16_t last_angle_diz = 0;
 void robot_moveby(float dist, float angle, bool abs_angle, bool save_dest) {
 	last_angle = angle;
 	last_abs = abs_angle;
+	last_ray_to_dest = ray_to_dest;
+	last_t_rob = t_rob;
 
 	if (abs_angle){
 		angle -= t_rob;
 
 		while(angle > 180) angle -= 360;
-		while(angle < 180) angle += 360;
+		while(angle < -180) angle += 360;
 	}
 
 	last_angle_post = angle;
@@ -214,7 +220,8 @@ uint32_t received = 0;
 uint32_t seen = 0;
 
 void retreive(buff_point_t* pt){
-	pts[ret_index] = *pt;
+	memcpy(&pts[ret_index], pt, sizeof(buff_point_t));
+	//pts[ret_index] = *pt;
 	ret_index++;
 	if(ret_index >= RET_MAX) ret_index = 0;
 }
@@ -237,11 +244,12 @@ void pts_process(){
 				best = pts[i];
 		}
 		*/
-		float x = x_rob + pts[i].dist * cos(pts[i].angle + t_rob_rad);
-		float y = y_rob + pts[i].dist * sin(pts[i].angle + t_rob_rad);
-		if(x > 5000 && y > 5000){
-			if(pts[i].dist < best.dist)
+		float x = (float)x_rob + (pts[i].dist * cos(pts[i].angle + t_rob_rad));
+		float y = (float)y_rob + (pts[i].dist * sin(pts[i].angle + t_rob_rad));
+		if(x > 5000 && y > 5000 && x < 15000 && y < 15000){
+			if(pts[i].dist < best.dist && pts[i].angle < 2*PI && pts[i].angle > -2*PI && pts[i].dist > 0){
 				best = pts[i];
+			}
 		}
 	}
 	if(best.dist != 9999999){
@@ -268,8 +276,6 @@ buff_point_t get_ray_to_dest(){
 }*/
 
 void Robot_en_matchView::robot_en_match_tick() {
-	static uint8_t etat_evitement = 0;
-
 	fifo_params_t fifo = read_fifo();
 
 	received += fifo.mess_amnt;
@@ -289,10 +295,10 @@ void Robot_en_matchView::robot_en_match_tick() {
 				//robot_stop(); NON ! cette trame est déjà envoyée par les lidars
 				avoid = true;
 
-				if ((x_rob + y_rob) > 14000) { // zone d'arrivée, desactiver l'evitement et forcer le mouvement vers l'arrivée
+				if ((x_rob + y_rob) > 12000) { // zone d'arrivée, desactiver l'evitement et forcer le mouvement vers l'arrivée
 					robot_stop();
 					almost = true;
-				} else {
+				} else if(!manuel) {
 					manuel = true;
 					etat_evitement = 0;
 				}
@@ -324,29 +330,43 @@ void Robot_en_matchView::robot_en_match_tick() {
 				} else if (!avoid && !manuel) {
 					next_move();
 				} else if (manuel) {
-					if (etat_evitement == 1 && !avoid) {
+					switch (etat_evitement) {
+					case 0 :
+						if(x_rob < 1000 || y_rob > 7000) { // très proche du mur de gauche ou haut, forcer par la droite
+							robot_moveby(0, 80, 0, 0);
+							look_at = 1;
+						} else if (y_rob < 1000 || x_rob > 7000) { // très proche du mur du bas ou droite, forcer par la gauche
+							robot_moveby(0, -80, 0, 0);
+							look_at = 2;
+						} else { // sinon, ça dépénd de quel coté du terrain on est
+							if(x_rob - y_rob > 0) {
+								robot_moveby(0, 80, 0, 0);
+								look_at = 1;
+							} else {
+								robot_moveby(0, -80, 0, 0);
+								look_at = 2;
+							}
+						}
+						etat_evitement++;
+						break;
+					case 1 :
+						if(avoid) {
+							robot_moveby(0, 180, 0, 0);
+						} else {
+							robot_moveby(0, 0, 0, 0);
+						}
+						etat_evitement++;
+						break;
+					case 2 :
+						robot_moveby(750, 0, 0, 0);
+						etat_evitement++;
+						break;
+					case 3 :
 						look_at = 0;
 						manuel = false;
 						etat_evitement = 0;
 						robot_resume();
 						break;
-					} else {
-						if(x_rob < 1000 || y_rob > 7000) { // très proche du mur de gauche ou haut, forcer par la droite
-							robot_moveby(750, 80, 0, 0);
-							look_at = 1;
-						} else if (y_rob < 1000 || x_rob > 7000) { // très proche du mur du bas ou droite, forcer par la gauche
-							robot_moveby(750, -80, 0, 0);
-							look_at = 2;
-						} else { // sinon, ça dépénd de quel coté du terrain on est
-							if(x_rob - y_rob > 0) {
-								robot_moveby(750, 80, 0, 0);
-								look_at = 1;
-							} else {
-								robot_moveby(750, -80, 0, 0);
-								look_at = 2;
-							}
-						}
-						etat_evitement++;
 					}
 				}
 				break;
