@@ -15,7 +15,7 @@
 
 #define DEST_ANGLE_MARGIN 30
 
-#define RET_MAX 10
+#define RET_MAX 20
 buff_point_t pts[RET_MAX];
 uint16_t ret_index = 0;
 buff_point_t ray_to_dest = {0};
@@ -46,6 +46,7 @@ bool manuel = false;
 bool avoid = false;
 bool timeout = false;
 bool diago = false;
+bool almost = false;
 
 int look_at = 0;
 
@@ -92,10 +93,15 @@ void robot_stop() {
 
 }
 
+volatile float last_angle = 0;
 void robot_moveby(float dist, float angle, bool abs_angle, bool save_dest) {
-	if (abs_angle)
+	last_angle = angle;
+	if (abs_angle){
 		angle -= t_rob;
 
+		while(angle > 180) angle -= 360;
+		while(angle < 180) angle += 360;
+	}
 	float angle_rad = -angle / 180.0 * M_PI;
 
 	if (!abs_angle && angle == 0) angle_rad = -t_rob / 180.0 * M_PI;
@@ -103,13 +109,13 @@ void robot_moveby(float dist, float angle, bool abs_angle, bool save_dest) {
 	if(save_dest) x_dest = x_rob + dist * cos(angle_rad), y_dest = y_rob + dist * sin(angle_rad);
 
 	int16_t distance = lroundf(dist);
-	int16_t angle_diz_deg = lroundf(angle * 100);
+	volatile int16_t angle_diz_deg = lroundf(angle * 100);
 
 	T_CAN_trame_tx trame_tx_consigne = { 0 };
 
 	trame_tx_consigne.header.Identifier = 0x101;
 	trame_tx_consigne.header.IdType = FDCAN_STANDARD_ID;
-	trame_tx_consigne.header.TxFrameType = FDCAN_DATA_FRAME;
+	trame_tx_consigne.header.TxFrameType = FDCAN_DATA_FRAME;;
 	trame_tx_consigne.header.DataLength = 4;
 	trame_tx_consigne.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
 	trame_tx_consigne.header.BitRateSwitch = FDCAN_BRS_OFF;
@@ -275,7 +281,8 @@ void Robot_en_matchView::robot_en_match_tick() {
 				avoid = true;
 
 				if ((x_rob + y_rob) > 14000) { // zone d'arrivée, desactiver l'evitement et forcer le mouvement vers l'arrivée
-					robot_goto_dest();
+					robot_stop();
+					almost = true;
 				} else {
 					manuel = true;
 					etat_evitement = 0;
@@ -289,7 +296,23 @@ void Robot_en_matchView::robot_en_match_tick() {
 				break;
 
 			case 0x10: // fin de mouvement
-				if (!avoid && !manuel) {
+				if (almost){
+					robot_goto_dest();
+					HAL_Delay(1000);
+					T_CAN_trame_tx hard_stop = { 0 };
+
+					hard_stop.header.Identifier = 0x02;
+					hard_stop.header.IdType = FDCAN_STANDARD_ID;
+					hard_stop.header.TxFrameType = FDCAN_REMOTE_FRAME;;
+					hard_stop.header.DataLength = 4;
+					hard_stop.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+					hard_stop.header.BitRateSwitch = FDCAN_BRS_OFF;
+					hard_stop.header.FDFormat = FDCAN_CLASSIC_CAN;
+					hard_stop.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+					hard_stop.header.MessageMarker = 0;
+
+					HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &hard_stop.header, NULL);
+				} else if (!avoid && !manuel) {
 					next_move();
 				} else if (manuel) {
 					if (etat_evitement == 1 && !avoid) {
@@ -393,6 +416,7 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 #warning et si il est en avoid quand il passe la diago ?
 	}
+
 
 //		switch (etat_homolo) {
 //		case 10:
