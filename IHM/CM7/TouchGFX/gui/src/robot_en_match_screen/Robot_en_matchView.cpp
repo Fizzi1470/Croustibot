@@ -137,7 +137,7 @@ void robot_goto(float x, float y) {
 }
 
 void robot_goto_dest(){
-	if ((x_rob + y_rob) > 8000) {
+	if ((x_rob + y_rob) > 4000) {
 		robot_moveby(ray_to_dest.dist, error_to_dest(), 0);
 	} else {
 		robot_goto(ARRIVEE_X, ARRIVEE_Y);
@@ -222,7 +222,7 @@ void pts_process(){
 		*/
 		float x = x_rob + pts[i].dist * cos(pts[i].angle + t_rob_rad);
 		float y = y_rob + pts[i].dist * sin(pts[i].angle + t_rob_rad);
-		if(x > 1000 && y > 1000){
+		if(x > 5000 && y > 5000){
 			if(pts[i].dist < best.dist)
 				best = pts[i];
 		}

@@ -25277,13 +25277,13 @@ void robot_goto(float x, float y) {
 void robot_goto_dest(){
  800ba20:	b508      	push	{r3, lr}
  800ba22:	ed2d 8b02 	vpush	{d8}
-	if ((x_rob + y_rob) > 8000) {
+	if ((x_rob + y_rob) > 4000) {
  800ba26:	4b10      	ldr	r3, [pc, #64]	@ (800ba68 <_Z15robot_goto_destv+0x48>)
  800ba28:	f9b3 3000 	ldrsh.w	r3, [r3]
  800ba2c:	4a0f      	ldr	r2, [pc, #60]	@ (800ba6c <_Z15robot_goto_destv+0x4c>)
  800ba2e:	f9b2 2000 	ldrsh.w	r2, [r2]
  800ba32:	4413      	add	r3, r2
- 800ba34:	f5b3 5ffa 	cmp.w	r3, #8000	@ 0x1f40
+ 800ba34:	f5b3 6f7a 	cmp.w	r3, #4000	@ 0xfa0
  800ba38:	dd0e      	ble.n	800ba58 <_Z15robot_goto_destv+0x38>
 		robot_moveby(ray_to_dest.dist, error_to_dest(), 0);
  800ba3a:	4b0d      	ldr	r3, [pc, #52]	@ (800ba70 <_Z15robot_goto_destv+0x50>)
@@ -25475,7 +25475,7 @@ void pts_process(){
  800bbd6:	ee07 6a90 	vmov	s15, r6
  800bbda:	eeb8 aae7 	vcvt.f32.s32	s20, s15
 		float y = y_rob + pts[i].dist * sin(pts[i].angle + t_rob_rad);
-		if(x > 1000 && y > 1000){
+		if(x > 5000 && y > 5000){
  800bbde:	eddf 9a2c 	vldr	s19, [pc, #176]	@ 800bc90 <_Z11pts_processv+0x120>
  800bbe2:	e002      	b.n	800bbea <_Z11pts_processv+0x7a>
 	for(uint16_t i = 0; i < RET_MAX; i++){
@@ -25491,7 +25491,7 @@ void pts_process(){
  800bbfa:	f7f4 fd29 	bl	8000650 <cosf>
  800bbfe:	ee28 0a00 	vmul.f32	s0, s16, s0
  800bc02:	ee3a 0a00 	vadd.f32	s0, s20, s0
-		if(x > 1000 && y > 1000){
+		if(x > 5000 && y > 5000){
  800bc06:	eeb4 0ae9 	vcmpe.f32	s0, s19
  800bc0a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  800bc0e:	dde9      	ble.n	800bbe4 <_Z11pts_processv+0x74>
@@ -25502,7 +25502,7 @@ void pts_process(){
  800bc18:	eef8 7aeb 	vcvt.f32.s32	s15, s23
  800bc1c:	ee28 0a00 	vmul.f32	s0, s16, s0
  800bc20:	ee77 7a80 	vadd.f32	s15, s15, s0
-		if(x > 1000 && y > 1000){
+		if(x > 5000 && y > 5000){
  800bc24:	eef4 7ae9 	vcmpe.f32	s15, s19
  800bc28:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
  800bc2c:	ddda      	ble.n	800bbe4 <_Z11pts_processv+0x74>
@@ -25545,7 +25545,7 @@ void pts_process(){
  800bc84:	24029220 	.word	0x24029220
  800bc88:	4b18967f 	.word	0x4b18967f
  800bc8c:	00000000 	.word	0x00000000
- 800bc90:	447a0000 	.word	0x447a0000
+ 800bc90:	459c4000 	.word	0x459c4000
  800bc94:	24029214 	.word	0x24029214
 
 0800bc98 <_ZN18Robot_en_matchView19robot_en_match_tickEv>:
