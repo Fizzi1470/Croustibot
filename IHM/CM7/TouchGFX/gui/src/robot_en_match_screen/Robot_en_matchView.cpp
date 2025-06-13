@@ -47,6 +47,8 @@ bool avoid = false;
 bool timeout = false;
 bool diago = false;
 
+int look_at = 0;
+
 typedef enum {
 	xy, rd, rd_abs, dest_dist, dest, done,
 } mov_type_t;
@@ -90,7 +92,7 @@ void robot_stop() {
 
 }
 
-void robot_moveby(float dist, float angle, bool abs_angle) {
+void robot_moveby(float dist, float angle, bool abs_angle, bool save_dest) {
 	if (abs_angle)
 		angle -= t_rob;
 
@@ -98,7 +100,7 @@ void robot_moveby(float dist, float angle, bool abs_angle) {
 
 	if (!abs_angle && angle == 0) angle_rad = -t_rob / 180.0 * M_PI;
 
-	x_dest = x_rob + dist * cos(angle_rad), y_dest = y_rob + dist * sin(angle_rad);
+	if(save_dest) x_dest = x_rob + dist * cos(angle_rad), y_dest = y_rob + dist * sin(angle_rad);
 
 	int16_t distance = lroundf(dist);
 	int16_t angle_diz_deg = lroundf(angle * 100);
@@ -125,7 +127,7 @@ void robot_moveby(float dist, float angle, bool abs_angle) {
 }
 
 float goto_x = 0, goto_y = 0, goto_atan = 0, goto_angle = 0;
-void robot_goto(float x, float y) {
+void robot_goto(float x, float y, bool save_dest) {
 	goto_x = x, goto_y = y;
 
 	float distance = sqrt(((x - x_rob) * (x - x_rob)) + ((y - y_rob) * (y - y_rob)));
@@ -133,39 +135,39 @@ void robot_goto(float x, float y) {
 	goto_atan = atan2((y - y_rob), (x - x_rob));
 	goto_angle = goto_atan * -180.0 / M_PI;
 
-	robot_moveby(distance, goto_angle, true);
+	robot_moveby(distance, goto_angle, true, save_dest);
 }
 
 void robot_goto_dest(){
 	if ((x_rob + y_rob) > 4000) {
-		robot_moveby(ray_to_dest.dist, error_to_dest(), 0);
+		robot_moveby(ray_to_dest.dist, error_to_dest(), 0, 1);
 	} else {
-		robot_goto(ARRIVEE_X, ARRIVEE_Y);
+		robot_goto(ARRIVEE_X, ARRIVEE_Y, 1);
 	}
 }
 
 void robot_resume() {
-	robot_goto_dest();
+	//robot_goto_dest();
 	//robot_goto(ARRIVE_X, ARRIVE_Y);
-	//robot_goto(dest_x, dest_y);
+	robot_goto(x_dest, y_dest, 0);
 }
 
 void next_move() {
 	switch (waypoints[move].type) {
 	case xy:
-		robot_goto(waypoints[move].x, waypoints[move].y);
+		robot_goto(waypoints[move].x, waypoints[move].y, 1);
  		move++;
 		break;
 	case rd:
-		robot_moveby(waypoints[move].distance, waypoints[move].angle, 0);
+		robot_moveby(waypoints[move].distance, waypoints[move].angle, 0, 1);
 		move++;
 		break;
 	case rd_abs:
-		robot_moveby(waypoints[move].distance, waypoints[move].angle, 1);
+		robot_moveby(waypoints[move].distance, waypoints[move].angle, 1, 1);
 		move++;
 		break;
 	case dest_dist:
-		robot_moveby(waypoints[move].distance, error_to_dest(), 0);
+		robot_moveby(waypoints[move].distance, error_to_dest(), 0, 1);
 		move++;
 		break;
 	case dest :
@@ -208,8 +210,8 @@ static bool checkToleranceAngular(float measured, float goal, float tolerance){ 
 	return (fabsf(diff) < tolerance);
 }
 void pts_process(){
-	float angle_to_dest = atan2(ARRIVEE_Y - y_rob, ARRIVEE_X - x_rob);
-	float margin = DEST_ANGLE_MARGIN * M_PI / 180.0;
+	//float angle_to_dest = atan2(ARRIVEE_Y - y_rob, ARRIVEE_X - x_rob);
+	//float margin = DEST_ANGLE_MARGIN * M_PI / 180.0;
 	float t_rob_rad = -t_rob * M_PI / 180.0;
 
 	buff_point_t best = {.dist = 9999999};
@@ -250,12 +252,8 @@ buff_point_t get_ray_to_dest(){
 	}
 }*/
 
-
 void Robot_en_matchView::robot_en_match_tick() {
-
-	static uint32_t tick_debut_stop = 0;
 	static uint8_t etat_evitement = 0;
-	static uint8_t etat_homolo = 10;
 
 	fifo_params_t fifo = read_fifo();
 
@@ -275,6 +273,13 @@ void Robot_en_matchView::robot_en_match_tick() {
 			case 0x05: // stop (envoyé par les lidars)
 				//robot_stop(); NON ! cette trame est déjà envoyée par les lidars
 				avoid = true;
+
+				if ((x_rob + y_rob) > 14000) { // zone d'arrivée, desactiver l'evitement et forcer le mouvement vers l'arrivée
+					robot_goto_dest();
+				} else {
+					manuel = true;
+					etat_evitement = 0;
+				}
 				break;
 
 			case 0x06: // reprise (envoyé par les lidars)
@@ -288,15 +293,31 @@ void Robot_en_matchView::robot_en_match_tick() {
 					next_move();
 				} else if (manuel) {
 					switch (etat_evitement) {
-					case 0:
+					case 0 :
+						if(x_rob < 1000 || y_rob > 7000) { // très proche du mur de gauche ou haut, forcer par la droite
+							robot_moveby(1000, 90, 0, 0);
+							look_at = 1;
+						} else if (y_rob < 1000 || x_rob > 7000) { // très proche du mur du bas ou droite, forcer par la gauche
+							robot_moveby(1000, -90, 0, 0);
+							look_at = 2;
+						} else { // sinon, ça dépénd de quel coté du terrain on est
+							if(x_rob - y_rob > 0) {
+								robot_moveby(1000, 90, 0, 0);
+								look_at = 1;
+							} else {
+								robot_moveby(1000, -90, 0, 0);
+								look_at = 2;
+							}
+						}
+						etat_evitement++;
+						break;
+					case 1:
+						look_at = 0;
 						manuel = false;
-						robot_resume();
 						etat_evitement = 0;
+						robot_resume();
 						break;
 					}
-				} else if(avoid){
-					tick_debut_stop = HAL_GetTick();
-					timeout = true;
 				}
 				break;
 
@@ -327,17 +348,29 @@ void Robot_en_matchView::robot_en_match_tick() {
 
 				break;
 			case 0x500 ... 0x5FF: // lidar arriere
-				start_angle =
-						(tab_recep_trames_can[read_index].header.Identifier
-								- 0x500) * 8;
+				start_angle = (tab_recep_trames_can[read_index].header.Identifier - 0x500) * 8;
 
 				start_angle += 270 + 180;
 				start_angle %= 360;
 
 				for (uint16_t i = 0; i < 8; i++) {
-					points_lidar_match[start_angle + i].distance =
-							tab_recep_trames_can[read_index].data[i]
-									* MAX_LIDAR_DIST / 255;
+					points_lidar_match[start_angle + i].distance = tab_recep_trames_can[read_index].data[i] * MAX_LIDAR_DIST / 255;
+
+					/*
+					if(look_at == 2) {
+						if(start_angle + i > 315 && start_angle + i < 330) {
+							if(points_lidar_match[start_angle + i].distance > 600) {
+								robot_stop();
+							}
+						}
+					} else if (look_at == 1) {
+						if(start_angle + i > 70 && start_angle + i < 80) {
+							if(points_lidar_match[start_angle + i].distance > 600) {
+								robot_stop();
+							}
+						}
+					}
+					*/
 				}
 
 				break;
@@ -359,22 +392,7 @@ void Robot_en_matchView::robot_en_match_tick() {
 			//move--;
 			diago = true;
 		}
-
-		if (avoid == true) {
-			if (HAL_GetTick() - tick_debut_stop >= 1000 && timeout) {
-				manuel = true;
-				timeout = false;
-				etat_evitement = 0;
-
-				int16_t diff = x_rob - y_rob; // positif a droite
-
-				if(diff > 0) {
-					robot_moveby(550, 90, 0);
-				} else {
-					robot_moveby(550, -90, 0);
-				}
-			}
-		}
+	}
 
 //		switch (etat_homolo) {
 //		case 10:
@@ -393,5 +411,4 @@ void Robot_en_matchView::robot_en_match_tick() {
 //
 //		robot_moveby(6000, 1, 0);
 
-	}
 }
