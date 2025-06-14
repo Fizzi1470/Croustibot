@@ -1,17 +1,18 @@
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:214:6:virtual void Robot_en_matchView::tearDownScreen()	0	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:222:6:void retreive(buff_point_t*)	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:219:6:virtual void Robot_en_matchView::tearDownScreen()	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:227:6:void retreive(buff_point_t*)	0	static
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchView.hpp:11:13:Robot_en_matchView::~Robot_en_matchView()	8	static
 ../../CM7/../../CM7/TouchGFX/gui/include/gui/robot_en_match_screen/Robot_en_matchView.hpp:11:13:virtual Robot_en_matchView::~Robot_en_matchView()	8	static
 E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:24:7:float error_to_dest()	0	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:79:6:void robot_stop()	56	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:103:6:void robot_moveby(float, float, bool, bool)	80	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:151:6:void robot_goto(float, float, bool)	16	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:162:6:void robot_goto_dest()	16	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:170:6:void robot_resume()	8	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:176:6:void next_move()	16	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:202:1:Robot_en_matchView::Robot_en_matchView()	8	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:234:6:void pts_process()	56	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:278:6:virtual void Robot_en_matchView::robot_en_match_tick()	104	static
-E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:206:6:virtual void Robot_en_matchView::setupScreen()	8	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:31:7:float dist(float, float, float, float)	0	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:84:6:void robot_stop()	56	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:108:6:void robot_moveby(float, float, bool, bool)	80	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:156:6:void robot_goto(float, float, bool)	16	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:167:6:void robot_goto_dest()	16	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:175:6:void robot_resume()	8	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:181:6:void next_move()	16	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:207:1:Robot_en_matchView::Robot_en_matchView()	8	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:239:6:void pts_process()	56	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:283:6:virtual void Robot_en_matchView::robot_en_match_tick()	104	static
+E:/Github/Croustibot/IHM/CM7/TouchGFX/gui/src/robot_en_match_screen/Robot_en_matchView.cpp:211:6:virtual void Robot_en_matchView::setupScreen()	8	static

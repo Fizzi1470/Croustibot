@@ -28,6 +28,9 @@ float error_to_dest(){
 extern int tirette;
 extern int strat;
 
+float dist(float x1, float y1, float x2, float y2){return sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));}
+
+
 typedef struct {
 	int16_t x;
 	int16_t y;
@@ -47,6 +50,8 @@ bool avoid = false;
 bool timeout = false;
 bool diago = false;
 bool almost = false;
+
+uint32_t at_end = 0;
 
 int look_at = 0;
 
@@ -313,37 +318,23 @@ void Robot_en_matchView::robot_en_match_tick() {
 			case 0x10: // fin de mouvement
 				if (almost){
 					robot_goto_dest();
-					HAL_Delay(1000);
-					T_CAN_trame_tx hard_stop = { 0 };
-
-					hard_stop.header.Identifier = 0x02;
-					hard_stop.header.IdType = FDCAN_STANDARD_ID;
-					hard_stop.header.TxFrameType = FDCAN_REMOTE_FRAME;;
-					hard_stop.header.DataLength = 4;
-					hard_stop.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
-					hard_stop.header.BitRateSwitch = FDCAN_BRS_OFF;
-					hard_stop.header.FDFormat = FDCAN_CLASSIC_CAN;
-					hard_stop.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
-					hard_stop.header.MessageMarker = 0;
-
-					HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &hard_stop.header, NULL);
 				} else if (!avoid && !manuel) {
 					next_move();
 				} else if (manuel) {
 					switch (etat_evitement) {
 					case 0 :
 						if(x_rob < 1000 || y_rob > 7000) { // très proche du mur de gauche ou haut, forcer par la droite
-							robot_moveby(0, 80, 0, 0);
+							robot_moveby(0, 90, 0, 0);
 							look_at = 1;
 						} else if (y_rob < 1000 || x_rob > 7000) { // très proche du mur du bas ou droite, forcer par la gauche
-							robot_moveby(0, -80, 0, 0);
+							robot_moveby(0, -90, 0, 0);
 							look_at = 2;
 						} else { // sinon, ça dépénd de quel coté du terrain on est
 							if(x_rob - y_rob > 0) {
-								robot_moveby(0, 80, 0, 0);
+								robot_moveby(0, 90, 0, 0);
 								look_at = 1;
 							} else {
-								robot_moveby(0, -80, 0, 0);
+								robot_moveby(0, -90, 0, 0);
 								look_at = 2;
 							}
 						}
@@ -358,14 +349,19 @@ void Robot_en_matchView::robot_en_match_tick() {
 						etat_evitement++;
 						break;
 					case 2 :
-						robot_moveby(750, 0, 0, 0);
+						robot_moveby(500, 0, 0, 0);
 						etat_evitement++;
 						break;
 					case 3 :
 						look_at = 0;
-						manuel = false;
 						etat_evitement = 0;
-						robot_resume();
+
+						if(!avoid){
+							manuel = false;
+							robot_resume();
+						} else {
+							robot_moveby(1, 0, 0, 0);
+						}
 						break;
 					}
 				}
@@ -444,6 +440,28 @@ void Robot_en_matchView::robot_en_match_tick() {
 		}
 
 #warning et si il est en avoid quand il passe la diago ?
+	}
+
+	if((ray_to_dest.dist < 660 && (x_rob + y_rob) > 4000 && ray_to_dest.dist != 0)) {
+		at_end++;
+	} else {
+		at_end = 0;
+	}
+
+	if(dist(x_rob, y_rob, ARRIVEE_X, ARRIVEE_Y) < 660 || at_end > 100){
+		T_CAN_trame_tx hard_stop = { 0 };
+
+		hard_stop.header.Identifier = 0x02;
+		hard_stop.header.IdType = FDCAN_STANDARD_ID;
+		hard_stop.header.TxFrameType = FDCAN_REMOTE_FRAME;;
+		hard_stop.header.DataLength = 4;
+		hard_stop.header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+		hard_stop.header.BitRateSwitch = FDCAN_BRS_OFF;
+		hard_stop.header.FDFormat = FDCAN_CLASSIC_CAN;
+		hard_stop.header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+		hard_stop.header.MessageMarker = 0;
+
+		HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &hard_stop.header, NULL);
 	}
 
 
