@@ -242,7 +242,7 @@ void pts_process(){
 	float t_rob_rad = -t_rob * M_PI / 180.0;
 
 	buff_point_t best = {.dist = 9999999};
-	for(uint16_t i = 0; i < RET_MAX; i++){
+	for(uint16_t i = 1; i < RET_MAX; i++){
 		/*
 		if(checkToleranceAngular(pts[i].angle + t_rob_rad, angle_to_dest, margin)){
 			if(pts[i].dist < best.dist)
@@ -442,13 +442,13 @@ void Robot_en_matchView::robot_en_match_tick() {
 #warning et si il est en avoid quand il passe la diago ?
 	}
 
-	if((ray_to_dest.dist < 660 && (x_rob + y_rob) > 4000 && ray_to_dest.dist != 0)) {
+	if((ray_to_dest.dist < 660 && ray_to_dest.dist != 0)) {
 		at_end++;
 	} else {
 		at_end = 0;
 	}
 
-	if(dist(x_rob, y_rob, ARRIVEE_X, ARRIVEE_Y) < 660 || at_end > 100){
+	if(/*dist(x_rob, y_rob, ARRIVEE_X, ARRIVEE_Y) < 660 ||*/ at_end > 50){
 		T_CAN_trame_tx hard_stop = { 0 };
 
 		hard_stop.header.Identifier = 0x02;
